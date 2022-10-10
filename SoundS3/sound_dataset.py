@@ -10,6 +10,7 @@ from scipy.signal import stft
 import librosa
 from tqdm import tqdm
 
+
 try:
     from .dataset_config import *
 except ImportError:
@@ -23,13 +24,15 @@ N_BINS = WIN_LEN // 2 + 1
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(
-        self, dataset_path, debug_ifft=False, 
-        cache_all=False, 
+        self, dataset_path, config, debug_ifft=False, 
+        cache_all=True,
     ):
+        self.config = config
         self.dataset_path = dataset_path
         with open(path.join(dataset_path, 'index.pickle'), 'rb') as f:
             self.index: List[Tuple[str, int]] = pickle.load(f)
         self.map = {}
+        
         if cache_all:
             self.cacheAll(debug_ifft)
     
@@ -89,11 +92,12 @@ class Dataset(torch.utils.data.Dataset):
                 IFFT_PATH, 
                 f'{instrument_name}-{start_pitch}.wav', 
             ))
+            
         datapoint = torch.zeros((
-            len(MAJOR_SCALE), N_BINS, ENCODE_STEP, 
+            self.config['seq_len'], N_BINS, ENCODE_STEP, 
             # n_notes, n_freq_bins, n_hops_per_beats
         ))
-        for note_i, _ in enumerate(MAJOR_SCALE):
+        for note_i in range(self.config['seq_len']):
             if (note_i + 1) * ENCODE_STEP >= mag.shape[1]:
                 break
             datapoint[note_i, :, :] = mag[
