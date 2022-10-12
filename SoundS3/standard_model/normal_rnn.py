@@ -1,6 +1,6 @@
 import sys
 from os import path
-sys.path.append(path.join(path.dirname(path.abspath(__file__)), '../../../'))
+sys.path.append(path.join(path.dirname(path.abspath(__file__)), '../../'))
 
 import numpy as np
 import torch
@@ -13,7 +13,7 @@ from SoundS3.shared import DEVICE
 from SoundS3.dataset_config import *
 
 # todo: make these parameters configurable
-BATCH_SIZE = 32
+BATCH_SIZE = 1
 log_interval = 10
 IMG_CHANNEL = 1
 
@@ -138,7 +138,7 @@ class Conv2dGruConv2d(nn.Module):
 
     def predict_with_symmetry(self, z_gt, sample_points, symm_func):
         z_SR_seq_batch = []
-        hidden_r = torch.zeros([self.rnn_num_layers, z_gt.size(0), self.rnn_hidden_size]).to(DEVICE)
+        hidden_r = torch.zeros(self.rnn_num_layers, z_gt.size(0), self.rnn_hidden_size, device=DEVICE)
         for i in range(z_gt.size(1)):
             """Schedule sample"""
             if i in sample_points:

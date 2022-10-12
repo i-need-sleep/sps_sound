@@ -30,7 +30,7 @@ hop_length = 512
 sample_rate = 16000
 time_frame_len = 4
 
-DT_BATCH_MULTIPLE = 4
+DT_BATCH_MULTIPLE = 32
 # LAST_SOUND = 16 # len(RNN) change me 
 
 
@@ -195,9 +195,13 @@ class BallTrainer:
             vae_loss = self.calc_vae_loss(data, z_combine, mu, logvar, is_log * i)
             rnn_loss = self.calc_rnn_loss(data[:, 1:, :, :, :], z_gt_p, z0_rnn, is_log * i, z_gt_cr[:, :-1, :])
 
+            # Ablate the RNN loss
+            rnn_loss = torch.zeros_like(rnn_loss[0]), torch.zeros_like(rnn_loss[1])
+
             R_loss = (torch.zeros(2))
             Z_loss = (torch.zeros(2))
             T_loss = self.batch_symm_loss(
+    
                 data[:, 1:, :, :, :], z_gt_p, z0_rnn, T_sample_points, DT_BATCH_MULTIPLE,
                 lambda z: symm_trans(z, T), lambda z: symm_trans(z, Tr), z_gt_cr[:, :-1, :]
             )
@@ -211,7 +215,7 @@ class BallTrainer:
                 print(train_loss_counter.make_record(i))
                 train_loss_counter.record_and_clear(self.train_record_path, i)
             if i % self.checkpoint_interval == 0 and i != 0:
-                self.model.save_tensor(self.model.state_dict(), f'{NAME}_checkpoint_{i}.pt')
+                self.model.save_tensor(self.model.state_dict(), f'{self.config["name"]}_checkpoint_{i}.pt')
 
     def save_audio(self, spec, name, sample_rate=16000):
         recon_waveform = self.griffin_lim(spec.cpu())
