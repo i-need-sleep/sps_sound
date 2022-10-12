@@ -20,6 +20,7 @@ from SoundS3.sound_dataset import Dataset, PersistentLoader
 import matplotlib
 from SoundS3.symmetry import rotation_x_mat, rotation_y_mat, rotation_z_mat, do_seq_symmetry, symm_rotate
 import numpy as np
+import argparse
 
 from SoundS3.shared import DEVICE
 
@@ -40,10 +41,22 @@ WAV_PATH_PRED_RECON = IMG_ROOT + "/pred_recon.wav"
 WAV_PATH_TRANSFORMED_SELF_RECON = IMG_ROOT + "/transformed_self_recon.wav"
 WAV_PATH_TRANSFORMED_PRED_RECON = IMG_ROOT + "/transformed_pred_recon.wav"
 DIY_WAVE_NAME = IMG_ROOT + "/diy_wave.wav"
-WAV_PATH = '../../../../makeSoundDatasets/datasets/cleanTrain/'
+WAV_PATH = '../../data/cleanTrain/'
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-MODEL_PATH = 'checkpoint_200000.pt'
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--name', default='unnamed')
+parser.add_argument('--seq_len', type=int)
+
+args = parser.parse_args()
+
+NAME = args.name
+CONFIG['seq_len'] = args.seq_len
+CONFIG['train_data_path'] = WAV_PATH
+
+MODEL_PATH = 'full_checkpoint_25000.pt'
+
 n_fft = 1024
 win_length = 1024
 hop_length = 512
@@ -138,7 +151,7 @@ class TestUI:
             hop_length=hop_length,
         )
         self.dataset = Dataset(
-            CONFIG['train_data_path'], cache_all=False, 
+            CONFIG['train_data_path'], CONFIG ,cache_all=False, 
         )
         # self.data_loader = PersistentLoader(self.dataset, 32)
         self.selected_wav_spec_tensor = None

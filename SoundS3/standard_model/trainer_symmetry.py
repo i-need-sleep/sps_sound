@@ -178,6 +178,7 @@ class BallTrainer:
             optimizer.zero_grad()
             I_sample_points = self.gen_sample_points(self.base_len, data.size(1), i, self.enable_sample)
             T_sample_points = self.gen_sample_points(self.base_len, data.size(1), i, self.enable_sample)
+
             z_gt, mu, logvar = self.model.batch_seq_encode_to_z(data)
             z_gt_p = z_gt[..., 0:1]
             z_gt_c = z_gt[..., 1:]

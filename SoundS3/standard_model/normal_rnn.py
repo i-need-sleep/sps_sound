@@ -13,7 +13,7 @@ from SoundS3.shared import DEVICE
 from SoundS3.dataset_config import *
 
 # todo: make these parameters configurable
-BATCH_SIZE = 1
+BATCH_SIZE = 32
 log_interval = 10
 IMG_CHANNEL = 1
 

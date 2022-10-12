@@ -17,8 +17,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--name', default='unnamed')
-    parser.add_argument('--seq_len', type=int)
-    parser.add_argument('--data_folder')
+    parser.add_argument('--seq_len', type=int, default=16)
+    parser.add_argument('--data_folder', default='375c_16th')
 
     args = parser.parse_args()
 
