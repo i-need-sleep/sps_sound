@@ -21,7 +21,7 @@ echo "START"               # 输出起始信息
 source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
-    --name 16th_noRNN \
+    --name 16th \
     --seq_len 16 \
     --data_folder 375c_16th
 echo "FINISH"                       # 输出起始信息

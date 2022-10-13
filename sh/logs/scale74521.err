@@ -1,0 +1,2 @@
+DeprecationWarning: 'source deactivate' is deprecated. Use 'conda deactivate'.
+slurmstepd-gpu-10: error: *** JOB 74521 ON gpu-10 CANCELLED AT 2022-10-13T11:34:02 ***

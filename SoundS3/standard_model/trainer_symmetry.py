@@ -30,7 +30,7 @@ hop_length = 512
 sample_rate = 16000
 time_frame_len = 4
 
-DT_BATCH_MULTIPLE = 32
+DT_BATCH_MULTIPLE = 4
 # LAST_SOUND = 16 # len(RNN) change me 
 
 

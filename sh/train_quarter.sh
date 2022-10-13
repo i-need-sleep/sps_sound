@@ -19,7 +19,7 @@ cd /l/users/yichen.huang/sps_sound/SoundS3/standard_model   # 切到程序目录
 
 echo "START"               # 输出起始信息
 source deactivate
-source /apps/local/anaconda3/bin/activate danielTrah          # 调用 virtual env
+source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
     --name quarter \
     --seq_len 16 \

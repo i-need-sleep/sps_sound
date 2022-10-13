@@ -81,7 +81,7 @@ class Dataset(torch.utils.data.Dataset):
         # win = 2*hop
         # hop per beat = 5
 
-        mag = torch.Tensor(np.abs(spectrogram)) 
+        mag = torch.Tensor(np.abs(spectrogram)) * WIN_LEN
         # magnitude
         # shape = [n_freq_bins, n_hop]
 
