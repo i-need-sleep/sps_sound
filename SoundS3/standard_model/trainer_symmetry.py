@@ -197,7 +197,8 @@ class BallTrainer:
             rnn_loss = self.calc_rnn_loss(data[:, 1:, :, :, :], z_gt_p, z0_rnn, is_log * i, z_gt_cr[:, :-1, :])
 
             # Ablate the RNN loss
-            rnn_loss = torch.zeros_like(rnn_loss[0]), torch.zeros_like(rnn_loss[1])
+            if self.config['no_rnn']:
+                rnn_loss = torch.zeros_like(rnn_loss[0]), torch.zeros_like(rnn_loss[1])
 
             R_loss = (torch.zeros(2))
             Z_loss = (torch.zeros(2))

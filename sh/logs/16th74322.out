@@ -1,4 +1,4 @@
-Wed Oct 12 13:29:18 2022       
+Wed Oct 12 21:19:10 2022       
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 510.47.03    Driver Version: 510.47.03    CUDA Version: 11.6     |
 |-------------------------------+----------------------+----------------------+
@@ -6,20 +6,20 @@ Wed Oct 12 13:29:18 2022
 | Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
 |                               |                      |               MIG M. |
 |===============================+======================+======================|
-|   0  NVIDIA A100-SXM...  On   | 00000000:01:00.0 Off |                    0 |
-| N/A   29C    P0    55W / 400W |      0MiB / 40960MiB |      0%      Default |
+|   0  NVIDIA A100-SXM...  On   | 00000000:01:00.0 Off |                  N/A |
+| N/A   34C    P0    76W / 400W |      0MiB / 40960MiB |    100%      Default |
 |                               |                      |             Disabled |
 +-------------------------------+----------------------+----------------------+
 |   1  NVIDIA A100-SXM...  On   | 00000000:41:00.0 Off |                    0 |
-| N/A   34C    P0    96W / 400W |  14312MiB / 40960MiB |     79%      Default |
+| N/A   36C    P0   177W / 400W |  17944MiB / 40960MiB |     29%      Default |
 |                               |                      |             Disabled |
 +-------------------------------+----------------------+----------------------+
 |   2  NVIDIA A100-SXM...  On   | 00000000:81:00.0 Off |                    0 |
-| N/A   32C    P0    88W / 400W |  14316MiB / 40960MiB |    100%      Default |
+| N/A   35C    P0   137W / 400W |  15386MiB / 40960MiB |     75%      Default |
 |                               |                      |             Disabled |
 +-------------------------------+----------------------+----------------------+
 |   3  NVIDIA A100-SXM...  On   | 00000000:C1:00.0 Off |                    0 |
-| N/A   33C    P0    97W / 400W |  14316MiB / 40960MiB |     81%      Default |
+| N/A   34C    P0   167W / 400W |  15262MiB / 40960MiB |    100%      Default |
 |                               |                      |             Disabled |
 +-------------------------------+----------------------+----------------------+
                                                                                
@@ -28,10 +28,11 @@ Wed Oct 12 13:29:18 2022
 |  GPU   GI   CI        PID   Type   Process name                  GPU Memory |
 |        ID   ID                                                   Usage      |
 |=============================================================================|
-|    1   N/A  N/A   1791034      C   python                          14309MiB |
-|    2   N/A  N/A   1790078      C   python                          14313MiB |
-|    3   N/A  N/A   1790716      C   python                          14313MiB |
+|    1   N/A  N/A    593156      C   python                          17941MiB |
+|    2   N/A  N/A    583529      C   ...i/envs/gf3det2/bin/python    15383MiB |
+|    3   N/A  N/A    583530      C   ...i/envs/gf3det2/bin/python    15259MiB |
 +-----------------------------------------------------------------------------+
+WARNING: infoROM is corrupted at gpu 0000:01:00.0
 nvcc: NVIDIA (R) Cuda compiler driver
 Copyright (c) 2005-2020 NVIDIA Corporation
 Built on Wed_Jul_22_19:09:09_PDT_2020
@@ -543,7 +544,7 @@ New model is initialized
 498
 499
 500
-500-loss_ED:491.395,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:447.35,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:44.041,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.603
+500-loss_ED:20082.294,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:18442.636,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1524.628,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:253.178
 
 501
 502
@@ -1045,7 +1046,7 @@ New model is initialized
 998
 999
 1000
-1000-loss_ED:38.09,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:35.835,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.549,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.204
+1000-loss_ED:256.987,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:241.696,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:4.897,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.44
 
 1001
 1002
@@ -1547,7 +1548,7 @@ New model is initialized
 1498
 1499
 1500
-1500-loss_ED:37.473,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:35.255,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.088,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.182
+1500-loss_ED:151.941,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.956,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.21
 
 1501
 1502
@@ -2049,7 +2050,7 @@ New model is initialized
 1998
 1999
 2000
-2000-loss_ED:37.93,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:35.688,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.1,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.182
+2000-loss_ED:150.552,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.658,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.856,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.113
 
 2001
 2002
@@ -2551,7 +2552,7 @@ New model is initialized
 2498
 2499
 2500
-2500-loss_ED:37.825,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:35.588,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.17,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.184
+2500-loss_ED:150.294,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.413,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.994,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.097
 
 2501
 2502
@@ -3053,7 +3054,7 @@ New model is initialized
 2998
 2999
 3000
-3000-loss_ED:37.649,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:35.429,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.13,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.184
+3000-loss_ED:150.156,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.294,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:4.286,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.071
 
 3001
 3002
@@ -3555,7 +3556,7 @@ New model is initialized
 3498
 3499
 3500
-3500-loss_ED:38.036,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:35.783,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.12,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.185
+3500-loss_ED:150.181,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.299,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.587,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.064
 
 3501
 3502
@@ -4057,7 +4058,7 @@ New model is initialized
 3998
 3999
 4000
-4000-loss_ED:33.374,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:31.372,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.102,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.206
+4000-loss_ED:150.377,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.499,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.093,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.043
 
 4001
 4002
@@ -4559,7 +4560,7 @@ New model is initialized
 4498
 4499
 4500
-4500-loss_ED:4.852,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.567,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.37,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.198
+4500-loss_ED:150.976,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.052,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:4.318,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.059
 
 4501
 4502
@@ -5061,7 +5062,7 @@ New model is initialized
 4998
 4999
 5000
-5000-loss_ED:4.909,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.62,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.078,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.194
+5000-loss_ED:150.586,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.685,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.886,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.045
 
 5001
 5002
@@ -5563,7 +5564,7 @@ New model is initialized
 5498
 5499
 5500
-5500-loss_ED:4.878,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.59,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.075,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.196
+5500-loss_ED:150.675,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.777,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.472,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.046
 
 5501
 5502
@@ -6065,7 +6066,7 @@ New model is initialized
 5998
 5999
 6000
-6000-loss_ED:4.694,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.418,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.51,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.192
+6000-loss_ED:150.132,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.272,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:11.549,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.048
 
 6001
 6002
@@ -6567,7 +6568,7 @@ New model is initialized
 6498
 6499
 6500
-6500-loss_ED:4.718,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.44,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.118,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.193
+6500-loss_ED:150.347,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.465,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:11.382,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.05
 
 6501
 6502
@@ -7069,7 +7070,7 @@ New model is initialized
 6998
 6999
 7000
-7000-loss_ED:4.747,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.464,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.275,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.192
+7000-loss_ED:151.184,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.255,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.945,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.048
 
 7001
 7002
@@ -7571,7 +7572,7 @@ New model is initialized
 7498
 7499
 7500
-7500-loss_ED:4.779,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.496,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.268,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.192
+7500-loss_ED:149.996,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.135,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:5.871,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.053
 
 7501
 7502
@@ -8073,7 +8074,7 @@ New model is initialized
 7998
 7999
 8000
-8000-loss_ED:4.938,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.645,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.156,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.194
+8000-loss_ED:148.995,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.187,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:9.552,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.056
 
 8001
 8002
@@ -8575,7 +8576,7 @@ New model is initialized
 8498
 8499
 8500
-8500-loss_ED:4.793,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.511,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.963,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.19
+8500-loss_ED:150.013,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.161,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:34.286,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.127
 
 8501
 8502
@@ -9077,7 +9078,7 @@ New model is initialized
 8998
 8999
 9000
-9000-loss_ED:4.754,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.472,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.532,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.199
+9000-loss_ED:150.717,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.811,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:16.703,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.053
 
 9001
 9002
@@ -9579,7 +9580,7 @@ New model is initialized
 9498
 9499
 9500
-9500-loss_ED:4.799,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.517,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.315,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.193
+9500-loss_ED:149.654,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.837,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:48.918,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.035
 
 9501
 9502
@@ -10081,7 +10082,7 @@ New model is initialized
 9998
 9999
 10000
-10000-loss_ED:4.91,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.622,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.71,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.194
+10000-loss_ED:148.835,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.052,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:52.194,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.07
 
 10001
 10002
@@ -10583,7 +10584,7 @@ New model is initialized
 10498
 10499
 10500
-10500-loss_ED:4.835,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.55,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.703,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.191
+10500-loss_ED:149.666,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.824,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:30.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.044
 
 10501
 10502
@@ -11085,7 +11086,7 @@ New model is initialized
 10998
 10999
 11000
-11000-loss_ED:4.807,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.523,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.194
+11000-loss_ED:151.009,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.096,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:77.646,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.027
 
 11001
 11002
@@ -11587,7 +11588,7 @@ New model is initialized
 11498
 11499
 11500
-11500-loss_ED:4.857,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.569,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.331,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.189
+11500-loss_ED:149.526,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.689,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:33.303,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.017
 
 11501
 11502
@@ -12089,7 +12090,7 @@ New model is initialized
 11998
 11999
 12000
-12000-loss_ED:4.828,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.544,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.724,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.189
+12000-loss_ED:150.422,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.532,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:43.687,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.02
 
 12001
 12002
@@ -12591,7 +12592,7 @@ New model is initialized
 12498
 12499
 12500
-12500-loss_ED:4.761,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.481,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.63,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.189
+12500-loss_ED:150.252,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.379,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:25.361,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.983
 
 12501
 12502
@@ -13093,7 +13094,7 @@ New model is initialized
 12998
 12999
 13000
-13000-loss_ED:4.849,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.561,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.82,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.188
+13000-loss_ED:150.504,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.613,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:48.009,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.997
 
 13001
 13002
@@ -13595,7 +13596,7 @@ New model is initialized
 13498
 13499
 13500
-13500-loss_ED:4.777,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.495,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.661,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.19
+13500-loss_ED:151.111,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.167,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:21.932,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.997
 
 13501
 13502
@@ -14097,7 +14098,7 @@ New model is initialized
 13998
 13999
 14000
-14000-loss_ED:4.87,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.581,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.816,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.186
+14000-loss_ED:150.038,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.18,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:35.912,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.981
 
 14001
 14002
@@ -14599,7 +14600,7 @@ New model is initialized
 14498
 14499
 14500
-14500-loss_ED:4.627,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.354,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.644,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.188
+14500-loss_ED:151.274,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.345,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:17.579,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.988
 
 14501
 14502
@@ -15101,7 +15102,7 @@ New model is initialized
 14998
 14999
 15000
-15000-loss_ED:4.745,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.465,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.23,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.187
+15000-loss_ED:150.32,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.435,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:13.146,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.985
 
 15001
 15002
@@ -15603,7 +15604,7 @@ New model is initialized
 15498
 15499
 15500
-15500-loss_ED:4.875,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.585,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.182,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.189
+15500-loss_ED:150.264,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.391,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:23.383,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.968
 
 15501
 15502
@@ -16105,7 +16106,7 @@ New model is initialized
 15998
 15999
 16000
-16000-loss_ED:4.727,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.448,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.33,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.189
+16000-loss_ED:150.072,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.207,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:8.373,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.947
 
 16001
 16002
@@ -16607,7 +16608,7 @@ New model is initialized
 16498
 16499
 16500
-16500-loss_ED:4.853,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.565,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.346,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.185
+16500-loss_ED:151.165,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.237,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:7.781,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.955
 
 16501
 16502
@@ -17109,7 +17110,7 @@ New model is initialized
 16998
 16999
 17000
-17000-loss_ED:4.747,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.466,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.196,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.187
+17000-loss_ED:149.919,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.062,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:9.85,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.954
 
 17001
 17002
@@ -17611,7 +17612,7 @@ New model is initialized
 17498
 17499
 17500
-17500-loss_ED:4.59,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.317,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.209,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.186
+17500-loss_ED:150.732,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.831,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:5.344,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.943
 
 17501
 17502
@@ -18113,7 +18114,7 @@ New model is initialized
 17998
 17999
 18000
-18000-loss_ED:4.738,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.457,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.198,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.187
+18000-loss_ED:151.468,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.521,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.543,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.934
 
 18001
 18002
@@ -18615,7 +18616,7 @@ New model is initialized
 18498
 18499
 18500
-18500-loss_ED:4.68,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.402,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.162,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.187
+18500-loss_ED:149.49,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.664,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:7.163,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.953
 
 18501
 18502
@@ -19117,7 +19118,7 @@ New model is initialized
 18998
 18999
 19000
-19000-loss_ED:4.547,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.279,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.175,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.186
+19000-loss_ED:149.791,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.945,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:6.438,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.948
 
 19001
 19002
@@ -19619,7 +19620,7 @@ New model is initialized
 19498
 19499
 19500
-19500-loss_ED:4.822,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.537,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.166,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.183
+19500-loss_ED:151.159,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.227,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.899,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.939
 
 19501
 19502
@@ -20121,7 +20122,7 @@ New model is initialized
 19998
 19999
 20000
-20000-loss_ED:4.805,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.521,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.135,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.183
+20000-loss_ED:149.987,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.126,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:4.392,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.944
 
 20001
 20002
@@ -20623,7 +20624,7 @@ New model is initialized
 20498
 20499
 20500
-20500-loss_ED:4.84,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.553,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.131,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.185
+20500-loss_ED:149.741,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.895,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:7.666,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.934
 
 20501
 20502
@@ -21125,7 +21126,7 @@ New model is initialized
 20998
 20999
 21000
-21000-loss_ED:4.82,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.535,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.122,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.184
+21000-loss_ED:150.735,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.823,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.635,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.937
 
 21001
 21002
@@ -21627,7 +21628,7 @@ New model is initialized
 21498
 21499
 21500
-21500-loss_ED:4.75,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.47,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.128,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.183
+21500-loss_ED:149.953,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.095,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.418,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.925
 
 21501
 21502
@@ -22129,7 +22130,7 @@ New model is initialized
 21998
 21999
 22000
-22000-loss_ED:4.686,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.41,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.127,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.183
+22000-loss_ED:150.337,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.463,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:35.406,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.898
 
 22001
 22002
@@ -22631,7 +22632,7 @@ New model is initialized
 22498
 22499
 22500
-22500-loss_ED:4.678,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.403,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.131,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.181
+22500-loss_ED:149.991,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.127,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.104,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.908
 
 22501
 22502
@@ -23133,7 +23134,7 @@ New model is initialized
 22998
 22999
 23000
-23000-loss_ED:4.679,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.403,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.107,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.182
+23000-loss_ED:150.69,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.789,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.044,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.898
 
 23001
 23002
@@ -23635,7 +23636,7 @@ New model is initialized
 23498
 23499
 23500
-23500-loss_ED:4.68,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.404,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.12,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.182
+23500-loss_ED:150.52,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.629,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.687,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.885
 
 23501
 23502
@@ -24137,7 +24138,7 @@ New model is initialized
 23998
 23999
 24000
-24000-loss_ED:4.741,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.459,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.099,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.181
+24000-loss_ED:149.399,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.567,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.79,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.875
 
 24001
 24002
@@ -24639,7 +24640,7 @@ New model is initialized
 24498
 24499
 24500
-24500-loss_ED:4.666,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.39,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.111,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+24500-loss_ED:150.144,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.281,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.087,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.872
 
 24501
 24502
@@ -25141,7 +25142,7 @@ New model is initialized
 24998
 24999
 25000
-25000-loss_ED:4.67,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.395,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.095,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+25000-loss_ED:149.412,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.584,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.49,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.872
 
 25001
 25002
@@ -25643,7 +25644,7 @@ New model is initialized
 25498
 25499
 25500
-25500-loss_ED:4.615,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.343,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.094,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.182
+25500-loss_ED:151.13,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.202,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:53.795,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.831
 
 25501
 25502
@@ -26145,7 +26146,7 @@ New model is initialized
 25998
 25999
 26000
-26000-loss_ED:4.864,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.577,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.116,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+26000-loss_ED:150.174,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.306,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:5.657,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.783
 
 26001
 26002
@@ -26647,7 +26648,7 @@ New model is initialized
 26498
 26499
 26500
-26500-loss_ED:4.793,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.51,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.095,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+26500-loss_ED:150.56,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.66,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.532,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.766
 
 26501
 26502
@@ -27149,7 +27150,7 @@ New model is initialized
 26998
 26999
 27000
-27000-loss_ED:4.735,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.457,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.093,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+27000-loss_ED:150.463,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.577,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.1,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.743
 
 27001
 27002
@@ -27651,7 +27652,7 @@ New model is initialized
 27498
 27499
 27500
-27500-loss_ED:4.842,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.556,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.084,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+27500-loss_ED:150.08,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.208,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.991,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.743
 
 27501
 27502
@@ -28153,7 +28154,7 @@ New model is initialized
 27998
 27999
 28000
-28000-loss_ED:4.658,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.382,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.095,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.181
+28000-loss_ED:149.888,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.026,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.828,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.745
 
 28001
 28002
@@ -28655,7 +28656,7 @@ New model is initialized
 28498
 28499
 28500
-28500-loss_ED:4.645,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.371,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.103,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+28500-loss_ED:150.067,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.205,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.699,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.743
 
 28501
 28502
@@ -29157,7 +29158,7 @@ New model is initialized
 28998
 28999
 29000
-29000-loss_ED:4.669,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.393,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.093,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+29000-loss_ED:150.583,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.683,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.649,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.721
 
 29001
 29002
@@ -29659,7 +29660,7 @@ New model is initialized
 29498
 29499
 29500
-29500-loss_ED:4.741,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.461,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.087,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+29500-loss_ED:151.473,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.525,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.767,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.727
 
 29501
 29502
@@ -30161,7 +30162,7 @@ New model is initialized
 29998
 29999
 30000
-30000-loss_ED:4.617,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.344,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.1,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+30000-loss_ED:149.465,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.634,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.535,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.725
 
 30001
 30002
@@ -30663,7 +30664,7 @@ New model is initialized
 30498
 30499
 30500
-30500-loss_ED:4.454,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.191,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.09,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+30500-loss_ED:150.228,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.338,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.504,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.722
 
 30501
 30502
@@ -31165,7 +31166,7 @@ New model is initialized
 30998
 30999
 31000
-31000-loss_ED:4.578,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.306,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.081,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+31000-loss_ED:149.51,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.683,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.507,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.714
 
 31001
 31002
@@ -31667,7 +31668,7 @@ New model is initialized
 31498
 31499
 31500
-31500-loss_ED:4.667,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.393,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.225,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+31500-loss_ED:149.079,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.279,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.392,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.716
 
 31501
 31502
@@ -32169,7 +32170,7 @@ New model is initialized
 31998
 31999
 32000
-32000-loss_ED:4.493,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.23,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+32000-loss_ED:149.17,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.354,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.406,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.715
 
 32001
 32002
@@ -32671,7 +32672,7 @@ New model is initialized
 32498
 32499
 32500
-32500-loss_ED:5.083,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.781,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+32500-loss_ED:149.841,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.982,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.442,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.705
 
 32501
 32502
@@ -33173,7 +33174,7 @@ New model is initialized
 32998
 32999
 33000
-33000-loss_ED:4.672,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.397,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+33000-loss_ED:150.931,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.019,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.354,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.711
 
 33001
 33002
@@ -33675,7 +33676,7 @@ New model is initialized
 33498
 33499
 33500
-33500-loss_ED:4.564,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.296,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+33500-loss_ED:150.625,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.726,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.299,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.706
 
 33501
 33502
@@ -34177,7 +34178,7 @@ New model is initialized
 33998
 33999
 34000
-34000-loss_ED:4.727,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.447,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+34000-loss_ED:150.269,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.383,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.195,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.704
 
 34001
 34002
@@ -34679,7 +34680,7 @@ New model is initialized
 34498
 34499
 34500
-34500-loss_ED:4.703,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.425,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+34500-loss_ED:149.929,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.066,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.183,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.704
 
 34501
 34502
@@ -35181,7 +35182,7 @@ New model is initialized
 34998
 34999
 35000
-35000-loss_ED:4.69,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.413,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+35000-loss_ED:149.535,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.702,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.312,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.713
 
 35001
 35002
@@ -35683,7 +35684,7 @@ New model is initialized
 35498
 35499
 35500
-35500-loss_ED:4.677,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.401,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.09,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+35500-loss_ED:149.402,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.573,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.09,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.696
 
 35501
 35502
@@ -36185,7 +36186,7 @@ New model is initialized
 35998
 35999
 36000
-36000-loss_ED:4.649,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.375,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+36000-loss_ED:149.86,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.004,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.045,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.706
 
 36001
 36002
@@ -36687,7 +36688,7 @@ New model is initialized
 36498
 36499
 36500
-36500-loss_ED:4.613,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.339,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+36500-loss_ED:149.127,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.319,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.2,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.696
 
 36501
 36502
@@ -37189,7 +37190,7 @@ New model is initialized
 36998
 36999
 37000
-37000-loss_ED:4.799,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.515,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.082,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+37000-loss_ED:150.221,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.347,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.969,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.697
 
 37001
 37002
@@ -37691,7 +37692,7 @@ New model is initialized
 37498
 37499
 37500
-37500-loss_ED:4.773,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.491,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+37500-loss_ED:151.479,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.519,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.111,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.691
 
 37501
 37502
@@ -38193,7 +38194,7 @@ New model is initialized
 37998
 37999
 38000
-38000-loss_ED:4.838,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.553,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.087,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+38000-loss_ED:149.621,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.777,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.038,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.689
 
 38001
 38002
@@ -38695,7 +38696,7 @@ New model is initialized
 38498
 38499
 38500
-38500-loss_ED:4.824,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.538,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+38500-loss_ED:149.796,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.949,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.891,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.688
 
 38501
 38502
@@ -39197,7 +39198,7 @@ New model is initialized
 38998
 38999
 39000
-39000-loss_ED:4.494,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.23,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+39000-loss_ED:150.193,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.32,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.051,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.688
 
 39001
 39002
@@ -39699,7 +39700,7 @@ New model is initialized
 39498
 39499
 39500
-39500-loss_ED:4.617,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.343,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+39500-loss_ED:149.716,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.868,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.968,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.685
 
 39501
 39502
@@ -40201,7 +40202,7 @@ New model is initialized
 39998
 39999
 40000
-40000-loss_ED:4.661,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.387,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.092,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+40000-loss_ED:150.882,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.969,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.043,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.697
 
 40001
 40002
@@ -40703,7 +40704,7 @@ New model is initialized
 40498
 40499
 40500
-40500-loss_ED:4.898,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.61,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+40500-loss_ED:149.926,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.071,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.965,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.694
 
 40501
 40502
@@ -41205,7 +41206,7 @@ New model is initialized
 40998
 40999
 41000
-41000-loss_ED:4.797,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.513,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+41000-loss_ED:150.351,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.465,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.94,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.687
 
 41001
 41002
@@ -41707,7 +41708,7 @@ New model is initialized
 41498
 41499
 41500
-41500-loss_ED:4.765,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.483,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+41500-loss_ED:149.754,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.911,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.92,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.692
 
 41501
 41502
@@ -42209,7 +42210,7 @@ New model is initialized
 41998
 41999
 42000
-42000-loss_ED:4.623,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.352,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+42000-loss_ED:150.905,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.986,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.94,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.68
 
 42001
 42002
@@ -42711,7 +42712,7 @@ New model is initialized
 42498
 42499
 42500
-42500-loss_ED:4.699,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.422,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+42500-loss_ED:149.576,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.746,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.87,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.698
 
 42501
 42502
@@ -43213,7 +43214,7 @@ New model is initialized
 42998
 42999
 43000
-43000-loss_ED:4.502,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.237,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+43000-loss_ED:150.572,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.675,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.927,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.693
 
 43001
 43002
@@ -43715,7 +43716,7 @@ New model is initialized
 43498
 43499
 43500
-43500-loss_ED:4.678,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.403,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+43500-loss_ED:149.949,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.082,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.811,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.685
 
 43501
 43502
@@ -44217,7 +44218,7 @@ New model is initialized
 43998
 43999
 44000
-44000-loss_ED:4.796,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.512,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+44000-loss_ED:150.302,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.416,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.904,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.684
 
 44001
 44002
@@ -44719,7 +44720,7 @@ New model is initialized
 44498
 44499
 44500
-44500-loss_ED:4.656,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.381,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+44500-loss_ED:149.11,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.307,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.86,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.693
 
 44501
 44502
@@ -45221,7 +45222,7 @@ New model is initialized
 44998
 44999
 45000
-45000-loss_ED:4.645,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.37,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+45000-loss_ED:150.049,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.189,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.839,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.685
 
 45001
 45002
@@ -45723,7 +45724,7 @@ New model is initialized
 45498
 45499
 45500
-45500-loss_ED:4.6,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.328,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+45500-loss_ED:150.444,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.561,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.866,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.685
 
 45501
 45502
@@ -46225,7 +46226,7 @@ New model is initialized
 45998
 45999
 46000
-46000-loss_ED:4.791,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.506,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+46000-loss_ED:149.146,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.326,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.851,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.675
 
 46001
 46002
@@ -46727,7 +46728,7 @@ New model is initialized
 46498
 46499
 46500
-46500-loss_ED:4.695,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.418,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+46500-loss_ED:149.632,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.789,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.809,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.686
 
 46501
 46502
@@ -47229,7 +47230,7 @@ New model is initialized
 46998
 46999
 47000
-47000-loss_ED:4.603,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.33,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+47000-loss_ED:149.625,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.781,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.857,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.679
 
 47001
 47002
@@ -47731,7 +47732,7 @@ New model is initialized
 47498
 47499
 47500
-47500-loss_ED:4.78,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.498,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+47500-loss_ED:150.342,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.453,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.742,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.684
 
 47501
 47502
@@ -48233,7 +48234,7 @@ New model is initialized
 47998
 47999
 48000
-48000-loss_ED:4.636,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.36,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+48000-loss_ED:149.572,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.727,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.83,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.681
 
 48001
 48002
@@ -48735,7 +48736,7 @@ New model is initialized
 48498
 48499
 48500
-48500-loss_ED:4.886,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.597,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+48500-loss_ED:150.616,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.711,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.803,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.679
 
 48501
 48502
@@ -49237,7 +49238,7 @@ New model is initialized
 48998
 48999
 49000
-49000-loss_ED:4.837,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.551,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+49000-loss_ED:150.067,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.206,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.76,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.675
 
 49001
 49002
@@ -49739,7 +49740,7 @@ New model is initialized
 49498
 49499
 49500
-49500-loss_ED:4.601,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.328,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+49500-loss_ED:149.982,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.125,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.823,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.686
 
 49501
 49502
@@ -50241,7 +50242,7 @@ New model is initialized
 49998
 49999
 50000
-50000-loss_ED:4.765,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.485,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+50000-loss_ED:150.32,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.452,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.713,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.678
 
 50001
 50002
@@ -50743,7 +50744,7 @@ New model is initialized
 50498
 50499
 50500
-50500-loss_ED:4.706,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.428,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+50500-loss_ED:149.906,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.052,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.775,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.678
 
 50501
 50502
@@ -51245,7 +51246,7 @@ New model is initialized
 50998
 50999
 51000
-51000-loss_ED:4.668,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.392,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+51000-loss_ED:149.891,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.041,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.77,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.676
 
 51001
 51002
@@ -51747,7 +51748,7 @@ New model is initialized
 51498
 51499
 51500
-51500-loss_ED:4.629,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.355,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+51500-loss_ED:149.708,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.855,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.814,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.679
 
 51501
 51502
@@ -52249,7 +52250,7 @@ New model is initialized
 51998
 51999
 52000
-52000-loss_ED:4.655,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.381,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+52000-loss_ED:149.257,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.445,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.802,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.678
 
 52001
 52002
@@ -52751,7 +52752,7 @@ New model is initialized
 52498
 52499
 52500
-52500-loss_ED:4.62,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.347,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+52500-loss_ED:150.477,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.579,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.76,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.673
 
 52501
 52502
@@ -53253,7 +53254,7 @@ New model is initialized
 52998
 52999
 53000
-53000-loss_ED:4.632,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.359,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+53000-loss_ED:149.347,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.515,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.671,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.668
 
 53001
 53002
@@ -53755,7 +53756,7 @@ New model is initialized
 53498
 53499
 53500
-53500-loss_ED:4.663,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.388,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+53500-loss_ED:149.366,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.543,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.743,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.67
 
 53501
 53502
@@ -54257,7 +54258,7 @@ New model is initialized
 53998
 53999
 54000
-54000-loss_ED:4.702,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.422,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.081,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+54000-loss_ED:149.911,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.057,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.735,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.675
 
 54001
 54002
@@ -54759,7 +54760,7 @@ New model is initialized
 54498
 54499
 54500
-54500-loss_ED:4.677,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.4,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+54500-loss_ED:150.038,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.178,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.758,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.678
 
 54501
 54502
@@ -55261,7 +55262,7 @@ New model is initialized
 54998
 54999
 55000
-55000-loss_ED:4.558,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.289,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+55000-loss_ED:150.739,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.83,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.764,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.672
 
 55001
 55002
@@ -55763,7 +55764,7 @@ New model is initialized
 55498
 55499
 55500
-55500-loss_ED:4.744,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.464,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+55500-loss_ED:150.106,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.236,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.707,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.67
 
 55501
 55502
@@ -56265,7 +56266,7 @@ New model is initialized
 55998
 55999
 56000
-56000-loss_ED:4.511,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.246,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.082,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+56000-loss_ED:149.658,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.812,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.732,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.671
 
 56001
 56002
@@ -56767,7 +56768,7 @@ New model is initialized
 56498
 56499
 56500
-56500-loss_ED:4.839,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.552,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+56500-loss_ED:149.412,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.579,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.744,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.668
 
 56501
 56502
@@ -57269,7 +57270,7 @@ New model is initialized
 56998
 56999
 57000
-57000-loss_ED:4.921,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.631,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+57000-loss_ED:150.064,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.187,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.648,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.677
 
 57001
 57002
@@ -57771,7 +57772,7 @@ New model is initialized
 57498
 57499
 57500
-57500-loss_ED:4.633,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.361,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+57500-loss_ED:149.944,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.079,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.711,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.667
 
 57501
 57502
@@ -58273,7 +58274,7 @@ New model is initialized
 57998
 57999
 58000
-58000-loss_ED:4.761,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.48,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+58000-loss_ED:150.816,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.905,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.681,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.666
 
 58001
 58002
@@ -58775,7 +58776,7 @@ New model is initialized
 58498
 58499
 58500
-58500-loss_ED:4.791,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.507,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+58500-loss_ED:149.847,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.996,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.74,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.668
 
 58501
 58502
@@ -59277,7 +59278,7 @@ New model is initialized
 58998
 58999
 59000
-59000-loss_ED:4.837,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.55,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+59000-loss_ED:149.581,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.749,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.687,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.663
 
 59001
 59002
@@ -59779,7 +59780,7 @@ New model is initialized
 59498
 59499
 59500
-59500-loss_ED:4.68,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.402,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+59500-loss_ED:149.349,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.521,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.745,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.665
 
 59501
 59502
@@ -60281,7 +60282,7 @@ New model is initialized
 59998
 59999
 60000
-60000-loss_ED:4.716,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.435,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.084,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+60000-loss_ED:148.991,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.187,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.696,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.672
 
 60001
 60002
@@ -60783,7 +60784,7 @@ New model is initialized
 60498
 60499
 60500
-60500-loss_ED:4.54,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.272,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+60500-loss_ED:149.088,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.276,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.694,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.659
 
 60501
 60502
@@ -61285,7 +61286,7 @@ New model is initialized
 60998
 60999
 61000
-61000-loss_ED:4.625,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.353,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+61000-loss_ED:149.766,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.915,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.652,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.67
 
 61001
 61002
@@ -61787,7 +61788,7 @@ New model is initialized
 61498
 61499
 61500
-61500-loss_ED:4.714,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.435,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+61500-loss_ED:148.737,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:139.953,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.643,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.675
 
 61501
 61502
@@ -62289,7 +62290,7 @@ New model is initialized
 61998
 61999
 62000
-62000-loss_ED:4.705,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.427,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+62000-loss_ED:150.521,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.636,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.696,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.67
 
 62001
 62002
@@ -62791,7 +62792,7 @@ New model is initialized
 62498
 62499
 62500
-62500-loss_ED:4.769,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.488,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+62500-loss_ED:150.901,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.989,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.647,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.664
 
 62501
 62502
@@ -63293,7 +63294,7 @@ New model is initialized
 62998
 62999
 63000
-63000-loss_ED:4.44,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.177,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+63000-loss_ED:150.956,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.035,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.701,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.67
 
 63001
 63002
@@ -63795,7 +63796,7 @@ New model is initialized
 63498
 63499
 63500
-63500-loss_ED:4.746,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.468,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+63500-loss_ED:150.894,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.963,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.647,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.664
 
 63501
 63502
@@ -64297,7 +64298,7 @@ New model is initialized
 63998
 63999
 64000
-64000-loss_ED:4.697,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.419,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+64000-loss_ED:150.001,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.144,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.66,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.665
 
 64001
 64002
@@ -64799,7 +64800,7 @@ New model is initialized
 64498
 64499
 64500
-64500-loss_ED:4.68,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.405,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+64500-loss_ED:150.059,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.194,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.688,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.667
 
 64501
 64502
@@ -65301,7 +65302,7 @@ New model is initialized
 64998
 64999
 65000
-65000-loss_ED:4.745,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.467,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+65000-loss_ED:150.702,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.801,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.623,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.663
 
 65001
 65002
@@ -65803,7 +65804,7 @@ New model is initialized
 65498
 65499
 65500
-65500-loss_ED:4.467,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.204,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+65500-loss_ED:149.525,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.692,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.62,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.65
 
 65501
 65502
@@ -66305,7 +66306,7 @@ New model is initialized
 65998
 65999
 66000
-66000-loss_ED:4.688,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.41,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+66000-loss_ED:150.0,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.137,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.665,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.667
 
 66001
 66002
@@ -66807,7 +66808,7 @@ New model is initialized
 66498
 66499
 66500
-66500-loss_ED:4.964,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.672,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+66500-loss_ED:149.805,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.952,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.662,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.654
 
 66501
 66502
@@ -67309,7 +67310,7 @@ New model is initialized
 66998
 66999
 67000
-67000-loss_ED:4.578,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.307,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+67000-loss_ED:149.592,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.759,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.612,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.656
 
 67001
 67002
@@ -67811,7 +67812,7 @@ New model is initialized
 67498
 67499
 67500
-67500-loss_ED:4.796,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.514,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+67500-loss_ED:149.03,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.218,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.65,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.66
 
 67501
 67502
@@ -68313,7 +68314,7 @@ New model is initialized
 67998
 67999
 68000
-68000-loss_ED:4.82,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.535,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+68000-loss_ED:150.023,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.16,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.652,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.659
 
 68001
 68002
@@ -68815,7 +68816,7 @@ New model is initialized
 68498
 68499
 68500
-68500-loss_ED:4.717,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.439,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+68500-loss_ED:149.85,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.997,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.717,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.668
 
 68501
 68502
@@ -69317,7 +69318,7 @@ New model is initialized
 68998
 68999
 69000
-69000-loss_ED:4.765,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.484,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+69000-loss_ED:149.876,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.03,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.616,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.661
 
 69001
 69002
@@ -69819,7 +69820,7 @@ New model is initialized
 69498
 69499
 69500
-69500-loss_ED:4.645,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.37,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+69500-loss_ED:150.129,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.262,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.623,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.662
 
 69501
 69502
@@ -70321,7 +70322,7 @@ New model is initialized
 69998
 69999
 70000
-70000-loss_ED:4.712,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.434,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+70000-loss_ED:149.264,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.449,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.693,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.648
 
 70001
 70002
@@ -70823,7 +70824,7 @@ New model is initialized
 70498
 70499
 70500
-70500-loss_ED:4.95,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.657,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+70500-loss_ED:149.844,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.99,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.581,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.654
 
 70501
 70502
@@ -71325,7 +71326,7 @@ New model is initialized
 70998
 70999
 71000
-71000-loss_ED:4.599,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.328,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+71000-loss_ED:150.113,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.253,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.633,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 71001
 71002
@@ -71827,7 +71828,7 @@ New model is initialized
 71498
 71499
 71500
-71500-loss_ED:4.583,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.312,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+71500-loss_ED:149.233,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.415,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.623,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 71501
 71502
@@ -72329,7 +72330,7 @@ New model is initialized
 71998
 71999
 72000
-72000-loss_ED:4.609,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.336,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+72000-loss_ED:149.358,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.539,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.616,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.661
 
 72001
 72002
@@ -72831,7 +72832,7 @@ New model is initialized
 72498
 72499
 72500
-72500-loss_ED:4.638,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.363,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.182,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.181
+72500-loss_ED:150.484,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.589,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.642,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 72501
 72502
@@ -73333,7 +73334,7 @@ New model is initialized
 72998
 72999
 73000
-73000-loss_ED:4.564,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.295,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.095,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.187
+73000-loss_ED:149.792,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.951,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.619,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.657
 
 73001
 73002
@@ -73835,7 +73836,7 @@ New model is initialized
 73498
 73499
 73500
-73500-loss_ED:4.699,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.422,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+73500-loss_ED:149.405,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.581,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.629,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.659
 
 73501
 73502
@@ -74337,7 +74338,7 @@ New model is initialized
 73998
 73999
 74000
-74000-loss_ED:4.598,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.326,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+74000-loss_ED:150.432,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.556,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.622,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 74001
 74002
@@ -74839,7 +74840,7 @@ New model is initialized
 74498
 74499
 74500
-74500-loss_ED:4.736,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.456,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+74500-loss_ED:150.34,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.451,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.569,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.65
 
 74501
 74502
@@ -75341,7 +75342,7 @@ New model is initialized
 74998
 74999
 75000
-75000-loss_ED:4.626,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.352,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+75000-loss_ED:151.418,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.462,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.658,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.657
 
 75001
 75002
@@ -75843,7 +75844,7 @@ New model is initialized
 75498
 75499
 75500
-75500-loss_ED:4.642,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.369,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+75500-loss_ED:150.118,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.244,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.631,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 75501
 75502
@@ -76345,7 +76346,7 @@ New model is initialized
 75998
 75999
 76000
-76000-loss_ED:4.822,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.536,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+76000-loss_ED:150.194,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.323,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.625,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.645
 
 76001
 76002
@@ -76847,7 +76848,7 @@ New model is initialized
 76498
 76499
 76500
-76500-loss_ED:4.755,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.472,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+76500-loss_ED:150.197,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.329,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.609,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 76501
 76502
@@ -77349,7 +77350,7 @@ New model is initialized
 76998
 76999
 77000
-77000-loss_ED:4.601,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.331,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+77000-loss_ED:149.466,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.63,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.617,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.665
 
 77001
 77002
@@ -77851,7 +77852,7 @@ New model is initialized
 77498
 77499
 77500
-77500-loss_ED:4.736,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.455,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+77500-loss_ED:149.998,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.131,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.585,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.65
 
 77501
 77502
@@ -78353,7 +78354,7 @@ New model is initialized
 77998
 77999
 78000
-78000-loss_ED:4.716,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.437,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+78000-loss_ED:149.826,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.978,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.589,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.651
 
 78001
 78002
@@ -78855,7 +78856,7 @@ New model is initialized
 78498
 78499
 78500
-78500-loss_ED:4.673,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.395,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+78500-loss_ED:149.837,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.98,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.616,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 78501
 78502
@@ -79357,7 +79358,7 @@ New model is initialized
 78998
 78999
 79000
-79000-loss_ED:4.641,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.369,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+79000-loss_ED:149.162,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.359,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.601,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.643
 
 79001
 79002
@@ -79859,7 +79860,7 @@ New model is initialized
 79498
 79499
 79500
-79500-loss_ED:4.72,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.443,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+79500-loss_ED:149.971,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.114,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.592,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 79501
 79502
@@ -80361,7 +80362,7 @@ New model is initialized
 79998
 79999
 80000
-80000-loss_ED:4.815,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.531,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+80000-loss_ED:149.825,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.975,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.625,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.649
 
 80001
 80002
@@ -80863,7 +80864,7 @@ New model is initialized
 80498
 80499
 80500
-80500-loss_ED:4.5,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.235,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+80500-loss_ED:149.938,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.083,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.599,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.656
 
 80501
 80502
@@ -81365,7 +81366,7 @@ New model is initialized
 80998
 80999
 81000
-81000-loss_ED:4.73,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.452,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+81000-loss_ED:150.036,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.172,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.608,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.65
 
 81001
 81002
@@ -81867,7 +81868,7 @@ New model is initialized
 81498
 81499
 81500
-81500-loss_ED:4.763,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.481,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+81500-loss_ED:149.568,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.724,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.614,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 81501
 81502
@@ -82369,7 +82370,7 @@ New model is initialized
 81998
 81999
 82000
-82000-loss_ED:4.874,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.587,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+82000-loss_ED:148.979,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.185,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.555,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.647
 
 82001
 82002
@@ -82871,7 +82872,7 @@ New model is initialized
 82498
 82499
 82500
-82500-loss_ED:4.765,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.486,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+82500-loss_ED:150.161,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.289,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.612,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 82501
 82502
@@ -83373,7 +83374,7 @@ New model is initialized
 82998
 82999
 83000
-83000-loss_ED:4.598,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.325,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+83000-loss_ED:150.648,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.742,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.574,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.647
 
 83001
 83002
@@ -83875,7 +83876,7 @@ New model is initialized
 83498
 83499
 83500
-83500-loss_ED:4.77,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.488,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+83500-loss_ED:149.474,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.638,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.574,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.65
 
 83501
 83502
@@ -84377,7 +84378,7 @@ New model is initialized
 83998
 83999
 84000
-84000-loss_ED:4.708,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.429,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+84000-loss_ED:149.957,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.099,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.595,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.648
 
 84001
 84002
@@ -84879,7 +84880,7 @@ New model is initialized
 84498
 84499
 84500
-84500-loss_ED:4.665,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.39,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+84500-loss_ED:149.552,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.716,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.583,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 84501
 84502
@@ -85381,7 +85382,7 @@ New model is initialized
 84998
 84999
 85000
-85000-loss_ED:4.757,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.476,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+85000-loss_ED:150.124,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.25,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.597,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.656
 
 85001
 85002
@@ -85883,7 +85884,7 @@ New model is initialized
 85498
 85499
 85500
-85500-loss_ED:4.635,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.362,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+85500-loss_ED:148.978,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.184,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.545,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 85501
 85502
@@ -86385,7 +86386,7 @@ New model is initialized
 85998
 85999
 86000
-86000-loss_ED:4.745,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.465,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+86000-loss_ED:150.336,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.454,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.689,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.654
 
 86001
 86002
@@ -86887,7 +86888,7 @@ New model is initialized
 86498
 86499
 86500
-86500-loss_ED:4.673,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.398,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+86500-loss_ED:149.761,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.91,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.544,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.645
 
 86501
 86502
@@ -87389,7 +87390,7 @@ New model is initialized
 86998
 86999
 87000
-87000-loss_ED:4.833,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.548,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+87000-loss_ED:150.296,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.418,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.596,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 87001
 87002
@@ -87891,7 +87892,7 @@ New model is initialized
 87498
 87499
 87500
-87500-loss_ED:4.628,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.356,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+87500-loss_ED:150.341,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.455,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.577,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.649
 
 87501
 87502
@@ -88393,7 +88394,7 @@ New model is initialized
 87998
 87999
 88000
-88000-loss_ED:4.901,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.611,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+88000-loss_ED:149.73,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.875,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.614,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.646
 
 88001
 88002
@@ -88895,7 +88896,7 @@ New model is initialized
 88498
 88499
 88500
-88500-loss_ED:4.768,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.487,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+88500-loss_ED:149.212,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.395,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.83,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.659
 
 88501
 88502
@@ -89397,7 +89398,7 @@ New model is initialized
 88998
 88999
 89000
-89000-loss_ED:4.622,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.35,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+89000-loss_ED:149.841,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.985,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.472,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.647
 
 89001
 89002
@@ -89899,7 +89900,7 @@ New model is initialized
 89498
 89499
 89500
-89500-loss_ED:4.75,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.468,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+89500-loss_ED:150.126,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.264,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.558,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.647
 
 89501
 89502
@@ -90401,7 +90402,7 @@ New model is initialized
 89998
 89999
 90000
-90000-loss_ED:4.7,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.424,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+90000-loss_ED:149.858,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.002,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.542,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.641
 
 90001
 90002
@@ -90903,7 +90904,7 @@ New model is initialized
 90498
 90499
 90500
-90500-loss_ED:4.751,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.471,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+90500-loss_ED:149.822,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.969,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.568,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 90501
 90502
@@ -91405,7 +91406,7 @@ New model is initialized
 90998
 90999
 91000
-91000-loss_ED:4.7,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.422,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+91000-loss_ED:149.744,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.885,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.593,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.651
 
 91001
 91002
@@ -91907,7 +91908,7 @@ New model is initialized
 91498
 91499
 91500
-91500-loss_ED:4.539,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.272,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.181
+91500-loss_ED:149.434,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.607,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.534,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 91501
 91502
@@ -92409,7 +92410,7 @@ New model is initialized
 91998
 91999
 92000
-92000-loss_ED:4.721,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.439,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+92000-loss_ED:149.323,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.508,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.582,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 92001
 92002
@@ -92911,7 +92912,7 @@ New model is initialized
 92498
 92499
 92500
-92500-loss_ED:4.916,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.625,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+92500-loss_ED:149.711,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.867,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.565,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.638
 
 92501
 92502
@@ -93413,7 +93414,7 @@ New model is initialized
 92998
 92999
 93000
-93000-loss_ED:4.888,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.6,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+93000-loss_ED:149.926,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.073,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.558,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.64
 
 93001
 93002
@@ -93915,7 +93916,7 @@ New model is initialized
 93498
 93499
 93500
-93500-loss_ED:4.691,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.416,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.057,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+93500-loss_ED:150.247,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.363,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.589,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.647
 
 93501
 93502
@@ -94417,7 +94418,7 @@ New model is initialized
 93998
 93999
 94000
-94000-loss_ED:4.749,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.468,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+94000-loss_ED:150.327,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.446,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.527,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.645
 
 94001
 94002
@@ -94919,7 +94920,7 @@ New model is initialized
 94498
 94499
 94500
-94500-loss_ED:4.589,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.319,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+94500-loss_ED:149.488,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.65,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.59,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 94501
 94502
@@ -95421,7 +95422,7 @@ New model is initialized
 94998
 94999
 95000
-95000-loss_ED:4.655,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.377,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+95000-loss_ED:150.174,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.289,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.539,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.639
 
 95001
 95002
@@ -95923,7 +95924,7 @@ New model is initialized
 95498
 95499
 95500
-95500-loss_ED:4.749,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.468,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+95500-loss_ED:149.811,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.954,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.556,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.645
 
 95501
 95502
@@ -96425,7 +96426,7 @@ New model is initialized
 95998
 95999
 96000
-96000-loss_ED:4.663,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.388,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+96000-loss_ED:149.904,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.051,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.559,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.641
 
 96001
 96002
@@ -96927,7 +96928,7 @@ New model is initialized
 96498
 96499
 96500
-96500-loss_ED:4.679,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.401,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+96500-loss_ED:149.137,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.317,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.542,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.657
 
 96501
 96502
@@ -97429,7 +97430,7 @@ New model is initialized
 96998
 96999
 97000
-97000-loss_ED:4.701,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.422,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+97000-loss_ED:151.217,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.282,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.73,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.659
 
 97001
 97002
@@ -97931,7 +97932,7 @@ New model is initialized
 97498
 97499
 97500
-97500-loss_ED:4.684,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.408,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+97500-loss_ED:149.805,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.96,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.525,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.651
 
 97501
 97502
@@ -98433,7 +98434,7 @@ New model is initialized
 97998
 97999
 98000
-98000-loss_ED:4.49,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.224,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+98000-loss_ED:150.398,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.518,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.629,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.652
 
 98001
 98002
@@ -98935,7 +98936,7 @@ New model is initialized
 98498
 98499
 98500
-98500-loss_ED:4.745,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.465,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+98500-loss_ED:149.928,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.058,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.563,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.646
 
 98501
 98502
@@ -99437,7 +99438,7 @@ New model is initialized
 98998
 98999
 99000
-99000-loss_ED:4.702,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.424,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.251,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+99000-loss_ED:149.758,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.918,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.636,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 99001
 99002
@@ -99939,7 +99940,7 @@ New model is initialized
 99498
 99499
 99500
-99500-loss_ED:4.685,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.41,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+99500-loss_ED:150.628,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.729,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.547,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 99501
 99502
@@ -100441,7 +100442,7 @@ New model is initialized
 99998
 99999
 100000
-100000-loss_ED:4.766,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.484,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.598,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.169
+100000-loss_ED:150.187,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.316,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.604,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.638
 
 100001
 100002
@@ -100943,7 +100944,7 @@ New model is initialized
 100498
 100499
 100500
-100500-loss_ED:4.787,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.503,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.084,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+100500-loss_ED:148.988,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.179,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.557,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.651
 
 100501
 100502
@@ -101445,7 +101446,7 @@ New model is initialized
 100998
 100999
 101000
-101000-loss_ED:4.713,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.436,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+101000-loss_ED:150.17,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.306,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.943,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.665
 
 101001
 101002
@@ -101947,7 +101948,7 @@ New model is initialized
 101498
 101499
 101500
-101500-loss_ED:4.651,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.376,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.078,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+101500-loss_ED:150.449,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.56,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.133,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.716
 
 101501
 101502
@@ -102449,7 +102450,7 @@ New model is initialized
 101998
 101999
 102000
-102000-loss_ED:4.891,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.6,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.078,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+102000-loss_ED:150.414,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.529,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.5,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.7
 
 102001
 102002
@@ -102951,7 +102952,7 @@ New model is initialized
 102498
 102499
 102500
-102500-loss_ED:4.617,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.344,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.084,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+102500-loss_ED:150.247,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.377,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.612,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.654
 
 102501
 102502
@@ -103453,7 +103454,7 @@ New model is initialized
 102998
 102999
 103000
-103000-loss_ED:4.622,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.349,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.094,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+103000-loss_ED:149.856,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.003,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.546,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 103001
 103002
@@ -103955,7 +103956,7 @@ New model is initialized
 103498
 103499
 103500
-103500-loss_ED:4.713,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.435,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+103500-loss_ED:149.538,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.698,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.558,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 103501
 103502
@@ -104457,7 +104458,7 @@ New model is initialized
 103998
 103999
 104000
-104000-loss_ED:4.55,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.281,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+104000-loss_ED:149.789,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.938,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.527,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.641
 
 104001
 104002
@@ -104959,7 +104960,7 @@ New model is initialized
 104498
 104499
 104500
-104500-loss_ED:4.653,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.378,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.084,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+104500-loss_ED:150.02,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.152,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.694,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.643
 
 104501
 104502
@@ -105461,7 +105462,7 @@ New model is initialized
 104998
 104999
 105000
-105000-loss_ED:4.828,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.544,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+105000-loss_ED:149.685,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.843,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.558,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.639
 
 105001
 105002
@@ -105963,7 +105964,7 @@ New model is initialized
 105498
 105499
 105500
-105500-loss_ED:4.68,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.404,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+105500-loss_ED:149.878,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.022,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.738,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.66
 
 105501
 105502
@@ -106465,7 +106466,7 @@ New model is initialized
 105998
 105999
 106000
-106000-loss_ED:4.596,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.326,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+106000-loss_ED:148.972,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.172,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.982,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.665
 
 106001
 106002
@@ -106967,7 +106968,7 @@ New model is initialized
 106498
 106499
 106500
-106500-loss_ED:4.671,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.394,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+106500-loss_ED:149.573,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.742,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.641
 
 106501
 106502
@@ -107469,7 +107470,7 @@ New model is initialized
 106998
 106999
 107000
-107000-loss_ED:4.621,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.346,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+107000-loss_ED:149.737,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.883,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.551,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.659
 
 107001
 107002
@@ -107971,7 +107972,7 @@ New model is initialized
 107498
 107499
 107500
-107500-loss_ED:4.656,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.381,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+107500-loss_ED:150.39,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.504,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.537,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.639
 
 107501
 107502
@@ -108473,7 +108474,7 @@ New model is initialized
 107998
 107999
 108000
-108000-loss_ED:4.577,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.308,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.075,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+108000-loss_ED:149.752,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.916,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:4.182,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.802
 
 108001
 108002
@@ -108975,7 +108976,7 @@ New model is initialized
 108498
 108499
 108500
-108500-loss_ED:4.849,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.562,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+108500-loss_ED:148.902,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.102,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.592,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.768
 
 108501
 108502
@@ -109477,7 +109478,7 @@ New model is initialized
 108998
 108999
 109000
-109000-loss_ED:4.602,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.33,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+109000-loss_ED:150.556,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.661,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.859,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.8
 
 109001
 109002
@@ -109979,7 +109980,7 @@ New model is initialized
 109498
 109499
 109500
-109500-loss_ED:4.762,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.481,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+109500-loss_ED:150.515,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.629,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.575,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.862
 
 109501
 109502
@@ -110481,7 +110482,7 @@ New model is initialized
 109998
 109999
 110000
-110000-loss_ED:4.761,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.478,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+110000-loss_ED:149.795,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.943,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.703,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.715
 
 110001
 110002
@@ -110983,7 +110984,7 @@ New model is initialized
 110498
 110499
 110500
-110500-loss_ED:4.77,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.488,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+110500-loss_ED:149.753,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.901,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.605,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 110501
 110502
@@ -111485,7 +111486,7 @@ New model is initialized
 110998
 110999
 111000
-111000-loss_ED:4.665,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.389,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.083,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+111000-loss_ED:150.762,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.856,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.647,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.643
 
 111001
 111002
@@ -111987,7 +111988,7 @@ New model is initialized
 111498
 111499
 111500
-111500-loss_ED:4.685,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.409,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+111500-loss_ED:149.141,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.324,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.602,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.677
 
 111501
 111502
@@ -112489,7 +112490,7 @@ New model is initialized
 111998
 111999
 112000
-112000-loss_ED:4.758,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.477,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+112000-loss_ED:150.266,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.39,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.59,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.649
 
 112001
 112002
@@ -112991,7 +112992,7 @@ New model is initialized
 112498
 112499
 112500
-112500-loss_ED:4.668,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.391,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+112500-loss_ED:150.28,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.394,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.92,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 112501
 112502
@@ -113493,7 +113494,7 @@ New model is initialized
 112998
 112999
 113000
-113000-loss_ED:4.739,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.46,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+113000-loss_ED:149.756,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.916,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.614,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.662
 
 113001
 113002
@@ -113995,7 +113996,7 @@ New model is initialized
 113498
 113499
 113500
-113500-loss_ED:4.576,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.306,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+113500-loss_ED:150.376,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.489,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.633,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.657
 
 113501
 113502
@@ -114497,7 +114498,7 @@ New model is initialized
 113998
 113999
 114000
-114000-loss_ED:4.562,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.293,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+114000-loss_ED:149.471,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.645,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.786,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.661
 
 114001
 114002
@@ -114999,7 +115000,7 @@ New model is initialized
 114498
 114499
 114500
-114500-loss_ED:4.701,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.424,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+114500-loss_ED:149.601,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.77,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.664,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 114501
 114502
@@ -115501,7 +115502,7 @@ New model is initialized
 114998
 114999
 115000
-115000-loss_ED:4.801,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.517,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+115000-loss_ED:150.524,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.636,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.389,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.667
 
 115001
 115002
@@ -116003,7 +116004,7 @@ New model is initialized
 115498
 115499
 115500
-115500-loss_ED:4.465,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.201,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+115500-loss_ED:150.319,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.442,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.707,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.61
 
 115501
 115502
@@ -116505,7 +116506,7 @@ New model is initialized
 115998
 115999
 116000
-116000-loss_ED:4.745,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.464,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.095,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+116000-loss_ED:149.246,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.422,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.473,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.448
 
 116001
 116002
@@ -117007,7 +117008,7 @@ New model is initialized
 116498
 116499
 116500
-116500-loss_ED:4.594,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.322,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+116500-loss_ED:148.794,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:139.999,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.818,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.676
 
 116501
 116502
@@ -117509,7 +117510,7 @@ New model is initialized
 116998
 116999
 117000
-117000-loss_ED:4.659,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.382,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+117000-loss_ED:149.512,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.677,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.719,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.621
 
 117001
 117002
@@ -118011,7 +118012,7 @@ New model is initialized
 117498
 117499
 117500
-117500-loss_ED:4.646,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.372,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+117500-loss_ED:150.442,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.551,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.479,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.921
 
 117501
 117502
@@ -118513,7 +118514,7 @@ New model is initialized
 117998
 117999
 118000
-118000-loss_ED:4.776,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.493,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+118000-loss_ED:149.876,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.025,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.644,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.766
 
 118001
 118002
@@ -119015,7 +119016,7 @@ New model is initialized
 118498
 118499
 118500
-118500-loss_ED:4.775,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.494,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+118500-loss_ED:151.334,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.396,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.735,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.743
 
 118501
 118502
@@ -119517,7 +119518,7 @@ New model is initialized
 118998
 118999
 119000
-119000-loss_ED:4.775,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.494,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+119000-loss_ED:149.741,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.893,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.681,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.744
 
 119001
 119002
@@ -120019,7 +120020,7 @@ New model is initialized
 119498
 119499
 119500
-119500-loss_ED:4.848,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.56,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+119500-loss_ED:150.739,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.829,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.838,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.725
 
 119501
 119502
@@ -120521,7 +120522,7 @@ New model is initialized
 119998
 119999
 120000
-120000-loss_ED:4.768,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.486,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.057,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+120000-loss_ED:148.481,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:139.718,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.88,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.928
 
 120001
 120002
@@ -121023,7 +121024,7 @@ New model is initialized
 120498
 120499
 120500
-120500-loss_ED:4.775,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.491,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+120500-loss_ED:149.132,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.318,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.653,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.667
 
 120501
 120502
@@ -121525,7 +121526,7 @@ New model is initialized
 120998
 120999
 121000
-121000-loss_ED:4.902,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.614,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+121000-loss_ED:149.164,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.351,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.698,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.66
 
 121001
 121002
@@ -122027,7 +122028,7 @@ New model is initialized
 121498
 121499
 121500
-121500-loss_ED:4.667,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.393,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+121500-loss_ED:149.924,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.069,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.953,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.707
 
 121501
 121502
@@ -122529,7 +122530,7 @@ New model is initialized
 121998
 121999
 122000
-122000-loss_ED:4.702,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.425,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+122000-loss_ED:149.589,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.744,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.157,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.623
 
 122001
 122002
@@ -123031,7 +123032,7 @@ New model is initialized
 122498
 122499
 122500
-122500-loss_ED:4.761,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.479,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+122500-loss_ED:149.499,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.664,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.727,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.61
 
 122501
 122502
@@ -123533,7 +123534,7 @@ New model is initialized
 122998
 122999
 123000
-123000-loss_ED:4.533,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.265,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+123000-loss_ED:149.726,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.883,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.05,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.628
 
 123001
 123002
@@ -124035,7 +124036,7 @@ New model is initialized
 123498
 123499
 123500
-123500-loss_ED:4.831,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.545,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.057,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+123500-loss_ED:149.516,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.673,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.879,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.568
 
 123501
 123502
@@ -124537,7 +124538,7 @@ New model is initialized
 123998
 123999
 124000
-124000-loss_ED:4.659,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.383,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+124000-loss_ED:149.904,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.055,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.765,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.822
 
 124001
 124002
@@ -125039,7 +125040,7 @@ New model is initialized
 124498
 124499
 124500
-124500-loss_ED:4.785,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.503,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.087,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+124500-loss_ED:149.481,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.651,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.764,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.748
 
 124501
 124502
@@ -125541,7 +125542,7 @@ New model is initialized
 124998
 124999
 125000
-125000-loss_ED:4.838,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.55,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+125000-loss_ED:150.362,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.482,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.903,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.749
 
 125001
 125002
@@ -126043,7 +126044,7 @@ New model is initialized
 125498
 125499
 125500
-125500-loss_ED:4.513,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.248,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.056,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+125500-loss_ED:150.629,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.716,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.762,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.717
 
 125501
 125502
@@ -126545,7 +126546,7 @@ New model is initialized
 125998
 125999
 126000
-126000-loss_ED:4.772,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.489,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.056,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+126000-loss_ED:149.946,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.087,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.675,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.703
 
 126001
 126002
@@ -127047,7 +127048,7 @@ New model is initialized
 126498
 126499
 126500
-126500-loss_ED:4.604,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.332,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.238,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+126500-loss_ED:150.038,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.165,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.765,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 126501
 126502
@@ -127549,7 +127550,7 @@ New model is initialized
 126998
 126999
 127000
-127000-loss_ED:4.67,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.393,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.192
+127000-loss_ED:150.156,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.284,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.668,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.667
 
 127001
 127002
@@ -128051,7 +128052,7 @@ New model is initialized
 127498
 127499
 127500
-127500-loss_ED:4.724,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.445,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+127500-loss_ED:149.076,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.272,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.845,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.609
 
 127501
 127502
@@ -128553,7 +128554,7 @@ New model is initialized
 127998
 127999
 128000
-128000-loss_ED:4.74,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.458,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+128000-loss_ED:149.842,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.996,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.703,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.621
 
 128001
 128002
@@ -129055,7 +129056,7 @@ New model is initialized
 128498
 128499
 128500
-128500-loss_ED:4.66,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.384,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+128500-loss_ED:149.812,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.965,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.665,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.612
 
 128501
 128502
@@ -129557,7 +129558,7 @@ New model is initialized
 128998
 128999
 129000
-129000-loss_ED:4.759,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.478,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.078,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.173
+129000-loss_ED:150.98,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.066,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.602,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.663
 
 129001
 129002
@@ -130059,7 +130060,7 @@ New model is initialized
 129498
 129499
 129500
-129500-loss_ED:4.827,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.54,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+129500-loss_ED:150.118,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.249,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.68,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.625
 
 129501
 129502
@@ -130561,7 +130562,7 @@ New model is initialized
 129998
 129999
 130000
-130000-loss_ED:4.718,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.439,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+130000-loss_ED:149.985,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.128,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.267,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.044
 
 130001
 130002
@@ -131063,7 +131064,7 @@ New model is initialized
 130498
 130499
 130500
-130500-loss_ED:4.774,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.491,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+130500-loss_ED:149.491,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.663,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.896,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.623
 
 130501
 130502
@@ -131565,7 +131566,7 @@ New model is initialized
 130998
 130999
 131000
-131000-loss_ED:4.66,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.384,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.082,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.184
+131000-loss_ED:149.969,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.114,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.045,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.591
 
 131001
 131002
@@ -132067,7 +132068,7 @@ New model is initialized
 131498
 131499
 131500
-131500-loss_ED:4.61,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.336,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+131500-loss_ED:149.704,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.853,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.091,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.341
 
 131501
 131502
@@ -132569,7 +132570,7 @@ New model is initialized
 131998
 131999
 132000
-132000-loss_ED:4.693,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.415,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+132000-loss_ED:150.06,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.197,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.613,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.637
 
 132001
 132002
@@ -133071,7 +133072,7 @@ New model is initialized
 132498
 132499
 132500
-132500-loss_ED:4.661,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.386,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+132500-loss_ED:149.87,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.009,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.601,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.695
 
 132501
 132502
@@ -133573,7 +133574,7 @@ New model is initialized
 132998
 132999
 133000
-133000-loss_ED:4.65,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.374,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+133000-loss_ED:149.46,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.629,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.612,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.7
 
 133001
 133002
@@ -134075,7 +134076,7 @@ New model is initialized
 133498
 133499
 133500
-133500-loss_ED:4.635,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.361,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+133500-loss_ED:149.892,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.034,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.673,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.61
 
 133501
 133502
@@ -134577,7 +134578,7 @@ New model is initialized
 133998
 133999
 134000
-134000-loss_ED:4.628,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.355,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.177,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+134000-loss_ED:150.832,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.919,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.581,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.649
 
 134001
 134002
@@ -135079,7 +135080,7 @@ New model is initialized
 134498
 134499
 134500
-134500-loss_ED:4.765,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.485,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+134500-loss_ED:149.026,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.22,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.011,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.587
 
 134501
 134502
@@ -135581,7 +135582,7 @@ New model is initialized
 134998
 134999
 135000
-135000-loss_ED:4.459,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.197,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+135000-loss_ED:149.959,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.101,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.761,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.809
 
 135001
 135002
@@ -136083,7 +136084,7 @@ New model is initialized
 135498
 135499
 135500
-135500-loss_ED:4.656,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.382,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+135500-loss_ED:150.256,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.366,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.701,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.763
 
 135501
 135502
@@ -136585,7 +136586,7 @@ New model is initialized
 135998
 135999
 136000
-136000-loss_ED:4.831,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.546,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+136000-loss_ED:151.006,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.087,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.654,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.699
 
 136001
 136002
@@ -137087,7 +137088,7 @@ New model is initialized
 136498
 136499
 136500
-136500-loss_ED:4.696,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.418,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+136500-loss_ED:150.004,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.147,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.676,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.722
 
 136501
 136502
@@ -137589,7 +137590,7 @@ New model is initialized
 136998
 136999
 137000
-137000-loss_ED:4.674,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.399,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+137000-loss_ED:150.005,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.135,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.568,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.167
 
 137001
 137002
@@ -138091,7 +138092,7 @@ New model is initialized
 137498
 137499
 137500
-137500-loss_ED:4.611,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.338,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+137500-loss_ED:149.066,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.259,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.125,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.266
 
 137501
 137502
@@ -138593,7 +138594,7 @@ New model is initialized
 137998
 137999
 138000
-138000-loss_ED:4.907,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.615,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+138000-loss_ED:150.492,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.598,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.644,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.56
 
 138001
 138002
@@ -139095,7 +139096,7 @@ New model is initialized
 138498
 138499
 138500
-138500-loss_ED:4.728,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.448,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+138500-loss_ED:150.931,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.013,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.639,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.612
 
 138501
 138502
@@ -139597,7 +139598,7 @@ New model is initialized
 138998
 138999
 139000
-139000-loss_ED:4.618,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.345,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+139000-loss_ED:148.907,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.111,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.672,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.61
 
 139001
 139002
@@ -140099,7 +140100,7 @@ New model is initialized
 139498
 139499
 139500
-139500-loss_ED:4.793,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.511,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+139500-loss_ED:148.592,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:139.812,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.602,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 139501
 139502
@@ -140601,7 +140602,7 @@ New model is initialized
 139998
 139999
 140000
-140000-loss_ED:4.603,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.332,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+140000-loss_ED:148.992,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.186,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.336,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.773
 
 140001
 140002
@@ -141103,7 +141104,7 @@ New model is initialized
 140498
 140499
 140500
-140500-loss_ED:4.762,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.48,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+140500-loss_ED:149.553,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.72,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.715,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.723
 
 140501
 140502
@@ -141605,7 +141606,7 @@ New model is initialized
 140998
 140999
 141000
-141000-loss_ED:4.661,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.385,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.093,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+141000-loss_ED:149.542,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.704,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.353,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:6.155
 
 141001
 141002
@@ -142107,7 +142108,7 @@ New model is initialized
 141498
 141499
 141500
-141500-loss_ED:4.654,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.377,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+141500-loss_ED:149.092,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.284,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:2.873,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.818
 
 141501
 141502
@@ -142609,7 +142610,7 @@ New model is initialized
 141998
 141999
 142000
-142000-loss_ED:4.721,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.442,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+142000-loss_ED:149.902,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.039,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.73,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.748
 
 142001
 142002
@@ -143111,7 +143112,7 @@ New model is initialized
 142498
 142499
 142500
-142500-loss_ED:4.722,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.443,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+142500-loss_ED:150.139,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.276,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.698,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.723
 
 142501
 142502
@@ -143613,7 +143614,7 @@ New model is initialized
 142998
 142999
 143000
-143000-loss_ED:4.733,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.453,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+143000-loss_ED:150.267,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.395,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.752,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.701
 
 143001
 143002
@@ -144115,7 +144116,7 @@ New model is initialized
 143498
 143499
 143500
-143500-loss_ED:4.763,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.481,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+143500-loss_ED:149.988,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.129,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.734,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.654
 
 143501
 143502
@@ -144617,7 +144618,7 @@ New model is initialized
 143998
 143999
 144000
-144000-loss_ED:4.646,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.372,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+144000-loss_ED:150.553,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.648,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.669,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.683
 
 144001
 144002
@@ -145119,7 +145120,7 @@ New model is initialized
 144498
 144499
 144500
-144500-loss_ED:4.898,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.608,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.173
+144500-loss_ED:148.782,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:139.994,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.648,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.659
 
 144501
 144502
@@ -145621,7 +145622,7 @@ New model is initialized
 144998
 144999
 145000
-145000-loss_ED:4.704,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.426,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+145000-loss_ED:150.423,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.527,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.674,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.66
 
 145001
 145002
@@ -146123,7 +146124,7 @@ New model is initialized
 145498
 145499
 145500
-145500-loss_ED:4.538,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.269,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+145500-loss_ED:150.055,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.193,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.698,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.631
 
 145501
 145502
@@ -146625,7 +146626,7 @@ New model is initialized
 145998
 145999
 146000
-146000-loss_ED:4.665,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.39,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.056,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+146000-loss_ED:150.394,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.514,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.711,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.725
 
 146001
 146002
@@ -147127,7 +147128,7 @@ New model is initialized
 146498
 146499
 146500
-146500-loss_ED:4.638,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.364,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+146500-loss_ED:149.475,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.641,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:3.0,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.75
 
 146501
 146502
@@ -147629,7 +147630,7 @@ New model is initialized
 146998
 146999
 147000
-147000-loss_ED:4.59,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.319,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.114,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+147000-loss_ED:149.691,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.846,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.621,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.682
 
 147001
 147002
@@ -148131,7 +148132,7 @@ New model is initialized
 147498
 147499
 147500
-147500-loss_ED:4.676,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.4,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+147500-loss_ED:149.592,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.755,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.622,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.676
 
 147501
 147502
@@ -148633,7 +148634,7 @@ New model is initialized
 147998
 147999
 148000
-148000-loss_ED:4.845,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.558,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+148000-loss_ED:149.907,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.062,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.63,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 148001
 148002
@@ -149135,7 +149136,7 @@ New model is initialized
 148498
 148499
 148500
-148500-loss_ED:4.752,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.47,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.082,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+148500-loss_ED:148.783,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:139.997,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.66,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 148501
 148502
@@ -149637,7 +149638,7 @@ New model is initialized
 148998
 148999
 149000
-149000-loss_ED:4.585,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.314,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+149000-loss_ED:150.396,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.498,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.628,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 149001
 149002
@@ -150139,7 +150140,7 @@ New model is initialized
 149498
 149499
 149500
-149500-loss_ED:4.59,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.317,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+149500-loss_ED:150.625,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.726,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.582,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.645
 
 149501
 149502
@@ -150641,7 +150642,7 @@ New model is initialized
 149998
 149999
 150000
-150000-loss_ED:4.878,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.589,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+150000-loss_ED:150.07,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.203,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.639,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.64
 
 150001
 150002
@@ -151143,7 +151144,7 @@ New model is initialized
 150498
 150499
 150500
-150500-loss_ED:4.807,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.521,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+150500-loss_ED:149.789,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.937,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.59,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.641
 
 150501
 150502
@@ -151645,7 +151646,7 @@ New model is initialized
 150998
 150999
 151000
-151000-loss_ED:4.791,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.508,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+151000-loss_ED:149.33,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.508,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.583,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 151001
 151002
@@ -152147,7 +152148,7 @@ New model is initialized
 151498
 151499
 151500
-151500-loss_ED:4.684,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.408,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.566,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.159
+151500-loss_ED:149.551,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.72,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.586,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.636
 
 151501
 151502
@@ -152649,7 +152650,7 @@ New model is initialized
 151998
 151999
 152000
-152000-loss_ED:4.689,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.411,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.086,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+152000-loss_ED:150.776,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.859,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.57,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.642
 
 152001
 152002
@@ -153151,7 +153152,7 @@ New model is initialized
 152498
 152499
 152500
-152500-loss_ED:4.78,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.497,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.224,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+152500-loss_ED:149.419,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.588,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.611,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 152501
 152502
@@ -153653,7 +153654,7 @@ New model is initialized
 152998
 152999
 153000
-153000-loss_ED:4.546,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.277,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.096,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+153000-loss_ED:150.761,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.855,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.661,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.646
 
 153001
 153002
@@ -154155,7 +154156,7 @@ New model is initialized
 153498
 153499
 153500
-153500-loss_ED:4.708,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.431,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.078,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+153500-loss_ED:149.661,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.825,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.572,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.642
 
 153501
 153502
@@ -154657,7 +154658,7 @@ New model is initialized
 153998
 153999
 154000
-154000-loss_ED:4.705,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.428,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+154000-loss_ED:148.957,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.161,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.576,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.65
 
 154001
 154002
@@ -155159,7 +155160,7 @@ New model is initialized
 154498
 154499
 154500
-154500-loss_ED:4.861,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.573,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.084,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+154500-loss_ED:149.719,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.864,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.555,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 154501
 154502
@@ -155661,7 +155662,7 @@ New model is initialized
 154998
 154999
 155000
-155000-loss_ED:4.74,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.46,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.52,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+155000-loss_ED:151.481,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.527,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.589,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.64
 
 155001
 155002
@@ -156163,7 +156164,7 @@ New model is initialized
 155498
 155499
 155500
-155500-loss_ED:4.926,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.635,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.468,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.185
+155500-loss_ED:150.17,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.292,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.6,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.635
 
 155501
 155502
@@ -156665,7 +156666,7 @@ New model is initialized
 155998
 155999
 156000
-156000-loss_ED:4.767,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.486,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.082,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+156000-loss_ED:151.085,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.162,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.587,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 156001
 156002
@@ -157167,7 +157168,7 @@ New model is initialized
 156498
 156499
 156500
-156500-loss_ED:4.602,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.332,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+156500-loss_ED:149.402,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.57,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.563,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.633
 
 156501
 156502
@@ -157669,7 +157670,7 @@ New model is initialized
 156998
 156999
 157000
-157000-loss_ED:4.594,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.324,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.099,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.18
+157000-loss_ED:148.938,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.142,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.556,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.648
 
 157001
 157002
@@ -158171,7 +158172,7 @@ New model is initialized
 157498
 157499
 157500
-157500-loss_ED:4.717,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.439,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.114,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.179
+157500-loss_ED:150.504,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.608,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.555,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.645
 
 157501
 157502
@@ -158673,7 +158674,7 @@ New model is initialized
 157998
 157999
 158000
-158000-loss_ED:4.627,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.352,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.206,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.172
+158000-loss_ED:149.704,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.864,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.567,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.643
 
 158001
 158002
@@ -159175,7 +159176,7 @@ New model is initialized
 158498
 158499
 158500
-158500-loss_ED:4.634,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.361,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.078,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+158500-loss_ED:149.928,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.067,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.519,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 158501
 158502
@@ -159677,7 +159678,7 @@ New model is initialized
 158998
 158999
 159000
-159000-loss_ED:4.752,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.471,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+159000-loss_ED:149.347,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.521,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.594,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.671
 
 159001
 159002
@@ -160179,7 +160180,7 @@ New model is initialized
 159498
 159499
 159500
-159500-loss_ED:4.746,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.464,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+159500-loss_ED:150.346,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.464,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.656,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.708
 
 159501
 159502
@@ -160681,7 +160682,7 @@ New model is initialized
 159998
 159999
 160000
-160000-loss_ED:4.644,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.369,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.088,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+160000-loss_ED:149.881,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.028,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.583,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.674
 
 160001
 160002
@@ -161183,7 +161184,7 @@ New model is initialized
 160498
 160499
 160500
-160500-loss_ED:4.75,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.468,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.081,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+160500-loss_ED:148.41,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:139.64,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.601,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.649
 
 160501
 160502
@@ -161685,7 +161686,7 @@ New model is initialized
 160998
 160999
 161000
-161000-loss_ED:4.645,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.372,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+161000-loss_ED:149.998,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.136,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.732,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.698
 
 161001
 161002
@@ -162187,7 +162188,7 @@ New model is initialized
 161498
 161499
 161500
-161500-loss_ED:4.799,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.516,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.085,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+161500-loss_ED:150.158,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.288,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.585,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.676
 
 161501
 161502
@@ -162689,7 +162690,7 @@ New model is initialized
 161998
 161999
 162000
-162000-loss_ED:4.725,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.446,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.086,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+162000-loss_ED:149.924,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.067,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.56,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.658
 
 162001
 162002
@@ -163191,7 +163192,7 @@ New model is initialized
 162498
 162499
 162500
-162500-loss_ED:4.714,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.435,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+162500-loss_ED:149.782,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.925,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.54,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.649
 
 162501
 162502
@@ -163693,7 +163694,7 @@ New model is initialized
 162998
 162999
 163000
-163000-loss_ED:4.59,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.318,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+163000-loss_ED:149.767,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.916,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.551,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.648
 
 163001
 163002
@@ -164195,7 +164196,7 @@ New model is initialized
 163498
 163499
 163500
-163500-loss_ED:4.735,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.455,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.086,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+163500-loss_ED:149.71,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.872,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.588,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.66
 
 163501
 163502
@@ -164697,7 +164698,7 @@ New model is initialized
 163998
 163999
 164000
-164000-loss_ED:4.643,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.369,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+164000-loss_ED:149.962,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.091,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.529,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.647
 
 164001
 164002
@@ -165199,7 +165200,7 @@ New model is initialized
 164498
 164499
 164500
-164500-loss_ED:4.646,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.372,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+164500-loss_ED:148.883,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.09,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.553,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.646
 
 164501
 164502
@@ -165701,7 +165702,7 @@ New model is initialized
 164998
 164999
 165000
-165000-loss_ED:4.865,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.578,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+165000-loss_ED:149.344,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.524,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.546,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.651
 
 165001
 165002
@@ -166203,7 +166204,7 @@ New model is initialized
 165498
 165499
 165500
-165500-loss_ED:4.789,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.506,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+165500-loss_ED:149.926,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.072,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.567,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.642
 
 165501
 165502
@@ -166705,7 +166706,7 @@ New model is initialized
 165998
 165999
 166000
-166000-loss_ED:4.685,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.41,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+166000-loss_ED:149.428,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.598,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.594,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.632
 
 166001
 166002
@@ -167207,7 +167208,7 @@ New model is initialized
 166498
 166499
 166500
-166500-loss_ED:4.525,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.26,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.076,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+166500-loss_ED:148.889,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.088,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.533,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.646
 
 166501
 166502
@@ -167709,7 +167710,7 @@ New model is initialized
 166998
 166999
 167000
-167000-loss_ED:4.846,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.558,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.072,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+167000-loss_ED:150.057,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.192,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.536,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 167001
 167002
@@ -168211,7 +168212,7 @@ New model is initialized
 167498
 167499
 167500
-167500-loss_ED:4.556,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.288,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.079,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+167500-loss_ED:150.874,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.956,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.817,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.719
 
 167501
 167502
@@ -168713,7 +168714,7 @@ New model is initialized
 167998
 167999
 168000
-168000-loss_ED:4.675,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.399,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.069,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+168000-loss_ED:149.522,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.686,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:5.142,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.927
 
 168001
 168002
@@ -169215,7 +169216,7 @@ New model is initialized
 168498
 168499
 168500
-168500-loss_ED:4.552,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.286,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.073,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+168500-loss_ED:150.55,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.653,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.448,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.772
 
 168501
 168502
@@ -169717,7 +169718,7 @@ New model is initialized
 168998
 168999
 169000
-169000-loss_ED:4.453,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.19,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.08,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+169000-loss_ED:150.368,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.48,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.494,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.713
 
 169001
 169002
@@ -170219,7 +170220,7 @@ New model is initialized
 169498
 169499
 169500
-169500-loss_ED:4.528,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.261,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.071,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+169500-loss_ED:149.286,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.473,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.552,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.674
 
 169501
 169502
@@ -170721,7 +170722,7 @@ New model is initialized
 169998
 169999
 170000
-170000-loss_ED:4.681,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.404,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+170000-loss_ED:149.795,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.947,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.581,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.67
 
 170001
 170002
@@ -171223,7 +171224,7 @@ New model is initialized
 170498
 170499
 170500
-170500-loss_ED:4.59,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.32,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.077,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+170500-loss_ED:149.746,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.898,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.576,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.66
 
 170501
 170502
@@ -171725,7 +171726,7 @@ New model is initialized
 170998
 170999
 171000
-171000-loss_ED:4.694,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.418,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.074,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+171000-loss_ED:151.464,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.515,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.544,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.668
 
 171001
 171002
@@ -172227,7 +172228,7 @@ New model is initialized
 171498
 171499
 171500
-171500-loss_ED:4.696,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.419,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+171500-loss_ED:150.443,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.556,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.593,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.653
 
 171501
 171502
@@ -172729,7 +172730,7 @@ New model is initialized
 171998
 171999
 172000
-172000-loss_ED:4.604,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.333,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+172000-loss_ED:149.803,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.962,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.618,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.65
 
 172001
 172002
@@ -173231,7 +173232,7 @@ New model is initialized
 172498
 172499
 172500
-172500-loss_ED:4.486,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.222,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.183
+172500-loss_ED:149.905,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.049,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.541,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.646
 
 172501
 172502
@@ -173733,7 +173734,7 @@ New model is initialized
 172998
 172999
 173000
-173000-loss_ED:4.743,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.464,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+173000-loss_ED:149.75,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.9,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.566,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.655
 
 173001
 173002
@@ -174235,7 +174236,7 @@ New model is initialized
 173498
 173499
 173500
-173500-loss_ED:4.55,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.281,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+173500-loss_ED:150.047,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.181,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.568,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.644
 
 173501
 173502
@@ -174737,7 +174738,7 @@ New model is initialized
 173998
 173999
 174000
-174000-loss_ED:4.693,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.417,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+174000-loss_ED:149.612,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.762,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.565,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.639
 
 174001
 174002
@@ -175239,7 +175240,7 @@ New model is initialized
 174498
 174499
 174500
-174500-loss_ED:4.746,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.466,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.07,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+174500-loss_ED:150.145,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.279,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.571,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.647
 
 174501
 174502
@@ -175741,7 +175742,7 @@ New model is initialized
 174998
 174999
 175000
-175000-loss_ED:4.577,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.307,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.145,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.169
+175000-loss_ED:149.811,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.963,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.592,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.652
 
 175001
 175002
@@ -176243,7 +176244,7 @@ New model is initialized
 175498
 175499
 175500
-175500-loss_ED:4.618,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.346,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+175500-loss_ED:150.08,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.211,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.56,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.651
 
 175501
 175502
@@ -176745,7 +176746,7 @@ New model is initialized
 175998
 175999
 176000
-176000-loss_ED:4.673,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.398,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+176000-loss_ED:150.103,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.251,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.564,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.651
 
 176001
 176002
@@ -177247,7 +177248,7 @@ New model is initialized
 176498
 176499
 176500
-176500-loss_ED:4.601,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.328,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+176500-loss_ED:149.826,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.964,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.565,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.642
 
 176501
 176502
@@ -177749,7 +177750,7 @@ New model is initialized
 176998
 176999
 177000
-177000-loss_ED:4.664,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.39,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+177000-loss_ED:150.021,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.156,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.565,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.639
 
 177001
 177002
@@ -178251,7 +178252,7 @@ New model is initialized
 177498
 177499
 177500
-177500-loss_ED:4.767,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.485,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.174
+177500-loss_ED:149.077,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.261,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.544,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.643
 
 177501
 177502
@@ -178753,7 +178754,7 @@ New model is initialized
 177998
 177999
 178000
-178000-loss_ED:4.607,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.335,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+178000-loss_ED:149.973,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.114,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.548,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.638
 
 178001
 178002
@@ -179255,7 +179256,7 @@ New model is initialized
 178498
 178499
 178500
-178500-loss_ED:4.671,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.396,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+178500-loss_ED:149.651,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.804,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.531,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.633
 
 178501
 178502
@@ -179757,7 +179758,7 @@ New model is initialized
 178998
 178999
 179000
-179000-loss_ED:4.632,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.357,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.064,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+179000-loss_ED:149.949,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.084,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.53,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.64
 
 179001
 179002
@@ -180259,7 +180260,7 @@ New model is initialized
 179498
 179499
 179500
-179500-loss_ED:4.701,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.422,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+179500-loss_ED:149.957,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.104,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.542,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.635
 
 179501
 179502
@@ -180761,7 +180762,7 @@ New model is initialized
 179998
 179999
 180000
-180000-loss_ED:5.048,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.749,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+180000-loss_ED:149.527,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.69,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.545,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 180001
 180002
@@ -181263,7 +181264,7 @@ New model is initialized
 180498
 180499
 180500
-180500-loss_ED:4.715,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.435,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+180500-loss_ED:150.401,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.521,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.551,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.641
 
 180501
 180502
@@ -181765,7 +181766,7 @@ New model is initialized
 180998
 180999
 181000
-181000-loss_ED:4.722,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.442,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+181000-loss_ED:150.18,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.3,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.58,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.645
 
 181001
 181002
@@ -182267,7 +182268,7 @@ New model is initialized
 181498
 181499
 181500
-181500-loss_ED:4.671,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.396,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+181500-loss_ED:149.122,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.316,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.519,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.633
 
 181501
 181502
@@ -182769,7 +182770,7 @@ New model is initialized
 181998
 181999
 182000
-182000-loss_ED:4.65,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.375,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.068,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+182000-loss_ED:149.478,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.649,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.528,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.628
 
 182001
 182002
@@ -183271,7 +183272,7 @@ New model is initialized
 182498
 182499
 182500
-182500-loss_ED:4.706,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.427,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+182500-loss_ED:150.127,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.251,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.54,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 182501
 182502
@@ -183773,7 +183774,7 @@ New model is initialized
 182998
 182999
 183000
-183000-loss_ED:4.72,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.441,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.104,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.169
+183000-loss_ED:149.942,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.077,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.49,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.629
 
 183001
 183002
@@ -184275,7 +184276,7 @@ New model is initialized
 183498
 183499
 183500
-183500-loss_ED:4.594,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.323,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.065,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+183500-loss_ED:148.935,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.137,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.525,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 183501
 183502
@@ -184777,7 +184778,7 @@ New model is initialized
 183998
 183999
 184000
-184000-loss_ED:4.671,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.395,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+184000-loss_ED:150.832,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.926,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.544,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 184001
 184002
@@ -185279,7 +185280,7 @@ New model is initialized
 184498
 184499
 184500
-184500-loss_ED:4.775,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.491,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+184500-loss_ED:149.767,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.911,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.528,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.641
 
 184501
 184502
@@ -185781,7 +185782,7 @@ New model is initialized
 184998
 184999
 185000
-185000-loss_ED:4.807,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.524,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+185000-loss_ED:149.5,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.674,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.556,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.635
 
 185001
 185002
@@ -186283,7 +186284,7 @@ New model is initialized
 185498
 185499
 185500
-185500-loss_ED:4.77,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.488,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.066,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+185500-loss_ED:149.416,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.59,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.539,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.633
 
 185501
 185502
@@ -186785,7 +186786,7 @@ New model is initialized
 185998
 185999
 186000
-186000-loss_ED:4.948,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.656,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+186000-loss_ED:150.192,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.32,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.506,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.629
 
 186001
 186002
@@ -187287,7 +187288,7 @@ New model is initialized
 186498
 186499
 186500
-186500-loss_ED:4.588,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.316,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.063,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+186500-loss_ED:149.504,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.673,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.532,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.64
 
 186501
 186502
@@ -187789,7 +187790,7 @@ New model is initialized
 186998
 186999
 187000
-187000-loss_ED:4.627,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.353,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+187000-loss_ED:149.454,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.629,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.521,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.629
 
 187001
 187002
@@ -188291,7 +188292,7 @@ New model is initialized
 187498
 187499
 187500
-187500-loss_ED:4.822,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.537,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.067,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.178
+187500-loss_ED:149.408,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.576,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.529,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.629
 
 187501
 187502
@@ -188793,7 +188794,7 @@ New model is initialized
 187998
 187999
 188000
-188000-loss_ED:4.758,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.476,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+188000-loss_ED:149.458,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.63,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.532,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.638
 
 188001
 188002
@@ -189295,7 +189296,7 @@ New model is initialized
 188498
 188499
 188500
-188500-loss_ED:4.619,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.346,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+188500-loss_ED:150.339,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.455,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.516,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.633
 
 188501
 188502
@@ -189797,7 +189798,7 @@ New model is initialized
 188998
 188999
 189000
-189000-loss_ED:4.751,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.471,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+189000-loss_ED:150.315,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.423,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.496,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.638
 
 189001
 189002
@@ -190299,7 +190300,7 @@ New model is initialized
 189498
 189499
 189500
-189500-loss_ED:4.646,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.372,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+189500-loss_ED:150.403,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.513,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.511,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.626
 
 189501
 189502
@@ -190801,7 +190802,7 @@ New model is initialized
 189998
 189999
 190000
-190000-loss_ED:4.563,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.293,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+190000-loss_ED:150.859,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.933,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.519,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.627
 
 190001
 190002
@@ -191303,7 +191304,7 @@ New model is initialized
 190498
 190499
 190500
-190500-loss_ED:4.675,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.398,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+190500-loss_ED:150.224,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.35,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.53,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.629
 
 190501
 190502
@@ -191805,7 +191806,7 @@ New model is initialized
 190998
 190999
 191000
-191000-loss_ED:4.632,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.358,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+191000-loss_ED:149.457,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.625,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.5,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.632
 
 191001
 191002
@@ -192307,7 +192308,7 @@ New model is initialized
 191498
 191499
 191500
-191500-loss_ED:4.626,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.353,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+191500-loss_ED:149.535,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.707,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.497,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.625
 
 191501
 191502
@@ -192809,7 +192810,7 @@ New model is initialized
 191998
 191999
 192000
-192000-loss_ED:4.733,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.454,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+192000-loss_ED:149.483,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.654,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.495,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.635
 
 192001
 192002
@@ -193311,7 +193312,7 @@ New model is initialized
 192498
 192499
 192500
-192500-loss_ED:4.749,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.47,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.061,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+192500-loss_ED:150.821,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.908,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.549,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 192501
 192502
@@ -193813,7 +193814,7 @@ New model is initialized
 192998
 192999
 193000
-193000-loss_ED:4.869,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.581,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+193000-loss_ED:149.696,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.861,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.468,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.63
 
 193001
 193002
@@ -194315,7 +194316,7 @@ New model is initialized
 193498
 193499
 193500
-193500-loss_ED:4.708,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.429,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+193500-loss_ED:149.889,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.036,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.503,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.63
 
 193501
 193502
@@ -194817,7 +194818,7 @@ New model is initialized
 193998
 193999
 194000
-194000-loss_ED:4.633,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.36,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.062,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+194000-loss_ED:149.782,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.922,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.515,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.631
 
 194001
 194002
@@ -195319,7 +195320,7 @@ New model is initialized
 194498
 194499
 194500
-194500-loss_ED:4.667,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.39,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+194500-loss_ED:149.686,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.838,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.517,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.634
 
 194501
 194502
@@ -195821,7 +195822,7 @@ New model is initialized
 194998
 194999
 195000
-195000-loss_ED:4.62,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.346,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+195000-loss_ED:149.773,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.927,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.527,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.625
 
 195001
 195002
@@ -196323,7 +196324,7 @@ New model is initialized
 195498
 195499
 195500
-195500-loss_ED:4.765,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.482,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+195500-loss_ED:149.752,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.902,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.476,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.631
 
 195501
 195502
@@ -196825,7 +196826,7 @@ New model is initialized
 195998
 195999
 196000
-196000-loss_ED:4.655,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.379,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+196000-loss_ED:149.647,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.805,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.505,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.625
 
 196001
 196002
@@ -197327,7 +197328,7 @@ New model is initialized
 196498
 196499
 196500
-196500-loss_ED:4.86,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.573,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+196500-loss_ED:151.02,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:142.095,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.525,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.632
 
 196501
 196502
@@ -197829,7 +197830,7 @@ New model is initialized
 196998
 196999
 197000
-197000-loss_ED:4.804,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.521,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.057,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+197000-loss_ED:149.234,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.423,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.471,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.62
 
 197001
 197002
@@ -198331,7 +198332,7 @@ New model is initialized
 197498
 197499
 197500
-197500-loss_ED:4.706,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.429,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+197500-loss_ED:149.983,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.127,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.506,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.622
 
 197501
 197502
@@ -198833,7 +198834,7 @@ New model is initialized
 197998
 197999
 198000
-198000-loss_ED:4.693,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.415,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+198000-loss_ED:150.177,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.301,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.507,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.623
 
 198001
 198002
@@ -199335,7 +199336,7 @@ New model is initialized
 198498
 198499
 198500
-198500-loss_ED:4.755,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.473,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.057,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.176
+198500-loss_ED:150.809,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:141.887,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.496,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.623
 
 198501
 198502
@@ -199837,7 +199838,7 @@ New model is initialized
 198998
 198999
 199000
-199000-loss_ED:4.737,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.458,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.059,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+199000-loss_ED:149.694,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.861,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.509,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.632
 
 199001
 199002
@@ -200339,7 +200340,7 @@ New model is initialized
 199498
 199499
 199500
-199500-loss_ED:4.711,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.434,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.058,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.175
+199500-loss_ED:149.11,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.302,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.471,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.631
 
 199501
 199502
@@ -200841,6 +200842,6 @@ New model is initialized
 199998
 199999
 200000
-200000-loss_ED:4.611,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:4.337,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:0.06,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:0.177
+200000-loss_ED:148.819,loss_ERnnD:0.0,loss_Rnn:0.0,loss_TRnnTrD_x1:140.03,loss_RRnnRrD_x1:0.0,loss_ZRnnZrD_x1:0.0,loss_TRnnTr_z1:1.506,loss_RRnnRr_z1:0.0,loss_ZRnnZr_z1:0.0,KLD:5.627
 
 FINISH

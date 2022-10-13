@@ -19,6 +19,7 @@ if __name__ == '__main__':
     parser.add_argument('--name', default='unnamed')
     parser.add_argument('--seq_len', type=int, default=16)
     parser.add_argument('--data_folder', default='375c_16th')
+    parser.add_argument('--no_rnn', action='store_true')
 
     args = parser.parse_args()
 
@@ -29,6 +30,7 @@ if __name__ == '__main__':
     CONFIG['train_result_path'] = f'{args.name}TrainingResults/'
     CONFIG['train_record_path'] = f'{args.name}Train_record.txt'
     CONFIG['eval_record_path'] = f'{args.name}Eval_record.txt'
+    CONFIG['no_rnn'] = args.no_rnn
 
     trainer = BallTrainer(CONFIG)
     if is_need_train(CONFIG):
