@@ -27,9 +27,9 @@ if __name__ == '__main__':
     CONFIG['model_path'] =  f'{args.name}_Conv2dNOTGruConv2d_symmetry.pt'
     CONFIG['seq_len'] = args.seq_len
     CONFIG['train_data_path'] = f'../../data/{args.data_folder}'
-    CONFIG['train_result_path'] = f'{args.name}TrainingResults/'
-    CONFIG['train_record_path'] = f'{args.name}Train_record.txt'
-    CONFIG['eval_record_path'] = f'{args.name}Eval_record.txt'
+    CONFIG['train_result_path'] = f'./dumpster/{args.name}TrainingResults/'
+    CONFIG['train_record_path'] = f'./dumpster/{args.name}Train_record.txt'
+    CONFIG['eval_record_path'] = f'./dumpster/{args.name}Eval_record.txt'
     CONFIG['no_rnn'] = args.no_rnn
 
     trainer = BallTrainer(CONFIG)
