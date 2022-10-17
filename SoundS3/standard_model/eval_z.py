@@ -55,7 +55,7 @@ NAME = args.name
 CONFIG['seq_len'] = args.seq_len
 CONFIG['train_data_path'] = WAV_PATH
 
-MODEL_PATH = './checkpoints/checkpoint.pt'
+MODEL_PATH = f'./checkpoints/{args.name}.pt'
 
 n_fft = 1024
 win_length = 1024
