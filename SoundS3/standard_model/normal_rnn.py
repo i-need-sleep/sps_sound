@@ -136,12 +136,12 @@ class Conv2dGruConv2d(nn.Module):
         z2 = self.fc2(out_r.squeeze(1))
         return z2, hidden_rz
 
-    def predict_with_symmetry(self, z_gt, sample_points, symm_func):
+    def predict_with_symmetry(self, z_gt, sample_points, symm_func, additional_symm_steps = 0):
         z_SR_seq_batch = []
         hidden_r = torch.zeros(self.rnn_num_layers, z_gt.size(0), self.rnn_hidden_size, device=DEVICE)
-        for i in range(z_gt.size(1)):
+        for i in range(z_gt.size(1) + additional_symm_steps):
             """Schedule sample"""
-            if i in sample_points:
+            if i in sample_points or i >= z_gt.size(1):
                 z_S = z_SR_seq_batch[-1]
             else:
                 z = z_gt[:, i]

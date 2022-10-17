@@ -176,7 +176,7 @@ class BallTrainer:
             data = norm_log2(data, k=LOG_K)
             is_log = (i % self.log_interval == 0 and i != 0)
             optimizer.zero_grad()
-            I_sample_points = self.gen_sample_points(self.base_len, data.size(1), i, self.enable_sample)
+            I_sample_points = self.gen_sample_points(self.base_len, data.size(1), i, self.enable_sample) # sampling for to transit from teacher forcing to student forcing
             T_sample_points = self.gen_sample_points(self.base_len, data.size(1), i, self.enable_sample)
 
             z_gt, mu, logvar = self.model.batch_seq_encode_to_z(data)
@@ -191,20 +191,24 @@ class BallTrainer:
             T, Tr = make_translation_batch(batch_size=BATCH_SIZE * DT_BATCH_MULTIPLE, dim=np.array([1]),
                                            t_range=self.t_range)
             # T = tensor_arrange(DT_BATCH_MULTIPLE, -2.4, 2.4, True).to(DEVICE).unsqueeze(1).repeat(1, BATCH_SIZE).reshape(BATCH_SIZE * DT_BATCH_MULTIPLE, 1)
-            # Tr = -T
-            z0_rnn = self.model.predict_with_symmetry(z_gt_p, I_sample_points, lambda z: z)
+            # Tr = -T\
+            z0_rnn_extended = self.model.predict_with_symmetry(z_gt_p, I_sample_points, lambda z: z, self.config['additional_symm_steps']) # Except there is no symm function. and this is just pred w/ RNN?
+            # extended with out-of-range predictions for long imagination
+            z0_rnn = z0_rnn_extended[:, :z_gt.shape[1]-1, :]
+            
             vae_loss = self.calc_vae_loss(data, z_combine, mu, logvar, is_log * i)
             rnn_loss = self.calc_rnn_loss(data[:, 1:, :, :, :], z_gt_p, z0_rnn, is_log * i, z_gt_cr[:, :-1, :])
-
+            
             # Ablate the RNN loss
             if self.config['no_rnn']:
                 rnn_loss = torch.zeros_like(rnn_loss[0]), torch.zeros_like(rnn_loss[1])
 
             R_loss = (torch.zeros(2))
             Z_loss = (torch.zeros(2))
+            # The actual symm step
             T_loss = self.batch_symm_loss(
     
-                data[:, 1:, :, :, :], z_gt_p, z0_rnn, T_sample_points, DT_BATCH_MULTIPLE,
+                data[:, 1:, :, :, :], z_gt_p, z0_rnn_extended, T_sample_points, DT_BATCH_MULTIPLE,
                 lambda z: symm_trans(z, T), lambda z: symm_trans(z, Tr), z_gt_cr[:, :-1, :]
             )
             loss = self.loss_func(vae_loss, rnn_loss, T_loss, R_loss, Z_loss, train_loss_counter)
@@ -225,9 +229,9 @@ class BallTrainer:
 
     def batch_symm_loss(self, x1, z_gt, z0_rnn, sample_points, symm_batch_multiple, symm_func, symm_reverse_func, z_gt_cr):
         z_gt_repeat = z_gt.repeat(symm_batch_multiple, 1, 1)
-        z0_S_rnn = self.model.predict_with_symmetry(z_gt_repeat, sample_points, symm_func)
+        z0_S_rnn = self.model.predict_with_symmetry(z_gt_repeat, sample_points, symm_func, self.config['additional_symm_steps']) # prediction with symm
         z0_rnn_repeat = z0_rnn.repeat(symm_batch_multiple, 1, 1)
-        z_gt_cr_repeat = z_gt_cr.repeat(symm_batch_multiple, 1, 1)[:, 0:self.config['seq_len']-1, :]
+        z_gt_cr_repeat = z_gt_cr.repeat(symm_batch_multiple, 1, 1)[:, 0:self.config['seq_len']-1+self.config['additional_symm_steps'], :]
         x1_repeat = x1.repeat(symm_batch_multiple, 1, 1, 1, 1)[:, 0:self.config['seq_len']-1, :, :, :]
         zloss_S_rnn_Sr_D__x1, zloss_S_rnn_Sr__z1 = \
             self.calc_symm_loss(x1_repeat, z_gt_repeat, z0_rnn_repeat, z0_S_rnn, symm_reverse_func, z_gt_cr_repeat)
@@ -259,12 +263,21 @@ class BallTrainer:
         return recon_loss, KLD
 
     def calc_symm_loss(self, x1, z_gt, z0_rnn, z0_S_rnn, symm_reverse_func, z_gt_cr):
-        z0_S_rnn_Sr = do_seq_symmetry(z0_S_rnn, symm_reverse_func)[:, 0:self.config['seq_len']-1, :]
-        # zloss_S_rnn_Sr__rnn = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr, z0_rnn[:, 0:self.config['seq_len']-1, :])
-        zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr, z_gt[:, 1:self.config['seq_len'], :])
-        zloss_S_rnn_Sr__rnn = torch.zeros(1)
-        z0_S_rnn_Sr_D = self.model.batch_seq_decode_from_z(torch.cat((z0_S_rnn_Sr, z_gt_cr), -1))
-        zloss_S_rnn_Sr_D__x1 = nn.BCELoss(reduction='sum')(z0_S_rnn_Sr_D, x1)
+        z0_S_rnn_Sr = do_seq_symmetry(z0_S_rnn, symm_reverse_func)[:, 0:self.config['seq_len']-1+self.config['additional_symm_steps'], :]
+        if self.config['additional_symm_steps'] > 0:
+            zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr, z0_rnn[:, 1:self.config['seq_len']+self.config['additional_symm_steps'], :])
+            # batch decode predicted z (after reverse symmetry)
+            z0_S_rnn_Sr_D = self.model.batch_seq_decode_from_z(torch.cat((z0_S_rnn_Sr, z_gt_cr), -1))
+            z0_rnn_D = self.model.batch_seq_decode_from_z(torch.cat((z0_rnn, z_gt_cr), -1))
+            zloss_S_rnn_Sr_D__x1 = nn.BCELoss(reduction='sum')(z0_S_rnn_Sr_D, z0_rnn_D)
+
+            # Rescale 
+            zloss_S_rnn_Sr__z1 *= (zloss_S_rnn_Sr__z1-1) / (zloss_S_rnn_Sr__z1-1+self.config['additional_symm_steps'])
+            zloss_S_rnn_Sr_D__x1 *= (zloss_S_rnn_Sr__z1-1) / (zloss_S_rnn_Sr__z1-1+self.config['additional_symm_steps'])
+        else:
+            zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr, z_gt[:, 1:self.config['seq_len'], :])
+            z0_S_rnn_Sr_D = self.model.batch_seq_decode_from_z(torch.cat((z0_S_rnn_Sr, z_gt_cr), -1))
+            zloss_S_rnn_Sr_D__x1 = nn.BCELoss(reduction='sum')(z0_S_rnn_Sr_D, x1)
         return zloss_S_rnn_Sr_D__x1, zloss_S_rnn_Sr__z1
 
     def loss_func(self, vae_loss, rnn_loss, T_loss, R_loss, Z_loss, loss_counter):

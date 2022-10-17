@@ -39,21 +39,37 @@ class Dataset(torch.utils.data.Dataset):
     def cacheAll(self, debug_ifft):
         self.data = []
         max_value = 0
-        for instrument_name, start_pitch in tqdm(
-            self.index, desc='Load data & stft', 
-        ):
-            wav_name = f'{instrument_name}-{start_pitch}.wav'
-            datapoint = self.loadOneFile(
-                instrument_name, start_pitch, wav_name, debug_ifft, 
-            )
-            max_value = max(max_value, datapoint.max())
-            # print(datapoint.shape)
-            self.data.append((
-                instrument_name, start_pitch, datapoint, 
-            ))
-            self.map[wav_name] = datapoint
-        print('max_value =', max_value)
-    
+        if len(self.index[0]) == 2:
+            for instrument_name, start_pitch in tqdm(
+                self.index, desc='Load data & stft', 
+            ):
+                wav_name = f'{instrument_name}-{start_pitch}.wav'
+                datapoint = self.loadOneFile(
+                    instrument_name, start_pitch, wav_name, debug_ifft, 
+                )
+                max_value = max(max_value, datapoint.max())
+                # print(datapoint.shape)
+                self.data.append((
+                    instrument_name, start_pitch, datapoint, 
+                ))
+                self.map[wav_name] = datapoint
+            print('max_value =', max_value)
+        else:
+            for instrument_name, segment, subsegment in tqdm(
+                self.index, desc='Load data & stft', 
+            ):
+                wav_name = f'{instrument_name}-{segment}-{subsegment}.wav'
+                datapoint = self.loadOneFile(
+                    instrument_name, f'{segment}-{subsegment}', wav_name, debug_ifft, 
+                )
+                max_value = max(max_value, datapoint.max())
+                # print(datapoint.shape)
+                self.data.append((
+                    instrument_name, f'{segment}-{subsegment}', datapoint, 
+                ))
+                self.map[wav_name] = datapoint
+            print('max_value =', max_value)
+
     def __getitem__(self, index):
         index %= self.trueLen()
         instrument_name, start_pitch, datapoint = self.data[index]
