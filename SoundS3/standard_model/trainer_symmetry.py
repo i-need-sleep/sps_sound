@@ -182,8 +182,9 @@ class BallTrainer:
             z_gt, mu, logvar = self.model.batch_seq_encode_to_z(data)
             z_gt_p = z_gt[..., 0:1]
             z_gt_c = z_gt[..., 1:]
+            z_gt_cr = repeat_one_dim(z_gt_c, sample_range=10)
             z_gt_cr_extended = repeat_one_dim(z_gt_c, sample_range=10, repeat_times=z_gt_c.shape[1] + self.config['additional_symm_steps'])
-            z_gt_cr = z_gt_cr_extended[:, :z_gt_c.shape[1], :]
+            z_gt_cr = z_gt_cr_extended[:z_gt_cr.shape[0], :z_gt_cr.shape[1], :z_gt_cr.shape[2]]
             z_combine = torch.cat((z_gt_p, z_gt_cr), -1)
             # R, Rr, theta = make_random_rotation_batch(batch_size=BATCH_SIZE * self.r_batch_multiple,
             #                                           angle_range=self.r_range)
