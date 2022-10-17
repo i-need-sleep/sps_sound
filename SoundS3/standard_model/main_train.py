@@ -20,7 +20,7 @@ if __name__ == '__main__':
     parser.add_argument('--seq_len', type=int, default=15)
     parser.add_argument('--data_folder', default='cleanTrain')
     parser.add_argument('--no_rnn', action='store_true')
-    parser.add_argument('--additional_symm_steps', type=int, default=0) 
+    parser.add_argument('--additional_symm_steps', type=int, default=1) 
     parser.add_argument('--symm_start_step', type=int, default=0) # Set this to 15 to apply symm loss only on OOR steps 
 
     args = parser.parse_args()
