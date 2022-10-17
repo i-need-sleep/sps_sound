@@ -17,11 +17,11 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
     parser.add_argument('--name', default='unnamed')
-    parser.add_argument('--seq_len', type=int, default=16)
-    parser.add_argument('--data_folder', default='375c_16th')
+    parser.add_argument('--seq_len', type=int, default=15)
+    parser.add_argument('--data_folder', default='cleanTrain')
     parser.add_argument('--no_rnn', action='store_true')
-    parser.add_argument('--additional_symm_steps', type=int, default=16) 
-    parser.add_argument('--symm_start_step', type=int, default=15) # Set this to 15 to apply symm loss only on OOR steps 
+    parser.add_argument('--additional_symm_steps', type=int, default=0) 
+    parser.add_argument('--symm_start_step', type=int, default=0) # Set this to 15 to apply symm loss only on OOR steps 
 
     args = parser.parse_args()
 

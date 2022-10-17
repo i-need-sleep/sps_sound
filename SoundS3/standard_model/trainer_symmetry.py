@@ -255,6 +255,8 @@ class BallTrainer:
 
     def calc_vae_loss(self, data, z_gt, mu, logvar, log_num=0):
         recon = self.model.batch_seq_decode_from_z(z_gt)
+        print(recon.shape)
+        print(data.shape)
         recon_loss = nn.BCELoss(reduction='sum')(recon, data)
         KLD = -0.5 * torch.sum(1 + logvar - mu.pow(2) - torch.exp(logvar)) * self.kld_loss_scalar
         if log_num != 0:
