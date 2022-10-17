@@ -182,7 +182,8 @@ class BallTrainer:
             z_gt, mu, logvar = self.model.batch_seq_encode_to_z(data)
             z_gt_p = z_gt[..., 0:1]
             z_gt_c = z_gt[..., 1:]
-            z_gt_cr = repeat_one_dim(z_gt_c, sample_range=10)
+            z_gt_cr_extended = repeat_one_dim(z_gt_c, sample_range=10, repeat_times=z_gt_c.shape[1] + self.config['additional_symm_steps'])
+            z_gt_cr = z_gt_cr_extended[:, :z_gt_c.shape[1], :]
             z_combine = torch.cat((z_gt_p, z_gt_cr), -1)
             # R, Rr, theta = make_random_rotation_batch(batch_size=BATCH_SIZE * self.r_batch_multiple,
             #                                           angle_range=self.r_range)
@@ -209,7 +210,7 @@ class BallTrainer:
             T_loss = self.batch_symm_loss(
     
                 data[:, 1:, :, :, :], z_gt_p, z0_rnn_extended, T_sample_points, DT_BATCH_MULTIPLE,
-                lambda z: symm_trans(z, T), lambda z: symm_trans(z, Tr), z_gt_cr[:, :-1, :]
+                lambda z: symm_trans(z, T), lambda z: symm_trans(z, Tr), z_gt_cr_extended[:, :-1, :]
             )
             loss = self.loss_func(vae_loss, rnn_loss, T_loss, R_loss, Z_loss, train_loss_counter)
             loss.backward()
@@ -265,7 +266,7 @@ class BallTrainer:
     def calc_symm_loss(self, x1, z_gt, z0_rnn, z0_S_rnn, symm_reverse_func, z_gt_cr):
         z0_S_rnn_Sr = do_seq_symmetry(z0_S_rnn, symm_reverse_func)[:, 0:self.config['seq_len']-1+self.config['additional_symm_steps'], :]
         if self.config['additional_symm_steps'] > 0:
-            zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z0_rnn[:, 1+self.config['symm_start_step']:self.config['seq_len']+self.config['additional_symm_steps'], :])
+            zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z0_rnn[:, self.config['symm_start_step']:self.config['seq_len']+self.config['additional_symm_steps'], :])
             # batch decode predicted z (after reverse symmetry)
             z0_S_rnn_Sr_D = self.model.batch_seq_decode_from_z(torch.cat((z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z_gt_cr[:, self.config['symm_start_step']:, :]), -1))
             z0_rnn_D = self.model.batch_seq_decode_from_z(torch.cat((z0_rnn[:, self.config['symm_start_step']:, :], z_gt_cr[:, self.config['symm_start_step']:, :]), -1))

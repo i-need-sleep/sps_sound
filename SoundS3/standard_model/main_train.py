@@ -18,10 +18,10 @@ if __name__ == '__main__':
 
     parser.add_argument('--name', default='unnamed')
     parser.add_argument('--seq_len', type=int, default=16)
-    parser.add_argument('--data_folder', default='debug')
+    parser.add_argument('--data_folder', default='375c_16th')
     parser.add_argument('--no_rnn', action='store_true')
-    parser.add_argument('--additional_symm_steps', default=0) 
-    parser.add_argument('--symm_start_step', default=0) # Set this to 15 to apply symm loss only on OOR steps 
+    parser.add_argument('--additional_symm_steps', default=16) 
+    parser.add_argument('--symm_start_step', default=15) # Set this to 15 to apply symm loss only on OOR steps 
 
     args = parser.parse_args()
 
