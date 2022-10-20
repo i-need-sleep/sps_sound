@@ -266,16 +266,19 @@ class BallTrainer:
 
     def calc_symm_loss(self, x1, z_gt, z0_rnn, z0_S_rnn, symm_reverse_func, z_gt_cr):
         z0_S_rnn_Sr = do_seq_symmetry(z0_S_rnn, symm_reverse_func)[:, 0:self.config['seq_len']-1+self.config['additional_symm_steps'], :]
+        # Symm loss against RNN predictions
         if self.config['additional_symm_steps'] > 0:
-            zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z0_rnn[:, self.config['symm_start_step']:self.config['seq_len']+self.config['additional_symm_steps'], :])
+            zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z0_rnn[:, self.config['symm_start_step']:, :])
             # batch decode predicted z (after reverse symmetry)
             z0_S_rnn_Sr_D = self.model.batch_seq_decode_from_z(torch.cat((z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z_gt_cr[:, self.config['symm_start_step']:, :]), -1))
             z0_rnn_D = self.model.batch_seq_decode_from_z(torch.cat((z0_rnn[:, self.config['symm_start_step']:, :], z_gt_cr[:, self.config['symm_start_step']:, :]), -1))
             zloss_S_rnn_Sr_D__x1 = nn.BCELoss(reduction='sum')(z0_S_rnn_Sr_D, z0_rnn_D)
+            zloss_S_rnn_Sr_D__x1 = 0 # Interesting... If I let zloss_S_rnn_Sr_D__x1 = 0, the gradient does not explode?
 
             # Rescale 
             zloss_S_rnn_Sr__z1 *= (zloss_S_rnn_Sr__z1-1) / (zloss_S_rnn_Sr__z1-1+self.config['additional_symm_steps'])
             zloss_S_rnn_Sr_D__x1 *= (zloss_S_rnn_Sr__z1-1) / (zloss_S_rnn_Sr__z1-1+self.config['additional_symm_steps'])
+        # Symm loss against GT
         else:
             zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr, z_gt[:, 1:self.config['seq_len'], :])
             z0_S_rnn_Sr_D = self.model.batch_seq_decode_from_z(torch.cat((z0_S_rnn_Sr, z_gt_cr), -1))
