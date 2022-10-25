@@ -89,13 +89,13 @@ def slice_notes(notes, n_slice=4, slice_size=3):
     return out
 
 
-def make_natural_mel_dataset():
+def make_natural_mel_dataset(size=1e10):
     # Initialise 
     try:
-        shutil.rmtree(DATASET_PATH)
+        shutil.rmtree(f'{DATASET_PATH}_{size}')
     except FileNotFoundError:
         pass
-    os.makedirs(DATASET_PATH, exist_ok=True)
+    os.makedirs(f'{DATASET_PATH}_{size}', exist_ok=True)
 
     # Preproc all melodies 
     d_pitches = []
@@ -110,6 +110,10 @@ def make_natural_mel_dataset():
             if notes_slice != []:
                 d_pitch = notes_to_d_pitches(notes_slice)
                 d_pitches.append([d_pitch, folder, idx])
+                if len(d_pitches) > size:
+                    break
+        if len(d_pitches) > size:
+                    break
 
     # Synthesize for each instrument
     index = []
@@ -141,11 +145,11 @@ def make_natural_mel_dataset():
 
             index.append((instrument.instrumentName, folder, idx))
             soundfile.write(path.join(
-                DATASET_PATH, 
+                f'{DATASET_PATH}_{size}', 
                 f'{instrument.instrumentName}-{folder}-{idx}.wav', 
             ), song, SR)
     
-    with open(path.join(DATASET_PATH, 'index.pickle'), 'wb') as f:
+    with open(path.join(f'{DATASET_PATH}_{size}', f'index.pickle'), 'wb') as f:
         pickle.dump(index, f)
 
 
@@ -211,7 +215,7 @@ def GenSong(pitches_audio, d_pitches, dtype):
     assert cursor - N_SAMPLES_BETWEEN_NOTES == SONG_LEN
     return song
 
-make_natural_mel_dataset()
+make_natural_mel_dataset(size=10)
 
 # data_dir = './datasets_in/nottingham-dataset-master/MIDI/melody'
 # for file in tqdm(os.listdir(data_dir)):

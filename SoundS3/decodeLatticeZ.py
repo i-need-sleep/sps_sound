@@ -9,11 +9,11 @@ RESOLUTION = 100
 
 # DATASET_NAME = 'single_note_GU'
 DATASET_NAME = sys.argv[1]
-DATASET_PATH = '../../makeSoundDatasets/datasets/' + DATASET_NAME
+DATASET_PATH = '../../data/scale_test/'
 
 # EXP_GROUP_MODEL_PATH = './afterClean/vae_symm_4_repeat'
 EXP_GROUP_MODEL_PATH = sys.argv[2]
-CHECKPOINT_NAME = 'checkpoint_200000.pt'
+CHECKPOINT_NAME = './sound_s3/standard_model/checkpoints/long_img/scal_longImg16_noRNN_checkpoint_200000.pt'
 
 # RESULT_NAME = 'test_set_vae_symm_4_repeat'
 RESULT_NAME = sys.argv[3]
