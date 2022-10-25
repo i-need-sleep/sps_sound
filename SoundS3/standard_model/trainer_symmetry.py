@@ -273,7 +273,7 @@ class BallTrainer:
     def calc_symm_loss(self, x1, z_gt, z0_rnn, z0_S_rnn, symm_reverse_func, z_gt_cr):
         z0_S_rnn_Sr = do_seq_symmetry(z0_S_rnn, symm_reverse_func)[:, 0:self.config['seq_len']-1+self.config['additional_symm_steps'], :]
         # Symm loss against RNN predictions
-        if self.config['additional_symm_steps'] > 0:
+        if self.config['additional_symm_steps'] > 0 or self.config['symm_against_rnn']:
             zloss_S_rnn_Sr__z1 = self.z_symm_loss_scalar * self.mse_loss(z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z0_rnn[:, self.config['symm_start_step']:, :])
             # batch decode predicted z (after reverse symmetry)
             z0_S_rnn_Sr_D = self.model.batch_seq_decode_from_z(torch.cat((z0_S_rnn_Sr[:, self.config['symm_start_step']:, :], z_gt_cr[:, self.config['symm_start_step']:, :]), -1))

@@ -39,6 +39,7 @@ if __name__ == '__main__':
     CONFIG['no_repetition'] = args.no_rep
     CONFIG['additional_symm_steps'] = args.additional_symm_steps
     CONFIG['symm_start_step'] = args.symm_start_step    
+    CONFIG['symm_against_rnn'] = args.symm_against_rnn
 
     # torch.manual_seed(21)
 
