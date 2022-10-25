@@ -21,6 +21,7 @@ if __name__ == '__main__':
     parser.add_argument('--data_folder', default='cleanTrain')
     parser.add_argument('--no_rnn', action='store_true')
     parser.add_argument('--no_symm', action='store_true')
+    parser.add_argument('--symm_against_rnn', action='store_true')
     parser.add_argument('--additional_symm_steps', type=int, default=32) 
     parser.add_argument('--symm_start_step', type=int, default=15) # Set this to 15 to apply symm loss only on OOR steps 
 
@@ -37,6 +38,7 @@ if __name__ == '__main__':
     CONFIG['no_symm'] = args.no_symm
     CONFIG['additional_symm_steps'] = args.additional_symm_steps
     CONFIG['symm_start_step'] = args.symm_start_step    
+    CONFIG['symm_against_rnn'] = args.symm_against_rnn
 
     # torch.manual_seed(21)
 
