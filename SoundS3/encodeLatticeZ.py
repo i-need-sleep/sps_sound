@@ -2,14 +2,15 @@ import sys
 import os
 from os import path
 import shutil
+sys.path.append(path.join(path.dirname(path.abspath(__file__)), 'standard_model'))
 
 # DATASET_NAME = 'single_note_GU'
 DATASET_NAME = sys.argv[1]
-DATASET_PATH = '../../data/scale_test/'
+DATASET_PATH = '../data/' + DATASET_NAME
 
 # EXP_GROUP_MODEL_PATH = './afterClean/vae_symm_4_repeat'
-EXP_GROUP_MODEL_PATH = sys.argv[2]
-CHECKPOINT_NAME = './sound_s3/standard_model/checkpoints/long_img/scal_longImg16_noRNN_checkpoint_200000.pt'
+EXP_GROUP_MODEL_PATH = 'standard_model/checkpoints/'
+CHECKPOINT_NAME = sys.argv[2]
 
 # RESULT_NAME = 'test_set_vae_symm_4_repeat'
 RESULT_NAME = sys.argv[3]
@@ -21,13 +22,15 @@ except FileNotFoundError:
 os.mkdir(RESULT_PATH)
 
 sys.path.append(path.abspath(EXP_GROUP_MODEL_PATH))
-from normal_rnn import Conv2dGruConv2d
-from train_config import CONFIG
-from trainer_symmetry import LOG_K
+# from normal_rnn import Conv2dGruConv2d
+# from train_config import CONFIG
+# from trainer_symmetry import LOG_K
 
-# from example_model.normal_rnn import Conv2dGruConv2d
-# from example_model.train_config import CONFIG
-# from example_model.trainer_symmetry import LOG_K
+from standard_model.normal_rnn import Conv2dGruConv2d
+from standard_model.train_config import CONFIG
+from standard_model.trainer_symmetry import LOG_K
+
+CONFIG['seq_len'] = 15
 
 import torch
 from tqdm import tqdm
@@ -44,7 +47,7 @@ def main():
     ))
     model.eval()
 
-    dataset = Dataset(DATASET_PATH)
+    dataset = Dataset(DATASET_PATH, CONFIG)
     instruments = {}
     for instrument_name, pitch, datapoint in tqdm(
         dataset.data, desc='encode', 
