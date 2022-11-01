@@ -2,6 +2,7 @@ import os
 from os import path
 import shutil
 import pickle
+import random
 
 import pretty_midi as pm
 from music21.instrument import Instrument, Piano
@@ -22,7 +23,7 @@ from intruments_and_ranges import intruments_ranges
 
 # MODIFIED GLOBALS
 N_STEPS = 16
-DATASET_PATH = './datasets_out/nottingham_mels' # WAV output
+DATASET_PATH = './datasets_out/nottingham_eights_pool_100' # WAV output
 DATASET_IN_PATH = './datasets_in/nottingham-dataset-master/MIDI/melody'
 
 # GLOBALS
@@ -56,17 +57,15 @@ SONG_LEN = (
 
 fs = FluidSynth(SOUND_FONT_PATH, sample_rate=SR)
 
-def notes_to_d_pitches(notes, n_bins=16, step_size=1/8):
+def notes_to_d_pitches(notes, n_bins, step_size):
     d_pitches = ['rest' for _ in range(n_bins)]
-    pits = []
     for idx, val in enumerate(d_pitches):
         if val == 'sustain':
             continue
         for note in notes:
             if note.start <= idx * step_size and note.end > idx * step_size:
-                pits.append(note.pitch)
                 d_pitches[idx] = note.pitch
-                for i in range(idx + 1, int(idx + (note.end - note.start) // step_size)):
+                for i in range(idx + 1, int(min(idx + max((note.end - note.start-1e-6) // step_size + 1, 0), n_bins))):
                     d_pitches[i] = 'sustain'
                 break
         
@@ -77,6 +76,8 @@ def slice_notes(notes, n_slice=1000, slice_size=2):
     
     # Cut notes crossing barlines and bin into slices 
     for note in notes:
+        if note.end >= n_slice * slice_size:
+            continue
         # Skip long sustains
         if note.end - note.start > slice_size:
             continue
@@ -88,8 +89,20 @@ def slice_notes(notes, n_slice=1000, slice_size=2):
             out[int(note.start // slice_size)].append(pretty_midi.Note(start = note.start % slice_size, end = note.end % slice_size, pitch = note.pitch, velocity = 100))
     return out
 
+def remove_repetition(d_pitch, n):
+    for idx in range(n, len(d_pitch)):
+        if len(set(d_pitch[idx - n: idx + 1])) == 1:
+            d_pitch[idx] = random.choice(d_pitch[: idx])
+            while len(set(d_pitch[idx - n: idx + 1])) == 1:
+                d_pitch[idx] = random.choice([i for i in range(48, 72)])
 
-def make_natural_mel_dataset():
+    # Remove hanging sustains
+    for idx in range(1, len(d_pitch)):
+        if d_pitch[idx] == 'sustain' and d_pitch[idx-1] == 'rest':
+                d_pitch[idx] = random.choice([i for i in range(48, 72)])
+    return d_pitch
+
+def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step_size=60/80/4, block_ngram=2):
     # Initialise 
     try:
         shutil.rmtree(DATASET_PATH)
@@ -104,12 +117,19 @@ def make_natural_mel_dataset():
         midi = pretty_midi.PrettyMIDI(midi_path)
         notes = midi.instruments[0].notes
     
-        notes_slices = slice_notes(notes)
+        notes_slices = slice_notes(notes, n_slice, slice_size)
         
         for idx, notes_slice in enumerate(notes_slices):
             if notes_slice != []:
-                d_pitch = notes_to_d_pitches(notes_slice)
+                d_pitch = notes_to_d_pitches(notes_slice, n_bins, step_size)
+
+                if block_ngram > 0:
+                    d_pitch = remove_repetition(d_pitch, block_ngram)
                 d_pitches.append([d_pitch, file, idx])
+                if len(d_pitches) > size:
+                    break
+        if len(d_pitches) > size:
+                break
     print(f'#Melody slices: {len(d_pitches)}')
 
     # Synthesize for each instrument
@@ -128,8 +148,6 @@ def make_natural_mel_dataset():
 
         # Loop over all melodies
         for n_mel, [d_pitch, folder, idx] in enumerate(d_pitches):
-            if n_mel > 1000:
-                break
 
             # skip if any pitch is out of range for the instrument
             out_of_range = False
@@ -214,4 +232,4 @@ def GenSong(pitches_audio, d_pitches, dtype):
     assert cursor - N_SAMPLES_BETWEEN_NOTES == SONG_LEN
     return song
 
-make_natural_mel_dataset()
+make_natural_mel_dataset(size=100, n_slice=5, slice_size=4, step_size=1/4)
