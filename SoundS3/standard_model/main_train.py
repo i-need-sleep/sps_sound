@@ -26,6 +26,10 @@ if __name__ == '__main__':
     parser.add_argument('--additional_symm_steps', type=int, default=32) 
     parser.add_argument('--symm_start_step', type=int, default=15) # Set this to 15 to apply symm loss only on OOR steps 
 
+    # RNN params
+    parser.add_argument('--rnn_num_layers', type=int, default=1)
+    parser.add_argument('--rnn_hidden_size', type=int, default=256)
+
     args = parser.parse_args()
 
     CONFIG['name'] = args.name
@@ -41,6 +45,8 @@ if __name__ == '__main__':
     CONFIG['additional_symm_steps'] = args.additional_symm_steps
     CONFIG['symm_start_step'] = args.symm_start_step    
     CONFIG['symm_against_rnn'] = args.symm_against_rnn
+    CONFIG['rnn_num_layers'] = args.rnn_num_layers
+    CONFIG['rnn_hidden_size'] = args.rnn_hidden_size
 
     # torch.manual_seed(21)
 
