@@ -19,7 +19,7 @@ CONFIG = {
     'z_symm_loss_scalar': 4,
     'enable_sample': True,
     'checkpoint_interval': 50000,
-    'learning_rate': 1e-3,
+    # 'learning_rate': 1e-3,
     'scheduler_base_num': 0.99999,
     'max_iter_num': 200001,
     'base_len': 3,

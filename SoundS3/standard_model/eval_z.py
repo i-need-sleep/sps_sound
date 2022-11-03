@@ -49,11 +49,20 @@ parser = argparse.ArgumentParser()
 parser.add_argument('--name', default='unnamed')
 parser.add_argument('--seq_len', type=int, default=64)
 
+# RNN params
+parser.add_argument('--rnn_num_layers', type=int, default=1)
+parser.add_argument('--rnn_hidden_size', type=int, default=256)
+
+# Hyperparams
+parser.add_argument('--lr', type=int, default=1e-3)
+
 args = parser.parse_args()
 
 NAME = args.name
 CONFIG['seq_len'] = args.seq_len
 CONFIG['train_data_path'] = WAV_PATH
+CONFIG['rnn_num_layers'] = args.rnn_num_layers
+CONFIG['rnn_hidden_size'] = args.rnn_hidden_size
 
 MODEL_PATH = f'./checkpoints/{args.name}.pt'
 
