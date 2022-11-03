@@ -30,6 +30,9 @@ if __name__ == '__main__':
     parser.add_argument('--rnn_num_layers', type=int, default=1)
     parser.add_argument('--rnn_hidden_size', type=int, default=256)
 
+    # Hyper params
+    parser.add_argument('--lr', type=float, default=1e-3)
+
     args = parser.parse_args()
 
     CONFIG['name'] = args.name
