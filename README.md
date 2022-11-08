@@ -1,2 +1,2 @@
 # sps_sound
-Experiments on the dated SPS conde
+Experiments on the dated SPS code
