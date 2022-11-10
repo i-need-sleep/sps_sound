@@ -21,7 +21,7 @@ CONFIG = {
     'checkpoint_interval': 100000,
     # 'learning_rate': 1e-3,
     'scheduler_base_num': 0.99999,
-    'max_iter_num': 200001,
+    'max_iter_num': 600001,
     'base_len': 3,
     # 'train_result_path': 'TrainingResults/',
     # 'train_record_path': "Train_record.txt",
