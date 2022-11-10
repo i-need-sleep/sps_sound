@@ -22,8 +22,8 @@ from dataset_config import *
 from intruments_and_ranges import intruments_ranges
 
 # MODIFIED GLOBALS
-N_STEPS = 16
-DATASET_PATH = './datasets_out/nottingham_eights_pool_100' # WAV output
+N_STEPS = 32
+DATASET_PATH = './datasets_out/nottingham_eights_pool_accOnly_20000_easy' # WAV output
 DATASET_IN_PATH = './datasets_in/nottingham-dataset-master/MIDI/melody'
 
 # GLOBALS
@@ -57,7 +57,7 @@ SONG_LEN = (
 
 fs = FluidSynth(SOUND_FONT_PATH, sample_rate=SR)
 
-def notes_to_d_pitches(notes, n_bins, step_size):
+def notes_to_d_pitches(notes, n_bins, step_size, easy):
     d_pitches = ['rest' for _ in range(n_bins)]
     for idx, val in enumerate(d_pitches):
         if val == 'sustain':
@@ -66,8 +66,15 @@ def notes_to_d_pitches(notes, n_bins, step_size):
             if note.start <= idx * step_size and note.end > idx * step_size:
                 d_pitches[idx] = note.pitch
                 for i in range(idx + 1, int(min(idx + max((note.end - note.start-1e-6) // step_size + 1, 0), n_bins))):
-                    d_pitches[i] = 'sustain'
+                    if easy:
+                        d_pitches[i] = note.pitch
+                    else:
+                        d_pitches[i] = 'sustain'
                 break
+    if easy:
+        for idx, val in enumerate(d_pitches):
+            if val == 'rest' and idx != 0:
+                d_pitches[idx] = d_pitches[idx-1]
         
     return d_pitches
 
@@ -102,7 +109,7 @@ def remove_repetition(d_pitch, n):
                 d_pitch[idx] = random.choice([i for i in range(48, 72)])
     return d_pitch
 
-def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step_size=60/80/4, block_ngram=2):
+def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step_size=60/80/4, block_ngram=2, accordion_only=False, easy=False):
     # Initialise 
     try:
         shutil.rmtree(DATASET_PATH)
@@ -121,7 +128,7 @@ def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step
         
         for idx, notes_slice in enumerate(notes_slices):
             if notes_slice != []:
-                d_pitch = notes_to_d_pitches(notes_slice, n_bins, step_size)
+                d_pitch = notes_to_d_pitches(notes_slice, n_bins, step_size, easy=easy)
 
                 if block_ngram > 0:
                     d_pitch = remove_repetition(d_pitch, block_ngram)
@@ -165,6 +172,9 @@ def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step
                 DATASET_PATH, 
                 f'{instrument.instrumentName}-{folder}-{idx}.wav', 
             ), song, SR)
+    
+        if accordion_only:
+            break
     
     with open(path.join(DATASET_PATH, 'index.pickle'), 'wb') as f:
         pickle.dump(index, f)
@@ -232,4 +242,4 @@ def GenSong(pitches_audio, d_pitches, dtype):
     assert cursor - N_SAMPLES_BETWEEN_NOTES == SONG_LEN
     return song
 
-make_natural_mel_dataset(size=100, n_slice=5, slice_size=4, step_size=1/4)
+make_natural_mel_dataset(size=40000, n_slice=1000, slice_size=8, n_bins=N_STEPS, step_size=1/4, accordion_only=True, easy=True)
