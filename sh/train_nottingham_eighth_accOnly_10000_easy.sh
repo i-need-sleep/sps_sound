@@ -22,7 +22,7 @@ source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
     --name nottingham_eighth_accOnly_10000_2_512_easy \
-    --seq_len 16 \
+    --seq_len 32 \
     --data_folder nottingham_eights_pool_accOnly_20000_easy \
     --additional_symm_steps 0 \
     --symm_start_step 0 \

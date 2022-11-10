@@ -23,7 +23,7 @@ source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual 
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
     --name nottingham_eighth_accOnly_10000_easy_longimg16_2_512 \
     --seq_len 32 \
-    --data_folder nottingham_eights_pool_accOnly_10000 \
+    --data_folder nottingham_eights_pool_accOnly_10000_easy \
     --additional_symm_steps 16 \
     --symm_start_step 0 \
     --rnn_num_layers 2 \
