@@ -21,12 +21,11 @@ echo "START"               # 输出起始信息
 source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
-    --name nottingham_eighth_accOnly_10000_easy_longimg16_2_512 \
+    --name nottingham_eighth_accOnly_10000_easy_longimg16_2_512_ \
     --seq_len 32 \
     --data_folder nottingham_eights_pool_accOnly_10000_easy \
     --additional_symm_steps 16 \
     --symm_start_step 0 \
     --rnn_num_layers 2 \
-    --rnn_hidden_size 512 \
-    --lr 5e-4
+    --rnn_hidden_size 512 
 echo "FINISH"                       # 输出起始信息
