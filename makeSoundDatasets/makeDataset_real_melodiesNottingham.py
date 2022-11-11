@@ -22,8 +22,8 @@ from dataset_config import *
 from intruments_and_ranges import intruments_ranges
 
 # MODIFIED GLOBALS
-N_STEPS = 32
-DATASET_PATH = './datasets_out/nottingham_eights_pool_accOnly_20000_easy' # WAV output
+N_STEPS = 64
+DATASET_PATH = './datasets_out/nottingham_eights_pool_accOnly_5000_easier' # WAV output
 DATASET_IN_PATH = './datasets_in/nottingham-dataset-master/MIDI/melody'
 
 # GLOBALS
@@ -242,4 +242,4 @@ def GenSong(pitches_audio, d_pitches, dtype):
     assert cursor - N_SAMPLES_BETWEEN_NOTES == SONG_LEN
     return song
 
-make_natural_mel_dataset(size=40000, n_slice=1000, slice_size=8, n_bins=N_STEPS, step_size=1/4, accordion_only=True, easy=True)
+make_natural_mel_dataset(size=400000, n_slice=10000, slice_size=16, n_bins=N_STEPS, step_size=1/4, accordion_only=True, easy=True)
