@@ -64,12 +64,22 @@ class Conv2dGruConv2d(nn.Module):
         self.fc11 = nn.Linear(CHANNELS[-1] * LAST_H * LAST_W, self.latent_code_num)
         self.fc12 = nn.Linear(CHANNELS[-1] * LAST_H * LAST_W, self.latent_code_num)
 
-        self.rnn = nn.RNN(
-            input_size=RNN_INPUT_SIZE,
-            hidden_size=self.rnn_hidden_size,
-            num_layers=self.rnn_num_layers,
-            batch_first=True,
-        )
+        if 'gru' in config.keys and config['gru']:
+            print('GRUUUUUUUUUUUINEUFBNQWEJEUBGIFJKNEIFRYG!@#')
+            self.rnn = nn.GRU(
+                input_size=RNN_INPUT_SIZE,
+                hidden_size=self.rnn_hidden_size,
+                num_layers=self.rnn_num_layers,
+                batch_first=True,
+            )
+
+        else:   
+            self.rnn = nn.RNN(
+                input_size=RNN_INPUT_SIZE,
+                hidden_size=self.rnn_hidden_size,
+                num_layers=self.rnn_num_layers,
+                batch_first=True,
+            )
         self.fc2 = nn.Linear(in_features=self.rnn_hidden_size, out_features=RNN_OUT_FEATURES)
 
         self.fc3 = nn.Sequential(

@@ -29,6 +29,7 @@ if __name__ == '__main__':
     # RNN params
     parser.add_argument('--rnn_num_layers', type=int, default=1)
     parser.add_argument('--rnn_hidden_size', type=int, default=256)
+    parser.add_argument('--gru', action='store_true')
 
     # Hyper params
     parser.add_argument('--lr', type=float, default=1e-3)
@@ -50,6 +51,7 @@ if __name__ == '__main__':
     CONFIG['symm_against_rnn'] = args.symm_against_rnn
     CONFIG['rnn_num_layers'] = args.rnn_num_layers
     CONFIG['rnn_hidden_size'] = args.rnn_hidden_size
+    CONFIG['GRU' = args.gru]
     CONFIG['learning_rate'] = args.lr
 
     # torch.manual_seed(21)
