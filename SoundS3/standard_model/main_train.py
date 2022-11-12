@@ -51,7 +51,7 @@ if __name__ == '__main__':
     CONFIG['symm_against_rnn'] = args.symm_against_rnn
     CONFIG['rnn_num_layers'] = args.rnn_num_layers
     CONFIG['rnn_hidden_size'] = args.rnn_hidden_size
-    CONFIG['GRU' = args.gru]
+    CONFIG['GRU'] = args.gru
     CONFIG['learning_rate'] = args.lr
 
     # torch.manual_seed(21)

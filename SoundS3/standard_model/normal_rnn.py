@@ -64,7 +64,7 @@ class Conv2dGruConv2d(nn.Module):
         self.fc11 = nn.Linear(CHANNELS[-1] * LAST_H * LAST_W, self.latent_code_num)
         self.fc12 = nn.Linear(CHANNELS[-1] * LAST_H * LAST_W, self.latent_code_num)
 
-        if 'gru' in config.keys and config['gru']:
+        if 'GRU' in config.keys() and config['GRU']:
             print('GRUUUUUUUUUUUINEUFBNQWEJEUBGIFJKNEIFRYG!@#')
             self.rnn = nn.GRU(
                 input_size=RNN_INPUT_SIZE,
