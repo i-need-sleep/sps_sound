@@ -229,7 +229,7 @@ class BallTrainer:
                 print(train_loss_counter.make_record(i))
                 train_loss_counter.record_and_clear(self.train_record_path, i)
             if i % self.checkpoint_interval == 0 and i != 0:
-                self.model.save_tensor(self.model.state_dict(), f'{self.config["name"]}_checkpoint_{i}.pt')
+                self.model.save_tensor(self.model.state_dict(), f'./checkpoints/{self.config["name"]}_checkpoint_{i}.pt')
 
     def save_audio(self, spec, name, sample_rate=16000):
         recon_waveform = self.griffin_lim(spec.cpu())

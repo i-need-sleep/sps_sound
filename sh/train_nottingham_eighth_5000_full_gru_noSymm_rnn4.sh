@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=nottingham_eighth_5000_full_gru       # 任务名
+#SBATCH --job-name=nottingham_eighth_5000_full_gru_noSymm_rnn4       # 任务名
 #SBATCH --nodes=1                   # 这里不用动 多节点脚本请查官方文档
 #SBATCH --ntasks=1                  # 这里不用动 多任务脚本请查官方文档
 #SBATCH --cpus-per-task=4           # 要几块CPU (一般4块就够用了)
@@ -21,12 +21,14 @@ echo "START"               # 输出起始信息
 source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
-    --name nottingham_eighth_5000_full_gru_ \
+    --name nottingham_eighth_5000_full_gru_noSymm_rnn4 \
     --seq_len 64 \
     --data_folder nottingham_eights_pool_5000_full \
     --additional_symm_steps 0 \
     --symm_start_step 0 \
     --rnn_num_layers 2 \
     --rnn_hidden_size 512 \
-    --gru
+    --gru \
+    --no_symm \
+    --z_rnn_loss_scalar 4
 echo "FINISH"                       # 输出起始信息

@@ -33,6 +33,7 @@ if __name__ == '__main__':
 
     # Hyper params
     parser.add_argument('--lr', type=float, default=1e-3)
+    parser.add_argument('--z_rnn_loss_scalar', type=float, default=2)
 
     args = parser.parse_args()
 
@@ -53,6 +54,7 @@ if __name__ == '__main__':
     CONFIG['rnn_hidden_size'] = args.rnn_hidden_size
     CONFIG['GRU'] = args.gru
     CONFIG['learning_rate'] = args.lr
+    CONFIG['z_rnn_loss_scalar'] = args.z_rnn_loss_scalar
 
     # torch.manual_seed(21)
 
