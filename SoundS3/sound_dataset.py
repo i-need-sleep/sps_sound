@@ -35,6 +35,9 @@ class Dataset(torch.utils.data.Dataset):
         
         if cache_all:
             self.cacheAll(debug_ifft)
+        else:
+            print('too bad not implemtned lol.')
+            raise NotImplemented
     
     def cacheAll(self, debug_ifft):
         self.data = []
