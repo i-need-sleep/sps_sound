@@ -24,8 +24,8 @@ N_BINS = WIN_LEN // 2 + 1
 
 class Dataset(torch.utils.data.Dataset):
     def __init__(
-        self, dataset_path, config, debug_ifft=False, 
-        cache_all=True,
+        self, dataset_path, config={'seq_len': 15}, debug_ifft=False, 
+        cache_all=False,
     ):
         self.config = config
         self.dataset_path = dataset_path
@@ -33,11 +33,11 @@ class Dataset(torch.utils.data.Dataset):
             self.index: List[Tuple[str, int]] = pickle.load(f)
         self.map = {}
         
+        self.cache_all = cache_all
+        print(f'cache all: {self.cache_all}')
+
         if cache_all:
             self.cacheAll(debug_ifft)
-        else:
-            print('too bad not implemtned lol.')
-            raise NotImplemented
     
     def cacheAll(self, debug_ifft):
         self.data = []
@@ -75,7 +75,31 @@ class Dataset(torch.utils.data.Dataset):
 
     def __getitem__(self, index):
         index %= self.trueLen()
-        instrument_name, start_pitch, datapoint = self.data[index]
+        try:
+            if self.cache_all:
+                instrument_name, start_pitch, datapoint = self.data[index]
+            else:
+                instrument_name, segment, subsegment = self.index[index]
+                wav_name = f'{instrument_name}-{segment}-{subsegment}.wav'
+                
+                if wav_name in self.map.keys():
+                    return self.map[wav_name]
+                else:
+                    datapoint = self.loadOneFile(
+                        instrument_name, f'{segment}-{subsegment}', wav_name, False, 
+                    )
+                    self.map[wav_name] = datapoint
+
+        # In the case of corrupted files
+        except EOFError:
+            instrument_name, segment, subsegment = self.index[0]
+            wav_name = f'{instrument_name}-{segment}-{subsegment}.wav'
+            datapoint = self.loadOneFile(
+                    instrument_name, f'{segment}-{subsegment}', wav_name, False, 
+                )
+            self.map[wav_name] = datapoint
+                
+
         return datapoint
     
     def __len__(self):
@@ -173,7 +197,8 @@ def PersistentLoader(dataset, batch_size):
             yield batch
 
 if __name__ == "__main__":
-    dataset = Dataset('../../makeSoundDatasets/datasets/cleanTrain')
+    dataset = Dataset('../makeSoundDatasets/datasets_out/nottingham_eights_pool_5000_easy')
     loader = PersistentLoader(dataset, 32)
     for i, x in enumerate(loader):
         print(i, x.shape)
+        break

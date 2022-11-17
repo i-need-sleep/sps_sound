@@ -243,4 +243,4 @@ def GenSong(pitches_audio, d_pitches, dtype):
     assert cursor - N_SAMPLES_BETWEEN_NOTES == SONG_LEN
     return song
 
-make_natural_mel_dataset(size=400000, n_slice=10000, slice_size=16, n_bins=N_STEPS, step_size=1/4, accordion_only=False, easy=False, block_ngram=0)
+make_natural_mel_dataset(size=400000, n_slice=10000, slice_size=16, n_bins=N_STEPS, step_size=1/4, accordion_only=True, easy=True, block_ngram=2)
