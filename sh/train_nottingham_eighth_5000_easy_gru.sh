@@ -21,7 +21,7 @@ echo "START"               # 输出起始信息
 source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
-    --name nottingham_eighth_5000_easy_gru \
+    --name nottingham_eighth_5000_easy_gru__ \
     --seq_len 64 \
     --data_folder nottingham_eights_pool_5000_easy \
     --additional_symm_steps 0 \

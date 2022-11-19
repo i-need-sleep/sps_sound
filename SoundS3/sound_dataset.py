@@ -91,7 +91,7 @@ class Dataset(torch.utils.data.Dataset):
                     self.map[wav_name] = datapoint
 
         # In the case of corrupted files
-        except EOFError:
+        except:
             instrument_name, segment, subsegment = self.index[0]
             wav_name = f'{instrument_name}-{segment}-{subsegment}.wav'
             datapoint = self.loadOneFile(
