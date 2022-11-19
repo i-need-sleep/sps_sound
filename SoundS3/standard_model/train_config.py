@@ -31,4 +31,5 @@ CONFIG = {
     'rnn_type': 'RNN',
     'is_save_img': True,
     'fixed_dim_sample_range': 10,
+    'beta_vae': False
 }
