@@ -187,6 +187,8 @@ class BallTrainer:
             z_gt_cr = z_gt_cr_extended[:z_gt_cr.shape[0], :z_gt_cr.shape[1], :z_gt_cr.shape[2]]
             if self.config['no_repetition']:
                 z_combine = torch.cat((z_gt_p, z_gt_c), -1)
+            elif self.config['beta_vae']:
+                z_combine = torch.cat((z_gt_p, torch.zeros_like(z_gt_p), torch.zeros_like(z_gt_p)), -1)
             else:
                 z_combine = torch.cat((z_gt_p, z_gt_cr), -1)
             # R, Rr, theta = make_random_rotation_batch(batch_size=BATCH_SIZE * self.r_batch_multiple,

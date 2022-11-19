@@ -7,12 +7,19 @@ from matplotlib.figure import SubFigure
 from numpy import iterable
 from tqdm import tqdm
 
-FIGSIZE = (8, 15)
+FIGSIZE = (8, 2.5)
 # WIDTH_RATIO = (.07, .9)
 
 import rc_params
 rc_params.init()
 from linearity_shared import *
+
+plt.rcParams.update({
+    'text.usetex': True, 
+    'font.family': 'serif', 
+    'font.serif': ['Computer Modern'], 
+    'font.size': 11, 
+})
 
 def main():
     fig = plt.figure(
@@ -23,11 +30,12 @@ def main():
     # subfig_0_ax: Axes = subfigs[0].subplots()
     # subfig_0_ax.axis('off')
     axeses: List[List[Axes]] = subfigs[-1].subplots(
-        5, 2, 
+        1, 3, 
         # sharey=True, 
         sharex=True, 
     )
-    axeses = [[*axeses[:, 0], *axeses[:, 1]]]
+    axeses = [[*axeses]]
+    # axeses = [[*axeses[:, 0], *axeses[:, 1]]]
     plotted: Dict[str, List[Line2D]] = {}
     for task_i, (
         task_path_name, task_display, 
@@ -71,11 +79,11 @@ def main():
                     rotation=90, 
                 )
             if task_path_name == 'decode':
-                ax.set_yticks((36, 60, 84))
-                ax.set_yticklabels(('C2', 'C4', 'C6'))
+                ax.set_yticks((60, 84))
+                ax.set_yticklabels(('C4', 'C6'))
             else:
-                ax.set_xticks((36, 60, 84))
-                ax.set_xticklabels(('C2', 'C4', 'C6'))
+                ax.set_xticks((60, 84))
+                ax.set_xticklabels(('C4', 'C6'))
     def prettify(k):
         return k.replace('Electric ', 'E. ')
     K, V = [], []
@@ -86,18 +94,18 @@ def main():
         K.append(prettify(k))
         V.append(plotted[k][0])
     
-    axeses[0][-1].legend(
-        V, K, markerscale=8, 
-        loc='upper left', 
-        bbox_to_anchor=(1.02, 1.05), 
-        # fontsize=10, 
-        labelspacing=1, 
-        ncols=2,
-        handlelength=0.3,
-        handletextpad=0.5,
-        columnspacing=.8,
-    )
-    plt.savefig(f'./figs/{exp_group[0]}.png')
+    # axeses[0][-1].legend(
+    #     V, K, markerscale=8, 
+    #     loc='upper left', 
+    #     bbox_to_anchor=(1.02, 1.05), 
+    #     # fontsize=10, 
+    #     labelspacing=1, 
+    #     ncol=2,
+    #     handlelength=0.3,
+    #     handletextpad=0.5,
+    #     columnspacing=.8,
+    # )
+    plt.savefig(f'./figs/cool_fig.pdf')
     plt.show()
 
 if __name__ == '__main__':

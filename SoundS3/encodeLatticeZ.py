@@ -31,6 +31,9 @@ from standard_model.train_config import CONFIG
 from standard_model.trainer_symmetry import LOG_K
 
 CONFIG['seq_len'] = 15
+CONFIG['rnn_num_layers'] = 2
+CONFIG['rnn_hidden_size'] = 512
+CONFIG['GRU'] = True
 
 import torch
 from tqdm import tqdm
@@ -47,11 +50,13 @@ def main():
     ))
     model.eval()
 
-    dataset = Dataset(DATASET_PATH, CONFIG)
+    dataset = Dataset(DATASET_PATH, CONFIG, cache_all=True)
     instruments = {}
     for instrument_name, pitch, datapoint in tqdm(
         dataset.data, desc='encode', 
     ):
+        if pitch not in range(60, 84):
+            continue
         norm_point = norm_log2(datapoint, k=LOG_K)
         _, mu, _ = model.batch_seq_encode_to_z(
             norm_point.unsqueeze(0), 

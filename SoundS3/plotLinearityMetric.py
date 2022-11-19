@@ -118,6 +118,12 @@ def plot(data):
                     edgecolor='k', 
                     hatch='OO', 
                 )
+            else:
+                exp_kw = dict(
+                    facecolor='w', 
+                    edgecolor='k', 
+                    hatch='OO', 
+                )
             def f():
                 values = []
                 for instrument_name in COMMON_INSTRUMENTS:

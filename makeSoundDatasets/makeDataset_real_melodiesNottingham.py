@@ -120,6 +120,8 @@ def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step
 
     # Preproc all melodies 
     d_pitches = []
+    max_p = 0
+    min_p = 100
     for file in tqdm(os.listdir(DATASET_IN_PATH)):
         midi_path = f'{DATASET_IN_PATH}/{file}'
         midi = pretty_midi.PrettyMIDI(midi_path)
@@ -129,6 +131,11 @@ def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step
         
         for idx, notes_slice in enumerate(notes_slices):
             if notes_slice != []:
+                for note in notes_slice:
+                    if note.pitch > max_p:
+                        max_p = note.pitch
+                    if note.pitch < min_p:
+                        min_p = note.pitch
                 d_pitch = notes_to_d_pitches(notes_slice, n_bins, step_size, easy=easy)
 
                 if block_ngram > 0:
@@ -139,7 +146,8 @@ def make_natural_mel_dataset(size=1e10, n_slice=4, slice_size=2, n_bins=16, step
         if len(d_pitches) > size:
                 break
     print(f'#Melody slices: {len(d_pitches)}')
-
+    print(max_p, min_p)
+    exit()
     # Synthesize for each instrument
     index = []
     for instrument, pitch_range in tqdm(intruments_ranges):

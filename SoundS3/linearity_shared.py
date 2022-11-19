@@ -40,16 +40,9 @@ EXP_GROUPS = [
     # ('Ours w/o Symmetry', 'vae_symm_0_repeat'), 
     # ('$\\beta$-VAE (Baseline)', 'beta_vae'), 
     # ('SPICE (Baseline)', SPICE), 
-    ('scale_noRNN_noSymm_noRep', 'scale_noRNN_noSymm_noRep'), 
-    ('scale_noRNN_noSymm', 'scale_noRNN_noSymm'), 
-    ('scale_noSymm', 'scale_noSymm'), 
-    ('scale_1_SPSbase', 'scale_1_SPSbase'), 
-    ('scale_longImg16', 'scale_longImg16'), 
-    ('scale_longImg16_oorOnly', 'scale_longImg16_oorOnly'), 
-    ('scale_ShortImgOnly', 'scale_ShortImgOnly'), 
-    ('scale_longImg16_noRNN', 'scale_longImg16_noRNN'), 
-    ('909_100_checkpoint', '909_100_checkpoint'), 
-    ('909_100_longimg16', '909_100_longimg16'),
+    ('SPS (Ours)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru___checkpoint_9000'),
+    ('Ours w/o Symmetry', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_checkpoint_9000'),
+    ('$\\beta$-VAE (Baseline)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_noRnn_checkpoint_9000')
 ]
 
 TASKS = [
@@ -61,7 +54,7 @@ TASKS = [
         dict(
             linestyle='none', 
             marker='.', 
-            markersize=1, 
+            markersize=5, 
         ), 
     ), 
     # (
@@ -85,7 +78,7 @@ DATA_SETS = [
 RESULT_PATH = './linearityEvalResults/%s_%s_%s/'
 SPICE_PATH = './SPICE_results/result_short.txt'
 
-COMMON_INSTRUMENTS = [
+COMMON_INSTRUMENTS = ['Accordion',
     'Piano', 'Accordion', 'Clarinet', 'Electric Piano', 
     'Flute', 'Guitar', 'Saxophone', 'Trumpet', 'Violin', 
     # 'Church Bells', 
