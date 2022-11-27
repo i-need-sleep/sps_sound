@@ -1,11 +1,5 @@
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_4_repeat           train_set_vae_symm_4_repeat
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_4_repeat            test_set_vae_symm_4_repeat
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_4_repeat_timbre10d train_set_vae_symm_4_repeat_timbre10d
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_4_repeat_timbre10d  test_set_vae_symm_4_repeat_timbre10d
-call py decodeLatticeZ.py single_note    ./afterClean/ae_symm_4_repeat            train_set_ae_symm_4_repeat           
-call py decodeLatticeZ.py single_note_GU ./afterClean/ae_symm_4_repeat             test_set_ae_symm_4_repeat           
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_0_repeat           train_set_vae_symm_0_repeat
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_0_repeat            test_set_vae_symm_0_repeat
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_4_no_repeat        train_set_vae_symm_4_no_repeat
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_4_no_repeat         test_set_vae_symm_4_no_repeat
+call python decodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new0_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new0_checkpoint_9000
+call python decodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new1_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new1_checkpoint_9000
+call python decodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new2_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new2_checkpoint_9000
+call python decodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new3_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new3_checkpoint_9000
 pause

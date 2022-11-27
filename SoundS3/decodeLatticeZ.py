@@ -3,17 +3,18 @@ import os
 from os import path
 import shutil
 from typing import Dict
+sys.path.append(path.join(path.dirname(path.abspath(__file__)), 'standard_model'))
 
 N_STD = 2   # how many std's of z_pitch. controls eval range. 
 RESOLUTION = 100
 
 # DATASET_NAME = 'single_note_GU'
 DATASET_NAME = sys.argv[1]
-DATASET_PATH = '../../data/scale_test/'
+DATASET_PATH = '../data/' + DATASET_NAME
 
 # EXP_GROUP_MODEL_PATH = './afterClean/vae_symm_4_repeat'
-EXP_GROUP_MODEL_PATH = sys.argv[2]
-CHECKPOINT_NAME = './sound_s3/standard_model/checkpoints/long_img/scal_longImg16_noRNN_checkpoint_200000.pt'
+EXP_GROUP_MODEL_PATH = 'standard_model/checkpoints/'
+CHECKPOINT_NAME = sys.argv[2]
 
 # RESULT_NAME = 'test_set_vae_symm_4_repeat'
 RESULT_NAME = sys.argv[3]
@@ -32,6 +33,16 @@ from trainer_symmetry import LOG_K
 # from example_model.normal_rnn import Conv2dGruConv2d
 # from example_model.train_config import CONFIG
 # from example_model.trainer_symmetry import LOG_K
+
+
+CONFIG['seq_len'] = 15
+CONFIG['rnn_num_layers'] = 2
+CONFIG['rnn_hidden_size'] = 512
+CONFIG['GRU'] = True
+
+if 'beta' in CHECKPOINT_NAME:
+    print('BETA')
+    CONFIG['beta_vae'] = True
 
 import torch
 from torchaudio.transforms import GriffinLim
@@ -75,7 +86,7 @@ def main():
         n_fft=WIN_LEN, win_length=WIN_LEN, hop_length=HOP_LEN, 
     ).to(DEVICE)
 
-    dataset = Dataset(DATASET_PATH)
+    dataset = Dataset(DATASET_PATH, cache_all=True)
     instruments: Dict[str, Instrument] = {}
     all_z_pitches = []
     for instrument_name, pitch, datapoint in tqdm(

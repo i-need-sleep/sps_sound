@@ -1,5 +1,5 @@
-call python encodeLatticeZ.py single_note_GU    accordion/nottingham_eighth_accOnly_5000_2_512_easier_gru___checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru___checkpoint_9000
-call python encodeLatticeZ.py single_note_GU    accordion/nottingham_eighth_accOnly_5000_2_512_easier_gru_noRep_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_noRep_checkpoint_9000
-call python encodeLatticeZ.py single_note_GU    accordion/nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_checkpoint_9000
-call python encodeLatticeZ.py single_note_GU    accordion/nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_noRnn_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_noRnn_checkpoint_9000
+call python encodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new0_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new0_checkpoint_9000
+call python encodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new1_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new1_checkpoint_9000
+call python encodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new2_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new2_checkpoint_9000
+call python encodeLatticeZ.py single_note_GU    new_checkpoints/nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new3_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new3_checkpoint_9000
 pause

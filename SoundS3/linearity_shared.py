@@ -40,9 +40,10 @@ EXP_GROUPS = [
     # ('Ours w/o Symmetry', 'vae_symm_0_repeat'), 
     # ('$\\beta$-VAE (Baseline)', 'beta_vae'), 
     # ('SPICE (Baseline)', SPICE), 
-    ('SPS (Ours)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru___checkpoint_9000'),
-    ('Ours w/o Symmetry', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_checkpoint_9000'),
-    ('$\\beta$-VAE (Baseline)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_noRnn_checkpoint_9000')
+    ('SPS (Ours)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new0_checkpoint_9000'),
+    ('Ours w/o Symmetry', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new1_checkpoint_9000'),
+    ('$\\beta$-VAE (Baseline)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new2_checkpoint_9000'),
+    ('$\\beta$-VAE (Baseline)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new3_checkpoint_9000')
 ]
 
 TASKS = [
@@ -54,19 +55,19 @@ TASKS = [
         dict(
             linestyle='none', 
             marker='.', 
-            markersize=5, 
+            markersize=3, 
         ), 
     ), 
-    # (
-    #     'decode', 'Synthesis', 
-    #     ('z_pitch', '$z_\\mathrm{pitch}$'), 
-    #     ('yin_pitch', 'Detected Pitch'),
-    #     dict(
-    #         linestyle='none', 
-    #         marker='.', 
-    #         markersize=1, 
-    #     ), 
-    # ), 
+    (
+        'decode', 'Synthesis', 
+        ('z_pitch', '$z_\\mathrm{pitch}$'), 
+        ('yin_pitch', 'Detected Pitch'),
+        dict(
+            linestyle='none', 
+            marker='.', 
+            markersize=3, 
+        ), 
+    ), 
 ]
 
 DATA_SETS = [

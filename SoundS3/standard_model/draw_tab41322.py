@@ -40,7 +40,7 @@ WAV_PATH_PRED_RECON = IMG_ROOT + "/pred_recon.wav"
 WAV_PATH_TRANSFORMED_SELF_RECON = IMG_ROOT + "/transformed_self_recon.wav"
 WAV_PATH_TRANSFORMED_PRED_RECON = IMG_ROOT + "/transformed_pred_recon.wav"
 DIY_WAVE_NAME = IMG_ROOT + "/diy_wave.wav"
-WAV_PATH = '../../../data/test'
+WAV_PATH = '../../data/single_note_GU'
 
 n_fft = 2046
 win_length = None
@@ -69,9 +69,13 @@ def do_the_thing(pit_range=[48, 73], norm=2):
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
     # Load the model
+    CONFIG['seq_len'] = 15
+    CONFIG['rnn_num_layers'] = 2
+    CONFIG['rnn_hidden_size'] = 512
+    CONFIG['GRU'] = True
     model = Conv2dGruConv2d(CONFIG).to(device)
     model.eval()
-    model_path = 'checkpoint.pt'
+    model_path = './checkpoints/results/nottingham_eighth_5000_easy_gru_rnn3_checkpoint_15000.pt'
     model.load_state_dict(torch.load(model_path, map_location=device))
     print(f"Model loaded: {model_path}")
 
@@ -79,6 +83,8 @@ def do_the_thing(pit_range=[48, 73], norm=2):
     inst_pits = {}
     insts = []
     for file in os.listdir(WAV_PATH):
+        if 'index' in file:
+            continue
         inst = file.split('-')[0]
         pit = int(file.split('-')[1][: -4])
 

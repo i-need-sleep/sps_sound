@@ -35,6 +35,10 @@ CONFIG['rnn_num_layers'] = 2
 CONFIG['rnn_hidden_size'] = 512
 CONFIG['GRU'] = True
 
+if 'beta' in CHECKPOINT_NAME:
+    print('BETA')
+    CONFIG['beta_vae'] = True
+
 import torch
 from tqdm import tqdm
 
