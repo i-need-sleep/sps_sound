@@ -30,12 +30,18 @@ from standard_model.normal_rnn import Conv2dGruConv2d
 from standard_model.train_config import CONFIG
 from standard_model.trainer_symmetry import LOG_K
 
-CONFIG['seq_len'] = 15
-CONFIG['rnn_num_layers'] = 2
-CONFIG['rnn_hidden_size'] = 512
-CONFIG['GRU'] = True
+if not 'scale' in CHECKPOINT_NAME:
+    CONFIG['seq_len'] = 15
+    CONFIG['rnn_num_layers'] = 2
+    CONFIG['rnn_hidden_size'] = 512
+    CONFIG['GRU'] = True
+else:
+    CONFIG['seq_len'] = 15
+    CONFIG['rnn_num_layers'] = 1
+    CONFIG['rnn_hidden_size'] = 256
+    CONFIG['GRU'] = False
 
-if 'beta' in CHECKPOINT_NAME:
+if 'beta' in CHECKPOINT_NAME or '1dim' in CHECKPOINT_NAME:
     print('BETA')
     CONFIG['beta_vae'] = True
 

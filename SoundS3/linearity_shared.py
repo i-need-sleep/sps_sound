@@ -40,10 +40,10 @@ EXP_GROUPS = [
     # ('Ours w/o Symmetry', 'vae_symm_0_repeat'), 
     # ('$\\beta$-VAE (Baseline)', 'beta_vae'), 
     # ('SPICE (Baseline)', SPICE), 
-    ('SPS (Ours)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new0_checkpoint_9000'),
-    ('Ours w/o Symmetry', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new1_checkpoint_9000'),
-    ('$\\beta$-VAE (Baseline)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new2_checkpoint_9000'),
-    ('$\\beta$-VAE (Baseline)', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_beta_new3_checkpoint_9000')
+    ('Nottingham: SPS 1dim', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_1dim_checkpoint_9000'),
+    ('Nottingham: SPS 1dim, noSymm', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_1dim_checkpoint_9000'),
+    ('Scale: SPS 1dim', 'scale_1dim_checkpoint_9000'),
+    ('Scale: SPS 1dim, noSymm', 'scale_no_Symm_1dim_checkpoint_9000')
 ]
 
 TASKS = [
