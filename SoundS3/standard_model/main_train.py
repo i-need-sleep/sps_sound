@@ -44,13 +44,8 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    CONFIG['name'] = args.name
-    CONFIG['model_path'] =  f'{args.name}_Conv2dNOTGruConv2d_symmetry.pt'
     CONFIG['seq_len'] = args.seq_len
     CONFIG['train_data_path'] = f'../../data/{args.data_folder}'
-    CONFIG['train_result_path'] = f'./dumpster/{args.name}TrainingResults/'
-    CONFIG['train_record_path'] = f'./dumpster/{args.name}Train_record.txt'
-    CONFIG['eval_record_path'] = f'./dumpster/{args.name}Eval_record.txt'
     CONFIG['no_rnn'] = args.no_rnn
     CONFIG['no_symm'] = args.no_symm
     CONFIG['no_repetition'] = args.no_rep
@@ -69,7 +64,12 @@ if __name__ == '__main__':
 
     # Loop for multiple runs
     for i in range(args.n_runs):
-        CONFIG['name'] = args.name + '_' + str(i)
+        name = args.name + '_' + str(i)
+        CONFIG['name'] = name
+        CONFIG['model_path'] =  f'{name}_Conv2dNOTGruConv2d_symmetry.pt'
+        CONFIG['train_result_path'] = f'./new_dumpster/{name}TrainingResults/'
+        CONFIG['train_record_path'] = f'./new_dumpster/{name}Train_record.txt'
+        CONFIG['eval_record_path'] = f'./new_dumpster/{name}Eval_record.txt'
 
         trainer = BallTrainer(CONFIG)
         if is_need_train(CONFIG):
