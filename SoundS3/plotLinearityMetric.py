@@ -18,6 +18,13 @@ import rc_params
 rc_params.init()
 from linearity_shared import *
 
+plt.rcParams.update({
+    'text.usetex': True, 
+    'font.family': 'serif', 
+    'font.serif': ['Computer Modern'], 
+    'font.size': 14, 
+})
+
 FIGSIZE = (8, 6)
 EXP_LOOKUP = dict([(y, x) for x, y in EXP_GROUPS])
 
@@ -94,19 +101,21 @@ def plot(data):
     for ax_i, (task_path, (task_display, data_st)) in enumerate(
         data_s.items()
     ):
+        ctr = -1
         for exp_path, (exp_display, data_tse) in data_st.items():
-            if exp_path == 'vae_symm_4_repeat':
+            ctr += 1
+            if exp_path == 'vae_symm_4_repeat' or ctr == 0:
                 exp_kw = dict(
                     facecolor='k', 
                     edgecolor='k', 
                 )
-            elif exp_path == 'vae_symm_0_repeat':
+            elif exp_path == 'vae_symm_0_repeat' or ctr == 1:
                 exp_kw = dict(
                     facecolor='w', 
                     edgecolor='k', 
                     hatch='+++', 
                 )
-            elif exp_path == 'beta_vae':
+            elif exp_path == 'beta_vae' or ctr == 2:
                 exp_kw = dict(
                     facecolor='w', 
                     edgecolor='k', 
@@ -155,7 +164,7 @@ def plot(data):
     axes[0].legend(
         ncol = 3, 
         # loc='center left', bbox_to_anchor=(1, 0), 
-        loc='upper center', bbox_to_anchor=(.5, 0), 
+        loc='lower center', bbox_to_anchor=(.5, 1.12), 
     )
 
     fig.tight_layout()
@@ -167,10 +176,11 @@ def plot(data):
     #     hspace=.6,
     # )
     plt.subplots_adjust(
-        hspace=.6,
-        top=.95, 
+        # hspace=.6,
+        top=.87, 
         bottom=.222,
     )
+    plt.savefig(f'./figs/nottingham_r2.pdf')
     plt.show()
 
 main()

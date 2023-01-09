@@ -16,3 +16,5 @@ fluidsynth-2.2.5-win10-x64
 *.abc
 *.err
 *.out
+SoundS3/yin.py
+debug.py

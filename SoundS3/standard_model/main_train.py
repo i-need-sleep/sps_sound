@@ -16,6 +16,9 @@ import torch
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
 
+    # For the 1-dim setup with symm constraint, look at the lines along beta_vae
+    # Just use beta_vae
+
     parser.add_argument('--name', default='unnamed')
     parser.add_argument('--seq_len', type=int, default=15)
     parser.add_argument('--data_folder', default='cleanTrain')

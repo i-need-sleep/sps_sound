@@ -1,11 +1,5 @@
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_4_repeat           train_set_vae_symm_4_repeat
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_4_repeat            test_set_vae_symm_4_repeat
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_4_repeat_timbre10d train_set_vae_symm_4_repeat_timbre10d
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_4_repeat_timbre10d  test_set_vae_symm_4_repeat_timbre10d
-call py decodeLatticeZ.py single_note    ./afterClean/ae_symm_4_repeat            train_set_ae_symm_4_repeat           
-call py decodeLatticeZ.py single_note_GU ./afterClean/ae_symm_4_repeat             test_set_ae_symm_4_repeat           
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_0_repeat           train_set_vae_symm_0_repeat
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_0_repeat            test_set_vae_symm_0_repeat
-call py decodeLatticeZ.py single_note    ./afterClean/vae_symm_4_no_repeat        train_set_vae_symm_4_no_repeat
-call py decodeLatticeZ.py single_note_GU ./afterClean/vae_symm_4_no_repeat         test_set_vae_symm_4_no_repeat
+call python decodeLatticeZ.py single_note_GU    1dim/nottingham_eighth_accOnly_5000_2_512_easier_gru_1dim_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_1dim_checkpoint_9000
+call python decodeLatticeZ.py single_note_GU    1dim/nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_1dim_checkpoint_9000.pt          nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_1dim_checkpoint_9000
+call python decodeLatticeZ.py single_note_GU    1dim/scale_1dim_checkpoint_9000.pt          scale_1dim_checkpoint_9000
+call python decodeLatticeZ.py single_note_GU    1dim/scale_no_Symm_1dim_checkpoint_9000.pt          scale_no_Symm_1dim_checkpoint_9000
 pause
