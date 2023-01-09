@@ -180,6 +180,9 @@ class BallTrainer:
             T_sample_points = self.gen_sample_points(self.base_len, data.size(1), i, self.enable_sample)
 
             z_gt, mu, logvar = self.model.batch_seq_encode_to_z(data)
+            print('gt',z_gt.shape)
+            print(mu.shape)
+            exit()
             z_gt_p = z_gt[..., 0:1]
             z_gt_c = z_gt[..., 1:]
             z_gt_cr = repeat_one_dim(z_gt_c, sample_range=10)
