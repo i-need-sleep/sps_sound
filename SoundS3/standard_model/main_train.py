@@ -39,6 +39,8 @@ if __name__ == '__main__':
     parser.add_argument('--lr', type=float, default=1e-3)
     parser.add_argument('--z_rnn_loss_scalar', type=float, default=2)
 
+    parser.add_argument('--n_runs', type=int, default=1)
+
     args = parser.parse_args()
 
     CONFIG['name'] = args.name
@@ -63,6 +65,10 @@ if __name__ == '__main__':
 
     # torch.manual_seed(21)
 
-    trainer = BallTrainer(CONFIG)
-    if is_need_train(CONFIG):
-        trainer.train()
+    # Loop for multiple runs
+    for i in range(args.n_runs):
+        CONFIG['name'] = args.name + '_' + str(i)
+
+        trainer = BallTrainer(CONFIG)
+        if is_need_train(CONFIG):
+            trainer.train()
