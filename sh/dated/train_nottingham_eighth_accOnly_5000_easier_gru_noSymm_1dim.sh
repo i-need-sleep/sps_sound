@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=nottingham_eighth_accOnly_5000_easier_gru_noSymm_noRnn       # 任务名
+#SBATCH --job-name=nottingham_eighth_accOnly_5000_easier_gru_noSymm_1dim       # 任务名
 #SBATCH --nodes=1                   # 这里不用动 多节点脚本请查官方文档
 #SBATCH --ntasks=1                  # 这里不用动 多任务脚本请查官方文档
 #SBATCH --cpus-per-task=4           # 要几块CPU (一般4块就够用了)
@@ -21,7 +21,7 @@ echo "START"               # 输出起始信息
 source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
-    --name nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_noRnn \
+    --name nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_1dim \
     --seq_len 64 \
     --data_folder nottingham_eights_pool_accOnly_5000_easier \
     --additional_symm_steps 0 \
@@ -30,5 +30,5 @@ CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
     --rnn_hidden_size 512 \
     --gru \
     --no_symm \
-    --no_rnn
+    --beta_vae
 echo "FINISH"                       # 输出起始信息

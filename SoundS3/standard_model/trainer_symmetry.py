@@ -88,7 +88,7 @@ def symm_rotate_first3dim(z, rotator):
 class BallTrainer:
     def __init__(self, config, is_train=True):
         self.model = Conv2dGruConv2d(config).to(DEVICE)
-        self.dataset = Dataset(config['train_data_path'], config)
+        self.dataset = Dataset(config['train_data_path'], config, cache_all=config['seq_len']==15)
         self.train_data_loader = PersistentLoader(
             self.dataset, BATCH_SIZE, 
         )
