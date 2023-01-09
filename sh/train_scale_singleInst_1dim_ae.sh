@@ -25,5 +25,6 @@ CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
     --seq_len 15 \
     --data_folder cleanTrain_accordion \
     --beta_vae \
+    --ae \
     --n_runs 10
 echo "FINISH"                       # 输出起始信息

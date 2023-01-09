@@ -34,6 +34,7 @@ if __name__ == '__main__':
     parser.add_argument('--rnn_hidden_size', type=int, default=256)
     parser.add_argument('--gru', action='store_true')
     parser.add_argument('--beta_vae', action='store_true')
+    parser.add_argument('--ae', action='store_true')
 
     # Hyper params
     parser.add_argument('--lr', type=float, default=1e-3)
@@ -62,6 +63,7 @@ if __name__ == '__main__':
     CONFIG['learning_rate'] = args.lr
     CONFIG['z_rnn_loss_scalar'] = args.z_rnn_loss_scalar
     CONFIG['beta_vae'] = args.beta_vae
+    CONFIG['ae'] = args.ae
 
     # torch.manual_seed(21)
 

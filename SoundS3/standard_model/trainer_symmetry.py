@@ -180,9 +180,8 @@ class BallTrainer:
             T_sample_points = self.gen_sample_points(self.base_len, data.size(1), i, self.enable_sample)
 
             z_gt, mu, logvar = self.model.batch_seq_encode_to_z(data)
-            print('gt',z_gt.shape)
-            print(mu.shape)
-            exit()
+            if self.config['ae']:
+                z_gt = mu
             z_gt_p = z_gt[..., 0:1]
             z_gt_c = z_gt[..., 1:]
             z_gt_cr = repeat_one_dim(z_gt_c, sample_range=10)
@@ -207,6 +206,8 @@ class BallTrainer:
             z0_rnn = z0_rnn_extended[:, :z_gt.shape[1]-1, :]
             
             vae_loss = self.calc_vae_loss(data, z_combine, mu, logvar, is_log * i)
+            if self.config['ae']:
+                vae_loss = torch.zeros_like(vae_loss[0]), torch.zeros_like(vae_loss[1])
             rnn_loss = self.calc_rnn_loss(data[:, 1:, :, :, :], z_gt_p, z0_rnn, is_log * i, z_gt_cr[:, :-1, :])
             
             # Ablate the RNN loss
