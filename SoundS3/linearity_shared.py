@@ -1,6 +1,6 @@
 from os import path
 
-# USING_METRIC = 'R2'
+USING_METRIC = 'R2'
 # METRIC_DISPLAY = dict(
 #     ylabel='$R^2$', 
 #     rotation=0,
@@ -12,7 +12,7 @@ from os import path
 #     ylabel='Std of Diff', 
 # )
 
-USING_METRIC = 'linearProjectionMSE'
+# USING_METRIC = 'linearProjectionMSE'
 # METRIC_DISPLAY = dict(
 #     ylabel='Linear Projection MSE', 
 # )
@@ -39,29 +39,38 @@ EXP_GROUPS = [
     # ('SPS (Ours)', 'vae_symm_4_repeat'), 
     # ('Ours w/o Symmetry', 'vae_symm_0_repeat'), 
     # ('$\\beta$-VAE (Baseline)', 'beta_vae'), 
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_0'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_1'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_2'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_3'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_4'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_5'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_6'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_7'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_8'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_1_9'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_0'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_1'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_2'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_3'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_4'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_5'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_6'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_7'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_8'),
-    # ('SPS-VAE', 'scale_singleInst_1dim_ae_9'),
-    # ('SPS-AE', 'scale_singleInst_1dim_ae_0'),
-    # ('$\\beta$-VAE (Baseline)', 'scale_noSymm_0'),
-    ('SPICE (Baseline)', SPICE), 
+    ('SPS-VAE', 'scale_singleInst_1dim_1_0'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_1'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_2'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_3'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_4'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_5'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_6'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_7'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_8'),
+    ('SPS-VAE', 'scale_singleInst_1dim_1_9'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_0'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_1'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_2'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_3'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_4'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_5'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_6'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_7'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_8'),
+    ('SPS-AE', 'scale_singleInst_1dim_ae_9'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_0'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_1'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_2'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_3'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_4'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_5'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_6'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_7'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_8'),
+    ('betaVAE', 'scale_singleInst_1dim_betavae_9'),
+    # ('$\\beta$-VAE (Baseline)', 'scale_no_Symm_1dim'),
+    # ('SPICE (Baseline)', SPICE), 
 ]
 
 TASKS = [

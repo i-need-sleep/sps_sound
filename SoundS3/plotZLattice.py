@@ -83,12 +83,12 @@ def main():
                 ax.set_yticklabels(('C4', 'C6'))
                 ax.set_ylim((55, 89))
 
-                if col_i == 0:
-                    ax.set_xlim((-3, 8))
-                if col_i == 1:
-                    ax.set_xlim((-11, 6))
-                if col_i == 2:
-                    ax.set_xlim((-1, 2))
+                # if col_i == 0:
+                #     ax.set_xlim((-3, 8))
+                # if col_i == 1:
+                #     ax.set_xlim((-11, 6))
+                # if col_i == 2:
+                #     ax.set_xlim((-1, 2))
             else:
                 ax.set_xticks((60, 84))
                 ax.set_xticklabels(('C4', 'C6'))
@@ -117,7 +117,7 @@ def main():
     #     handletextpad=0.5,
     #     columnspacing=.8,
     # )
-    plt.savefig(f'./figs/cool_fig.pdf')
+    plt.savefig(f'./figs/cool_fig.png')
     plt.show()
 
 if __name__ == '__main__':

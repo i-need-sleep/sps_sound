@@ -1,6 +1,6 @@
 import numpy as np
 
-name_root = 'decode_test_set_scale_singleInst_1dim_ae'
+name_root = 'decode_test_set_scale_singleInst_1dim_betavae'
 metric = 'linearProjectionMSE'
 nums = []
 
