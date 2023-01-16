@@ -45,6 +45,18 @@ if 'beta' in CHECKPOINT_NAME or '1dim' in CHECKPOINT_NAME:
     print('BETA')
     CONFIG['beta_vae'] = True
 
+if 'scale' in CHECKPOINT_NAME:
+    CONFIG['seq_len'] = 15
+    CONFIG['rnn_num_layers'] = 1
+    CONFIG['rnn_hidden_size'] = 256
+    CONFIG['GRU'] = False
+
+if '_ae_' in CHECKPOINT_NAME:
+    print('ae')
+    CONFIG['ae'] = True
+
+single_inst = True
+
 import torch
 from tqdm import tqdm
 
@@ -77,6 +89,9 @@ def main():
 
         if instrument_name not in instruments:
             instruments[instrument_name] = ([], [])
+
+        if single_inst and instrument_name != 'Accordion':
+            continue
         pitches, z_pitches = instruments[instrument_name]
         pitches.append(pitch)
         z_pitches.append(z_pitch.detach())

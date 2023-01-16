@@ -11,7 +11,7 @@ CONFIG = {
     'z_range': (0.5, 2),
     # 'eval_data_path': '../Ball3DImg/32_32_0.2_20_3_init_points_EvalSet/',
     # 'model_path': 'Conv2dGruConv2d_symmetry.pt',
-    'kld_loss_scalar': 0.1,
+    'kld_loss_scalar': 0.3,
     'enable_SRS': True,
     # 'z_rnn_loss_scalar': 2,
     'z_symm_loss_scalar': 4,

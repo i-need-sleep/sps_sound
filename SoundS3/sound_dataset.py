@@ -185,7 +185,7 @@ def debugIfft(y, mag, filename):
     y_hat *= y.norm() / y_hat.norm()
     soundfile.write(filename, y_hat, SR)
 
-def PersistentLoader(dataset, batch_size):
+def PersistentLoader(dataset, batch_size, set_break=False):
     while True:
         loader = torch.utils.data.DataLoader(
             dataset, batch_size, shuffle=True, 
@@ -193,8 +193,12 @@ def PersistentLoader(dataset, batch_size):
         )
         for batch in loader:
             if batch.shape[0] != batch_size:
+                if set_break:
+                    yield 'break'
                 break
             yield batch
+        if set_break:
+            yield 'break'
 
 if __name__ == "__main__":
     dataset = Dataset('../makeSoundDatasets/datasets_out/nottingham_eights_pool_5000_easy')

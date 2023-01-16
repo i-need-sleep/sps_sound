@@ -40,6 +40,7 @@ def repeat_one_dim(z, repeat_times=None, sample_range=None):
 class Conv2dGruConv2d(nn.Module):
     def __init__(self, config):
         super(Conv2dGruConv2d, self).__init__()
+        self.config = config
         self.rnn_hidden_size = config['rnn_hidden_size']
         self.rnn_num_layers = config['rnn_num_layers']
         self.latent_code_num = config['latent_code_num']
@@ -110,7 +111,7 @@ class Conv2dGruConv2d(nn.Module):
 
     def load_tensor(self, path):
         """从文件读取 tensor 对象"""
-        return torch.load(path)
+        return torch.load(path, map_location=DEVICE)
 
     def reparameterize(self, mu, logvar):
         eps = Variable(torch.randn(mu.size(0), mu.size(1))).to(DEVICE)

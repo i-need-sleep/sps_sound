@@ -1,18 +1,18 @@
 from os import path
 
-USING_METRIC = 'R2'
-METRIC_DISPLAY = dict(
-    ylabel='$R^2$', 
-    rotation=0,
-    labelpad=15,
-)
+# USING_METRIC = 'R2'
+# METRIC_DISPLAY = dict(
+#     ylabel='$R^2$', 
+#     rotation=0,
+#     labelpad=15,
+# )
 
 # USING_METRIC = 'diffStd'
 # METRIC_DISPLAY = dict(
 #     ylabel='Std of Diff', 
 # )
 
-# USING_METRIC = 'linearProjectionMSE'
+USING_METRIC = 'linearProjectionMSE'
 # METRIC_DISPLAY = dict(
 #     ylabel='Linear Projection MSE', 
 # )
@@ -39,11 +39,29 @@ EXP_GROUPS = [
     # ('SPS (Ours)', 'vae_symm_4_repeat'), 
     # ('Ours w/o Symmetry', 'vae_symm_0_repeat'), 
     # ('$\\beta$-VAE (Baseline)', 'beta_vae'), 
-    # ('SPICE (Baseline)', SPICE), 
-    ('Nottingham: SPS 1dim', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_1dim_checkpoint_9000'),
-    ('Nottingham: SPS 1dim, noSymm', 'nottingham_eighth_accOnly_5000_2_512_easier_gru_noSymm_1dim_checkpoint_9000'),
-    ('Scale: SPS 1dim', 'scale_1dim_checkpoint_9000'),
-    ('Scale: SPS 1dim, noSymm', 'scale_no_Symm_1dim_checkpoint_9000')
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_0'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_1'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_2'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_3'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_4'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_5'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_6'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_7'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_8'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_1_9'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_0'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_1'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_2'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_3'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_4'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_5'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_6'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_7'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_8'),
+    # ('SPS-VAE', 'scale_singleInst_1dim_ae_9'),
+    # ('SPS-AE', 'scale_singleInst_1dim_ae_0'),
+    # ('$\\beta$-VAE (Baseline)', 'scale_noSymm_0'),
+    ('SPICE (Baseline)', SPICE), 
 ]
 
 TASKS = [
@@ -80,8 +98,8 @@ RESULT_PATH = './linearityEvalResults/%s_%s_%s/'
 SPICE_PATH = './SPICE_results/result_short.txt'
 
 COMMON_INSTRUMENTS = ['Accordion',
-    'Piano', 'Accordion', 'Clarinet', 'Electric Piano', 
-    'Flute', 'Guitar', 'Saxophone', 'Trumpet', 'Violin', 
+    # 'Piano', 'Accordion', 'Clarinet', 'Electric Piano', 
+    # 'Flute', 'Guitar', 'Saxophone', 'Trumpet', 'Violin', 
     # 'Church Bells', 
 ]
 
