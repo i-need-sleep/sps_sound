@@ -90,8 +90,9 @@ class BallTrainer:
         self.model = Conv2dGruConv2d(config).to(DEVICE)
         self.dataset = Dataset(config['train_data_path'], config, cache_all=config['seq_len']==15)
         self.train_data_loader = PersistentLoader(
-            self.dataset, BATCH_SIZE, 
+            self.dataset, BATCH_SIZE, set_break = config['eval_recons']
         )
+        print(len(self.dataset))
         self.mse_loss = nn.MSELoss(reduction='sum').to(DEVICE)
         self.model.to(DEVICE)
         self.model_path = config['model_path']
@@ -126,6 +127,11 @@ class BallTrainer:
             hop_length=hop_length,
         )
         self.config = config
+        
+        # Eval recons
+        self.eval_recons_self = []
+        self.eval_recons_pred = []
+        self.eval_recons_prior = []
 
     def save_result_imgs(self, img_list, name, seq_len):
         result = torch.cat([img[0] for img in img_list], dim=0)
@@ -158,20 +164,36 @@ class BallTrainer:
         return self.scheduler_base_num ** curr_iter
 
     def train(self):
-        create_path_if_not_exist(self.train_result_path)
-        self.model.train()
-        self.resume()
-        train_loss_counter = LossCounter(['loss_ED', 'loss_ERnnD', 'loss_Rnn',
-                                          'loss_TRnnTrD_x1', 'loss_RRnnRrD_x1', 'loss_ZRnnZrD_x1',
-                                          'loss_TRnnTr_z1', 'loss_RRnnRr_z1', 'loss_ZRnnZr_z1',
-                                          'KLD'])
-        iter_num = train_loss_counter.load_iter_num(self.train_record_path)
-        curr_iter = iter_num
-        optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
-        scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: self.scheduler_func(curr_iter))
+        if not self.config['eval_recons']:
+            create_path_if_not_exist(self.train_result_path)
+            self.model.train()
+            self.resume()
+            train_loss_counter = LossCounter(['loss_ED', 'loss_ERnnD', 'loss_Rnn',
+                                            'loss_TRnnTrD_x1', 'loss_RRnnRrD_x1', 'loss_ZRnnZrD_x1',
+                                            'loss_TRnnTr_z1', 'loss_RRnnRr_z1', 'loss_ZRnnZr_z1',
+                                            'KLD'])
+            iter_num = train_loss_counter.load_iter_num(self.train_record_path)
+            curr_iter = iter_num
+            optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
+            scheduler = torch.optim.lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda epoch: self.scheduler_func(curr_iter))
+        else:
+            self.model.eval()
+            self.model.load_state_dict(self.model.load_tensor(self.model_path))
+            train_loss_counter = LossCounter(['loss_ED', 'loss_ERnnD', 'loss_Rnn',
+                                            'loss_TRnnTrD_x1', 'loss_RRnnRrD_x1', 'loss_ZRnnZrD_x1',
+                                            'loss_TRnnTr_z1', 'loss_RRnnRr_z1', 'loss_ZRnnZr_z1',
+                                            'KLD'])
+            iter_num = 0
+            curr_iter = 0
+            optimizer = optim.Adam(self.model.parameters(), lr=self.learning_rate)
+
         for i in range(iter_num, self.max_iter_num):
             curr_iter = iter_num
-            data = next(self.train_data_loader).to(DEVICE) # change me 
+            try:
+                data = next(self.train_data_loader).to(DEVICE) # change me 
+            # on epoch end
+            except:
+                return self.eval_recons_self, self.eval_recons_pred, self.eval_recons_prior
             print(f'{i}')
             data = norm_log2(data, k=LOG_K)
             is_log = (i % self.log_interval == 0 and i != 0)
@@ -205,9 +227,12 @@ class BallTrainer:
             # extended with out-of-range predictions for long imagination
             z0_rnn = z0_rnn_extended[:, :z_gt.shape[1]-1, :]
             
-            vae_loss = self.calc_vae_loss(data, z_combine, mu, logvar, is_log * i)
+            # Recons, KLD
+            vae_loss = self.calc_vae_loss(data, z_combine, mu, logvar, is_log * i) 
             if self.config['ae']:
                 vae_loss = torch.zeros_like(vae_loss[0]), torch.zeros_like(vae_loss[1])
+
+            # Pred_recon, rnn_prior
             rnn_loss = self.calc_rnn_loss(data[:, 1:, :, :, :], z_gt_p, z0_rnn, is_log * i, z_gt_cr[:, :-1, :])
             
             # Ablate the RNN loss
@@ -226,15 +251,20 @@ class BallTrainer:
                 T_loss = (torch.zeros(2))
 
             loss = self.loss_func(vae_loss, rnn_loss, T_loss, R_loss, Z_loss, train_loss_counter)
-            loss.backward()
-            optimizer.step()
-            scheduler.step()
+            if not self.config['eval_recons']:
+                loss.backward()
+                optimizer.step()
+                scheduler.step()
+            else:
+                self.eval_recons_self.append(vae_loss[0])
+                self.eval_recons_pred.append(rnn_loss[0])
+                self.eval_recons_prior.append(rnn_loss[1])
 
-            if is_log:
+            if is_log and not self.config['eval_recons']:
                 self.model.save_tensor(self.model.state_dict(), self.model_path)
                 print(train_loss_counter.make_record(i))
                 train_loss_counter.record_and_clear(self.train_record_path, i)
-            if i % self.checkpoint_interval == 0 and i != 0:
+            if i % self.checkpoint_interval == 0 and i != 0 and not self.config['eval_recons']:
                 self.model.save_tensor(self.model.state_dict(), f'./checkpoints/{self.config["name"]}_checkpoint_{i}.pt')
 
     def save_audio(self, spec, name, sample_rate=16000):
@@ -257,9 +287,14 @@ class BallTrainer:
         else:
             z_next = torch.cat((z0_rnn, z_gt_cr), -1)
         recon_next = self.model.batch_seq_decode_from_z(z_next)
-        xloss_ERnnD = nn.BCELoss(reduction='sum')(recon_next, x1)
-        zloss_Rnn = self.z_rnn_loss_scalar * self.mse_loss(z0_rnn, z_gt[:, 1:, :])
-        if log_num != 0:
+        if self.config['eval_recons']:
+            xloss_ERnnD = nn.BCELoss(reduction='mean')(recon_next, x1)
+            zloss_Rnn = self.mse_loss(z0_rnn, z_gt[:, 1:, :])
+        else:
+            print('predrecon', recon_next.shape)
+            xloss_ERnnD = nn.BCELoss(reduction='sum')(recon_next, x1)
+            zloss_Rnn = self.z_rnn_loss_scalar * self.mse_loss(z0_rnn, z_gt[:, 1:, :])
+        if log_num != 0 and not self.config['eval_recons']:
             save_spectrogram(tensor2spec(recon_next[0])[0], f'{self.train_result_path}{log_num}-recon_pred.png')
             # self.save_audio(tensor2spec(recon_next[0]), f'{self.train_result_path}{log_num}-recon_pred.wav')
 
@@ -267,9 +302,13 @@ class BallTrainer:
 
     def calc_vae_loss(self, data, z_gt, mu, logvar, log_num=0):
         recon = self.model.batch_seq_decode_from_z(z_gt)
-        recon_loss = nn.BCELoss(reduction='sum')(recon, data)
+        if self.config['eval_recons']:
+            recon_loss = nn.BCELoss(reduction='mean')(recon, data)
+        else:
+            print('recon', recon.shape)
+            recon_loss = nn.BCELoss(reduction='sum')(recon, data)
         KLD = -0.5 * torch.sum(1 + logvar - mu.pow(2) - torch.exp(logvar)) * self.kld_loss_scalar
-        if log_num != 0:
+        if log_num != 0 and not self.config['eval_recons']:
             save_spectrogram(tensor2spec(data[0])[0], f'{self.train_result_path}{log_num}-gt.png')
             # self.save_audio(tensor2spec(data[0]), f'{self.train_result_path}{log_num}-gt.wav')
             save_spectrogram(tensor2spec(recon[0])[0], f'{self.train_result_path}{log_num}-recon.png')

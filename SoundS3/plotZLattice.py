@@ -7,7 +7,7 @@ from matplotlib.figure import SubFigure
 from numpy import iterable
 from tqdm import tqdm
 
-FIGSIZE = (8, 4)
+FIGSIZE = (9, 5)
 # WIDTH_RATIO = (.07, .9)
 
 import rc_params
@@ -45,7 +45,7 @@ def main():
     ) in enumerate(TASKS):
         n_cols = len(EXP_GROUPS)
         if task_path_name == 'decode' and SPICE in [x[1] for x in EXP_GROUPS]:
-            # n_cols -= 1 # for SPICE
+            n_cols -= 1 # for SPICE
             axeses[task_i][n_cols].axis('off')
         for col_i in tqdm(range(n_cols), task_display):
             exp_group = EXP_GROUPS[col_i]
@@ -82,13 +82,20 @@ def main():
                 ax.set_yticks((60, 84))
                 ax.set_yticklabels(('C4', 'C6'))
                 ax.set_ylim((55, 89))
-                ax.set_xlim((-1.1, 1.1))
+
+                if col_i == 0:
+                    ax.set_xlim((-3, 8))
+                if col_i == 1:
+                    ax.set_xlim((-11, 6))
+                if col_i == 2:
+                    ax.set_xlim((-1, 2))
             else:
                 ax.set_xticks((60, 84))
                 ax.set_xticklabels(('C4', 'C6'))
-                ax.set_yticks((-1, 0, 1))
-                ax.set_yticklabels(('-1', '0', '1'))
-                ax.set_ylim((-1.3, 1.3))
+                ax.set_xlim((58, 86))
+                # ax.set_yticks((-1, 0, 1))
+                # ax.set_yticklabels(('-1', '0', '1'))
+                # ax.set_ylim((-1.3, 1.3))
     def prettify(k):
         return k.replace('Electric ', 'E. ')
     K, V = [], []
@@ -99,17 +106,17 @@ def main():
         K.append(prettify(k))
         V.append(plotted[k][0])
     
-    axeses[0][-1].legend(
-        V, K, markerscale=2, 
-        loc='upper left', 
-        bbox_to_anchor=(1.02, 1.05), 
-        # fontsize=10, 
-        labelspacing=1, 
-        ncol=2,
-        handlelength=0.3,
-        handletextpad=0.5,
-        columnspacing=.8,
-    )
+    # axeses[0][-1].legend(
+    #     V, K, markerscale=2, 
+    #     loc='upper left', 
+    #     bbox_to_anchor=(1.02, 1.05), 
+    #     # fontsize=10, 
+    #     labelspacing=1, 
+    #     ncol=2,
+    #     handlelength=0.3,
+    #     handletextpad=0.5,
+    #     columnspacing=.8,
+    # )
     plt.savefig(f'./figs/cool_fig.pdf')
     plt.show()
 

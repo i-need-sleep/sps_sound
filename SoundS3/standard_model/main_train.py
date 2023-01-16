@@ -42,6 +42,9 @@ if __name__ == '__main__':
 
     parser.add_argument('--n_runs', type=int, default=1)
 
+    # Eval
+    parser.add_argument('--eval_recons', action='store_true')
+
     args = parser.parse_args()
 
     CONFIG['seq_len'] = args.seq_len
@@ -59,6 +62,9 @@ if __name__ == '__main__':
     CONFIG['z_rnn_loss_scalar'] = args.z_rnn_loss_scalar
     CONFIG['beta_vae'] = args.beta_vae
     CONFIG['ae'] = args.ae
+    CONFIG['eval_recons'] = args.eval_recons
+    print(CONFIG['eval_recons'])
+
 
     # torch.manual_seed(21)
 
@@ -72,5 +78,8 @@ if __name__ == '__main__':
         CONFIG['eval_record_path'] = f'./new_dumpster/{name}Eval_record.txt'
 
         trainer = BallTrainer(CONFIG)
-        if is_need_train(CONFIG):
-            trainer.train()
+        if args.eval_recons or is_need_train(CONFIG):
+            self_recon, pred_recon, rnn_prior = trainer.train()
+            for m in [self_recon, pred_recon, rnn_prior]:
+                m = torch.tensor(m)
+                print(torch.mean(m))

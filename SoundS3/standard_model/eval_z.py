@@ -46,7 +46,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--name', default='unnamed')
+parser.add_argument('--name', default='jan7/scale_singleInst_1dim_1_0_Conv2dNOTGruConv2d_symmetry')
 parser.add_argument('--seq_len', type=int, default=64)
 
 # RNN params
