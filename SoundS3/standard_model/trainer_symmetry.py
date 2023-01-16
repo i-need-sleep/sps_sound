@@ -189,12 +189,11 @@ class BallTrainer:
 
         for i in range(iter_num, self.max_iter_num):
             curr_iter = iter_num
-            try:
-                data = next(self.train_data_loader).to(DEVICE) # change me 
+            data = next(self.train_data_loader)
             # on epoch end
-            except:
+            if data == 'break':
                 return self.eval_recons_self, self.eval_recons_pred, self.eval_recons_prior
-            print(f'{i}')
+            data = data.to(DEVICE) # change me 
             data = norm_log2(data, k=LOG_K)
             is_log = (i % self.log_interval == 0 and i != 0)
             optimizer.zero_grad()
@@ -229,7 +228,7 @@ class BallTrainer:
             
             # Recons, KLD
             vae_loss = self.calc_vae_loss(data, z_combine, mu, logvar, is_log * i) 
-            if self.config['ae']:
+            if self.config['ae'] and not self.config['eval_recons']:
                 vae_loss = torch.zeros_like(vae_loss[0]), torch.zeros_like(vae_loss[1])
 
             # Pred_recon, rnn_prior
@@ -256,9 +255,9 @@ class BallTrainer:
                 optimizer.step()
                 scheduler.step()
             else:
-                self.eval_recons_self.append(vae_loss[0])
-                self.eval_recons_pred.append(rnn_loss[0])
-                self.eval_recons_prior.append(rnn_loss[1])
+                self.eval_recons_self.append(vae_loss[0].detach().item())
+                self.eval_recons_pred.append(rnn_loss[0].detach().item())
+                self.eval_recons_prior.append(rnn_loss[1].detach().item())
 
             if is_log and not self.config['eval_recons']:
                 self.model.save_tensor(self.model.state_dict(), self.model_path)
@@ -291,7 +290,6 @@ class BallTrainer:
             xloss_ERnnD = nn.BCELoss(reduction='mean')(recon_next, x1)
             zloss_Rnn = self.mse_loss(z0_rnn, z_gt[:, 1:, :])
         else:
-            print('predrecon', recon_next.shape)
             xloss_ERnnD = nn.BCELoss(reduction='sum')(recon_next, x1)
             zloss_Rnn = self.z_rnn_loss_scalar * self.mse_loss(z0_rnn, z_gt[:, 1:, :])
         if log_num != 0 and not self.config['eval_recons']:
@@ -305,7 +303,6 @@ class BallTrainer:
         if self.config['eval_recons']:
             recon_loss = nn.BCELoss(reduction='mean')(recon, data)
         else:
-            print('recon', recon.shape)
             recon_loss = nn.BCELoss(reduction='sum')(recon, data)
         KLD = -0.5 * torch.sum(1 + logvar - mu.pow(2) - torch.exp(logvar)) * self.kld_loss_scalar
         if log_num != 0 and not self.config['eval_recons']:

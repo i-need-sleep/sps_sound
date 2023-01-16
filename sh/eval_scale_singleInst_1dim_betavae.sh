@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=scale_singleInst_1dim_ae       # 任务名
+#SBATCH --job-name=eval_scale_singleInst_1dim_betavae       # 任务名
 #SBATCH --nodes=1                   # 这里不用动 多节点脚本请查官方文档
 #SBATCH --ntasks=1                  # 这里不用动 多任务脚本请查官方文档
 #SBATCH --cpus-per-task=4           # 要几块CPU (一般4块就够用了)
@@ -21,10 +21,12 @@ echo "START"               # 输出起始信息
 source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
-    --name scale_singleInst_1dim_ae1 \
+    --name scale_singleInst_1dim_betavae \
     --seq_len 15 \
     --data_folder cleanTrain_accordion \
     --beta_vae \
-    --ae \
-    --n_runs 10
+    --n_runs 10 \
+    --eval_recons \
+    --no_symm \
+    --no_rnn 
 echo "FINISH"                       # 输出起始信息

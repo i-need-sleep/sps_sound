@@ -70,7 +70,9 @@ if __name__ == '__main__':
 
     # Loop for multiple runs
     for i in range(args.n_runs):
-        name = args.name + '_' + str(i)
+        name = args.name
+        if args.n_runs > 1:
+            name = args.name + '_' + str(i)
         CONFIG['name'] = name
         CONFIG['model_path'] =  f'{name}_Conv2dNOTGruConv2d_symmetry.pt'
         CONFIG['train_result_path'] = f'./new_dumpster/{name}TrainingResults/'
@@ -80,6 +82,6 @@ if __name__ == '__main__':
         trainer = BallTrainer(CONFIG)
         if args.eval_recons or is_need_train(CONFIG):
             self_recon, pred_recon, rnn_prior = trainer.train()
-            for m in [self_recon, pred_recon, rnn_prior]:
+            for idx, m in enumerate([self_recon, pred_recon, rnn_prior]):
                 m = torch.tensor(m)
-                print(torch.mean(m))
+                print(idx, torch.mean(m))
