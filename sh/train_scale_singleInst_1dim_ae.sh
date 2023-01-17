@@ -21,7 +21,7 @@ echo "START"               # 输出起始信息
 source deactivate
 source /apps/local/anaconda3/bin/activate danielTrash          # 调用 virtual env
 CUDA_LAUNCH_BLOCKING=1 python -u main_train.py \
-    --name scale_singleInst_1dim_ae1 \
+    --name scale_singleInst_1dim_ae2 \
     --seq_len 15 \
     --data_folder cleanTrain_accordion \
     --beta_vae \

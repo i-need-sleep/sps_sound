@@ -229,7 +229,7 @@ class BallTrainer:
             # Recons, KLD
             vae_loss = self.calc_vae_loss(data, z_combine, mu, logvar, is_log * i) 
             if self.config['ae'] and not self.config['eval_recons']:
-                vae_loss = torch.zeros_like(vae_loss[0]), torch.zeros_like(vae_loss[1])
+                vae_loss = vae_loss[0], torch.zeros_like(vae_loss[1])
 
             # Pred_recon, rnn_prior
             rnn_loss = self.calc_rnn_loss(data[:, 1:, :, :, :], z_gt_p, z0_rnn, is_log * i, z_gt_cr[:, :-1, :])

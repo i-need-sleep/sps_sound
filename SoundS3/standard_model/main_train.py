@@ -81,7 +81,9 @@ if __name__ == '__main__':
 
         trainer = BallTrainer(CONFIG)
         if args.eval_recons or is_need_train(CONFIG):
-            self_recon, pred_recon, rnn_prior = trainer.train()
-            for idx, m in enumerate([self_recon, pred_recon, rnn_prior]):
-                m = torch.tensor(m)
-                print(idx, torch.mean(m))
+            out = trainer.train()
+            if args.eval_recons:
+                self_recon, pred_recon, rnn_prior = out
+                for idx, m in enumerate([self_recon, pred_recon, rnn_prior]):
+                    m = torch.tensor(m)
+                    print(idx, torch.mean(m))
