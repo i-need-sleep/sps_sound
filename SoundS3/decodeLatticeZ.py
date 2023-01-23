@@ -49,6 +49,10 @@ if 'beta' in CHECKPOINT_NAME or '1dim' in CHECKPOINT_NAME:
     print('BETA')
     CONFIG['beta_vae'] = True
 
+if '_ae_' in CHECKPOINT_NAME:
+    print('ae')
+    CONFIG['ae'] = True
+
 import torch
 from torchaudio.transforms import GriffinLim
 import numpy as np
@@ -104,6 +108,8 @@ def main():
         # mu: batch_i, t, z_i
         z = mu[0, 0, :].detach()
         z_timbre = z[1:]
+        if CONFIG['beta_vae']:
+            z_timbre = torch.zeros_like(z_timbre)
         z_pitch = z[0]
         all_z_pitches.append(z_pitch)
 

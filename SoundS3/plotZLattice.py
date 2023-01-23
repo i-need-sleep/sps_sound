@@ -7,7 +7,7 @@ from matplotlib.figure import SubFigure
 from numpy import iterable
 from tqdm import tqdm
 
-FIGSIZE = (9, 5)
+FIGSIZE = (11, 5)
 # WIDTH_RATIO = (.07, .9)
 
 import rc_params
@@ -30,7 +30,7 @@ def main():
     # subfig_0_ax: Axes = subfigs[0].subplots()
     # subfig_0_ax.axis('off')
     axeses: List[List[Axes]] = subfigs[-1].subplots(
-        2, 4, 
+        2, 5, 
         # sharey=True, 
         sharex=False, 
     )
@@ -117,7 +117,7 @@ def main():
     #     handletextpad=0.5,
     #     columnspacing=.8,
     # )
-    plt.savefig(f'./figs/cool_fig.png')
+    plt.savefig(f'./figs/cool_fig.pdf')
     plt.show()
 
 if __name__ == '__main__':

@@ -25,7 +25,7 @@ plt.rcParams.update({
     'font.size': 14, 
 })
 
-FIGSIZE = (8, 6)
+FIGSIZE = (10, 6)
 EXP_LOOKUP = dict([(y, x) for x, y in EXP_GROUPS])
 
 def main():

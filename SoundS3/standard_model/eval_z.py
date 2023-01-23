@@ -46,12 +46,12 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 parser = argparse.ArgumentParser()
 
-parser.add_argument('--name', default='jan7/scale_singleInst_1dim_1_0_Conv2dNOTGruConv2d_symmetry')
+parser.add_argument('--name', default='accordion/nottingham_eighth_accOnly_5000_2_512_easier_gru___checkpoint_9000')
 parser.add_argument('--seq_len', type=int, default=64)
 
 # RNN params
-parser.add_argument('--rnn_num_layers', type=int, default=1)
-parser.add_argument('--rnn_hidden_size', type=int, default=256)
+parser.add_argument('--rnn_num_layers', type=int, default=2)
+parser.add_argument('--rnn_hidden_size', type=int, default=512)
 parser.add_argument('--gru', action='store_true')
 
 # Hyperparams

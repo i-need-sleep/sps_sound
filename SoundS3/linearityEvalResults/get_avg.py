@@ -1,7 +1,8 @@
 import numpy as np
 
-name_root = 'decode_test_set_scale_singleInst_1dim_betavae'
+name_root = 'decode_test_set_scale_singleInst_1dim_betaVAE'
 metric = 'linearProjectionMSE'
+# metric = 'R2'
 nums = []
 
 for i in range(10):
