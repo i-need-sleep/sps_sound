@@ -56,8 +56,8 @@ def diffStd(X, Y, dt=1):
 def linearProjectionMSE(X, Y):
     X = np.array(X, dtype=np.float32)
     Y = np.array(Y, dtype=np.float32)
-    Y = Y - Y.mean(dim=0)
-    Y = Y / Y.std(dim=0)
+    Y = Y - Y.mean()
+    Y = Y / Y.std()
     (
         slope, intercept, r_value, p_value, std_err, 
     ) = stats.linregress(X, Y)

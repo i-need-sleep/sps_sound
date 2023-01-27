@@ -7,7 +7,7 @@ from matplotlib.figure import SubFigure
 from numpy import iterable
 from tqdm import tqdm
 
-FIGSIZE = (11, 5)
+FIGSIZE = (13, 5)
 # WIDTH_RATIO = (.07, .9)
 
 import rc_params
@@ -30,7 +30,7 @@ def main():
     # subfig_0_ax: Axes = subfigs[0].subplots()
     # subfig_0_ax.axis('off')
     axeses: List[List[Axes]] = subfigs[-1].subplots(
-        2, 5, 
+        2, 6, 
         # sharey=True, 
         sharex=False, 
     )
@@ -79,8 +79,8 @@ def main():
                     rotation=90, 
                 )
             if task_path_name == 'decode':
-                ax.set_yticks((60, 84))
-                ax.set_yticklabels(('C4', 'C6'))
+                ax.set_yticks((58, 84))
+                ax.set_yticklabels(('C3', 'C6'))
                 ax.set_ylim((55, 89))
 
                 # if col_i == 0:
@@ -90,9 +90,9 @@ def main():
                 # if col_i == 2:
                 #     ax.set_xlim((-1, 2))
             else:
-                ax.set_xticks((60, 84))
-                ax.set_xticklabels(('C4', 'C6'))
-                ax.set_xlim((58, 86))
+                ax.set_xticks((58, 84))
+                ax.set_xticklabels(('C3', 'C6'))
+                ax.set_xlim((54, 89))
                 # ax.set_yticks((-1, 0, 1))
                 # ax.set_yticklabels(('-1', '0', '1'))
                 # ax.set_ylim((-1.3, 1.3))
