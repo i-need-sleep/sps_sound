@@ -6,8 +6,8 @@ metric = 'linearProjectionMSE'
 nums = []
 
 for i in range(10):
-    if i == 8:
-        continue
+    # if i == 8:
+        # continue
     path = f'{name_root}_{str(i)}_{metric}.txt'
     with open(path, 'r') as f:
         data = f.read()
